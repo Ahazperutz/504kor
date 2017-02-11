@@ -849,12 +849,18 @@
 
 	{{#capture}}
 		{{#3.III}}
-			<p>If there are fewer privileges in the row of cards as the # of {{owners}} at the start of this phase, the active {{agent}} draws 1 privilege and places it to the right of the row of cards {{^company}}(2♟: If less than 3 privileges are in the row of cards, the player draws 1 privilege).{{/company}} The price of a newly drawn privilege is always $20.</p>
-			<p>Now the {{agent}} may buy 1 privilege{{#company}} paying the money from the companies holdings{{/company}}. If he does not buy one privilege, the price drops for all privileges for $0 and the price token is placed on the right of the row of cards. Newly drawn privileges are again placed on the right of the price token, so their price is $20. If at any time there are privileges with different backs (I, II or III) in that row, the price for all privileges with the lower back drops to $0 and the price token is placed to the right of them.</p>
-			<p>{{^company}}The player may only buy each type of privilege once{{/company}}{{#company}}The president can&rsquo;t buy a privilege for their company if the company already owns it{{/company}}. He may use his privileges immediately after purchase.</p>
+			<p>이 단계가 시작될 때 특권 카드 열에 놓인 특권 카드가 플레이어의 수 미만이라면, 현재 차례인 플레이어가 특권 카드 1장을 뽑아 카드 열의 오른쪽에 놓습니다. {{^company}}(2♟: 카드 열에 있는 특권 카드가 3장 미만이라면 특권 카드 1장을 뽑습니다.){{/company}} 새로 뽑은 특권 카드의 가격은 항상 $20입니다.</p>
+			<p>
+				이제 플레이어는 특권 카드 1장을 $20에 살 수 있습니다.<br/>
+				이 플레이어가 특권 카드를 사지 않으면 모든 특권 카드의 가격은 $0으로 내려가고, 가격 토큰을 특권 카드 오른쪽에 놓습니다.<br/>
+				새로 뽑은 특권 카드는 다시 가격 토큰 오른쪽에 놓이며, 이 특권 카드의 가격은 $20입니다.<br/>
+				새로 뽑은 특권 카드 뒷면(I, II, III) 숫자가 현재 카드 열의 모든 카드 뒷면보다 높다면, 뒷면이 낮은 숫자인 특권 카드의 가격은 $0으로 내려가며 (가격 토큰을 이 카드들의 오른쪽에 놓습니다.)<br/>
+				새로 뽑힌 특권 카드는 가격 토큰의 오른쪽에 놓습니다.
+			</p>
+			<p>플레이어는 같은 종류의 특권 카드를 한 장만 살 수 있습니다. 플레이어는 특권 카드를 산 즉시 사용할 수 있습니다.</p>
 		{{/3.III}}
 		{{#1}}
-			<p>The {{agent}} may buy exactly 1 upgrade for {{fowns}} transport trolley per turn, either a bigger cargo hold or more movement points, see table <b>Prices for Upgrades</b>.</p>
+			<p>플레이어들은 차례마다 한 번씩, 더 큰 적재함과 더 많은 이동력 중 하나를 업그레이드 할 수 있습니다.<br/>위쪽에 있는 <strong>업그레이드 비용</strong> 표를 참조하세요.</p>
 		{{/1}}
 		{{#8.III}}
 			<p>Starting with the 2nd round the {{agent}} may buy only at max 2 more residents than the # of plants {{^company}}he{{/company}}{{#company}}the company{{/company}} owns in each turn.</p>
@@ -866,7 +872,7 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 3 C: Purchase</h1></div>
+			<div class="col-md-2 col-xs-2"><h1>3C 단계: 구매</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
@@ -1008,9 +1014,24 @@
 <script id="template_phase3efgh" type="x-tmpl-mustache">
 	{{#capture}}
 		{{#1}}
-			{{^1.III}}<p>The {{agent}} may transport 1 good of any type or up to 2 of {{fowns}} exhausted residents per cargo hold. He may load and unload the transport trolley any number of times. If he unloads goods on a land tile or a city, which has no demand for these goods{{#8}}{{^8.III}} (or without one of {{fowns}} trading houses){{/8.III}}{{/8}}, the goods remain there until any {{owner}} loads them again onto {{own}} transport trolley.</p>{{/1.III}}
-			{{#1.III}}<p>The {{agent}} may transport {{#8}}{{^8.III}}1 good of any type or {{/8.III}}{{/8}}up to 2 of {{fowns}} exhausted residents per cargo hold. He may load and unload the transport trolley any number of times.{{#8}}{{^8.III}}If he unloads goods on a land tile or a city, without one of {{fowns}} trading houses, the goods remain there until any {{owner}} loads them again onto {{owns}} transport trolley.{{/8.III}}{{/8}}</p>{{/1.III}}
-			<p>The {{agent}} needs 1 MP to move {{fowns}} transport trolley from tile to tile; but he needs 2 MP for the movement from any tile up on each mountain.{{#residents}}{{^4}} The transport trolley with loaded residents may move through tiles without settlements of the {{owner}}, which are empty or have opposing settlements and residents.{{/4}} If the {{agent}} unloads residents on a tile without 1 of {{fowns}} settlements, 1 resident turns into 1 settlement.{{/residents}}</p>
+			{{^1.III}}
+				<p>
+					플레이어는 적재함 1칸마다 아무 상품 1개나 비활성화된 자기 주민 2개까지를 실을 수 있습니다.<br/>
+					플레이어는 수송 차량에 싣거나 내리는 것을 원하는 만큼 할 수 있습니다.<br/>
+					육지타일이나 그 상품을 요구하지 않는 도시{{#8}}{{^8.III}}(또는 플레이어의 교역소가 없는){{/8.III}}{{/8}}에 상품을 내리면, 이 상품은 아무 플레이어나 수송 차량에 싣기 전까지 그 자리에 남아 있습니다.
+				</p>
+			{{/1.III}}
+			{{#1.III}}
+				<p>
+					The {{agent}} may transport {{#8}}{{^8.III}}1 good of any type or {{/8.III}}{{/8}}up to 2 of {{fowns}} exhausted residents per cargo hold.
+					He may load and unload the transport trolley any number of times.
+					{{#8}}{{^8.III}}If he unloads goods on a land tile or a city, without one of {{fowns}} trading houses, the goods remain there until any {{owner}} loads them again onto {{owns}} transport trolley.{{/8.III}}{{/8}}
+				</p>
+			{{/1.III}}
+			<p>
+				수송 차량이 인접한 타일로 이동할 때 이동력 1이 듭니다. 단, 아무 타일에서든 산 타일로 이동할 때는 이동력 2가 듭니다.<br/>
+				{{#residents}}{{^4}}주민을 실은 수송 차량은 그 플레이어의 정착지가 없는, 즉 비어 있거나 상대의 정착지나 주민이 있는 타일을 지나 이동할 수 있습니다.{{/4}}<br/> 플레이어가 자기 정착지가 없는 타일에 주민을 내리면, 내린 주민 중 1개가 정착지 1개로 바뀝니다.{{/residents}}
+			</p>
 			{{#6}}
 				<p>The {{agent}} needs 0.5 MP per road when moving {{fowns}} transport trolley on {{owns}} roads.</p>
 				{{#1.III}}<p>Once per turn and following the building rules for roads, the {{agent}} may build 1 road for free from the tile with his transport trolley, if the {{owner}}} has 1 settlement each on both affected tiles.</p>{{/1.III}}
@@ -1022,8 +1043,8 @@
 			{{/4}}
 			{{#2.II}}{{#residents}}<p>The {{agent}} reaches a city only with {{fowns}} transport trolley. In that case he places 1 resident from {{fowns}} storage on top of the matching city card.</p>{{/residents}}{{/2.II}}
 			{{^residents}}
-				<p>The {{owner}} may buy additional MP for {{owns}} transport trolley, see the table <b>Prices for Additional Movement Points (MP)</b>.</p>
-				{{#2}}{{^2.III}}<p>The {{agent}} reaches cities with {{fowns}} transport trolley. In that case he moves {{fowns}} resident from that city to the matching city card.{{/2.III}}{{/2}}
+				<p>플레이어는 차례 중 수송 차량에 사용할 수 있는 추가 이동력을 살 수 있습니다. 위쪽에 있는 <b>추가 이동력을 위한 비용</b> 표를 참조하세요.</p>
+				{{#2}}{{^2.III}}<p>플레이어의 수송 차량이 도시에 처음 도착할 때마다 그 도시에 있는 자기 주민을 해당하는 도시 카드에 놓습니다.{{/2.III}}{{/2}}
 				{{#5}}
 					<p>The transport trolley may explore new tiles. It must move onto the newly explored tile for 1 movement point (MP), it only needs 2 MP for moving onto each mountain. If the {{agent}} explores 1 water tile, he needs 1 MP but the transport trolley must remain on the starting tile. If the {{agent}} explores 1 mountain tile with his last MP, the transport trolley must remain on the starting tile, too.</p>
 					<p><b>Exploring:</b> After choosing the destination space, the {{agent}} places the explorer tiles next to the following stacks, until he placed all 6 tiles.</p>
@@ -1042,14 +1063,19 @@
 						{{#2.III}}{{#9.I}}<p>The {{agent}} counts that tile on the majority board.</p>{{/9.I}}{{/2.III}}
 					{{/5.II}}
 				{{/5}}
-				<p>If the game requires settlements for scoring, income or buildings, the {{agent}} may place 1 settlement on a tile, when he arrives there with {{fowns}} transport trolley. {{#7.III}}He counts the matching type of terrain on the majority board{{/7.III}} This is a voluntary action. Because of the limited number of his settlements the {{agent}} may pass on this action!.</p> 
-				<p>Note: This rule may not apply to this game! Check below for <b>Phase 3 F</b> (factories) <b>Income</b> and <b> Scoring</b>.</p>
+				<p>
+					점수, 수입, 건물을 위해 정착지를 필요로 하는 게임이면, 수송 차량이 도착한 타일에 정착지 1개를 놓을 수 있습니다.<br/>
+					{{#7.III}}정착지를 놓으면 플레이어는 우위 판에서 해당 지형의 자기 표시 토큰을 올립니다.{{/7.III}}<br/>
+					(이는 선택 가능한 행동입니다. 정착지의 수는 제한돼 있으므로 플레이어는 이 행동을 하지 않을 수도 있습니다.)
+				</p> 
+				<p>Note: 이 룰을 적용하지 않을 수 있습니다! 아래 <b>3F 단계: 공장</b>, <b>3H 단계: 수입</b>, <b>점수 계산</b>을 참조하세요.</p>
 			{{/residents}}
 			{{^1.III}}<p>
-				The goal of the {{owner}} is to deliver the goods to a city which has demand for this type of good. Each city takes only 1 good for each listed goods type.
+				플레이어의 목표는 도시가 요구하는 상품을 배송하는 것입니다.<br/>
+				도시들은 도시에 표시된 상품 종류마다 1개씩만 받습니다.<br/>
 				{{^8.I}}{{^8.II}}
-					{{#1.I}}The {{agent}} places the delivered goods face up in {{^company}}front of himself{{/company}}{{#company}}his company&rsquo;s holdings{{/company}} and covers the matching spaces on the cities with covering tokens.{{/1.I}}
-					{{#1.II}}The {{agent}} places the goods face up below the goods price board in the order he delivered them during his turn and covers the matching spaces on the cities with covering tokens. If the player delivers 2 goods to the same city, he decides in which order he places them below the goods price board.{{/1.II}}
+					{{#1.I}}플레이어는 배송한 상품을 앞면으로 자기 앞에고, 그 도시의 해당 상품 칸을 가림 토큰으로 덮습니다.{{/1.I}}
+					{{#1.II}}플레이어는 배송한 상품을 앞면으로 이번 차례에 배송한 순서대로 상품 가격 판 아래에 놓고, 그 도시의 해당 상품 칸을 가림 토큰으로 덮습니다.<br/>플레이어가 한 도시에 상품 2개를 배송하면, 플레이어는 이 상품들을 상품 가격 판 아래에 어떤 순서로 놓을지 정할 수 있습니다.{{/1.II}}
 				{{/8.II}}{{/8.I}}
 			</p>{{/1.III}}
 			{{#8}}
@@ -1061,7 +1087,7 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2 mod1"><h1>Phase 3 E: Transport Trolley</h1></div>
+			<div class="col-md-2 col-xs-2 mod1"><h1>3E 단계: 수송 차량</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
@@ -1099,13 +1125,15 @@
 			{{#4}}{{^8.I}}<p>If the {{owner}} delivers goods to a city without his settlements, he must pay $1 for each full $10 of this sale to the owner of the city, or in case of a free city, payment goes to the bank.</p>{{/8.I}}{{/4}}
 		{{/1.II}}
 		{{#2.II}}
-			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus once-only money for each settlement which {{sagent}} placed on an empty tile during this turn, depending on the type of terrain: The {{owner}} gets $5 for <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>, <span class="desert icon"></span> and $10 for <span class="city icon"></span> and <span class="mountain icon"></span>. Additionally the {{owner}} gets once-only money each time {{sagent}} places a new resident on 1 or more city cards in <b>Phase 3 D</b>. For the overall 1st resident $10, for the overall 2nd resident $20 etc. Afterwards, he moves the new residents to the bottom of the matching city cards - see example of <b>Income</b>.</p>
+			<p>
+				플레이어는 수도로부터 기본 수입 $20을 얻고, 이번 차례 중에 플레이어가 비어있던 타일에 놓은 첫 정착지에 대해 일회성 수입을 얻습니다.<br/>
+				그 타일이 <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>, <span class="desert icon"></span>라면 타일마다 $5씩, <span class="city icon"></span> and <span class="mountain icon"></span>라면 타일마다 $10씩을 얻습니다.<br/>
+				이번 차례 중에 플레이어가 도시 카드에 주민을 놨다면, 현재 도시 카드에 놓인 모든 주민 중 첫 번째 자기 주민은 $10, 두 번째 자기 주민은 $20과 같은 방식으로 일회성 수입을 얻습니다.<br/>
+				그런 다음 그 새로 놓은 주민들을 해당 도시 카드의 아래쪽으로 이동시킵니다.<br/>
+				위쪽에 있는 <b>수입 예</b>를 참조하세요.
+			</p>
 			{{#7.I}}<p>If the {{agent}} removes {{fowns}} settlement and then there are no settlements left on the tile, the next {{owner}} placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>{{/7.I}}
-			{{^7.I}}
-				{{#1}}
-					<p>If the {{agent}} removes {{fowns}} settlement and then there are no settlements left on the tile, the next {{owner}} placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>
-				{{/1}}
-			{{/7.I}}
+			{{^7.I}}{{#1}}<p>플레이어가 자기 정착지를 제거해서 그 타일에 정착지가 하나도 남지 않으면, 그 타일에 첫 정착지를 놓은 다음 플레이어가 다시 한 번 일회성 수입 $5을 얻을 수 있습니다. (도시와 산은 일회성 $10)</p>{{/1}}{{/7.I}}
 			{{#4}}<p>If a {{agent}} neutralizes a tile from another {{owner}}, the next {{owner}} placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain). If he conquers that tile he gets that income.</p>{{/4}}
 		{{/2.II}}
 		{{#3.II}}
@@ -1177,7 +1205,7 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2 mod{{world.1}}"><h1>Phase 3 H: Income</h1></div>
+			<div class="col-md-2 col-xs-2 mod{{world.1}}"><h1>3H 단계: 수입</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
@@ -1247,11 +1275,11 @@
 	{{/hascapture}}
 
 	<div class="row section">
-		<div class="col-md-2 col-xs-2 mod{{world.0}}"><h1>Game End</h1></div>
+		<div class="col-md-2 col-xs-2 mod{{world.0}}"><h1>게임 종료</h1></div>
 		<div class="col-md-10 col-xs-10">
 			{{#1.I}}
-				{{^9.II}}<p>The game ends at the end of the round after all players commonly delivered at least 19 (2♟), 21 (3♟) or 23 (4♟) goods tiles.</p>{{/9.II}}
-				{{#9.II}}<p>The game ends at the end of the round after all companies commonly delivered at least 25 goods tiles.</p>{{/9.II}}
+				{{^9.II}}<p>게임에 참가한 플레이어 수에 따라서 종료 조건이 달라집니다.<br/>모든 플레이어가 지금까지 모든 도시에 배송한 상품 총합이 19개(2♟) / 21개(3♟) / 23개(4♟) 이상인 라운드를 마치면 게임이 끝납니다.</p>{{/9.II}}
+				{{#9.II}}<p>주식회사 5개가 배송한 상품 총합 25개 이상인 라운드를 마치면 게임이 끝납니다.</p>{{/9.II}}
 			{{/1.I}}
 			{{#2.I}}
 				{{^residents}}
@@ -1369,11 +1397,15 @@
 		{{/9}}
 		{{^9}}
 			{{#1.I}}
-				<p>The players score victory points (VP) for the delivered goods, see left for the table <b>Victory Points (VP)</b>.</p>
+				<p>플레이어들은 배송한 상품에 따라 승점을 얻습니다.<br/>위쪽에 있는 <b>최종 점수 계산</b> 표를 참조하세요.</p>
 				{{#7.III}}
 					<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
 				{{/7.III}}
-				<p>The player with the most VP wins the game! In case of a tie, the tied player having the most goods (1 or 2) in the cargo holds of his transport trolley wins the game. If there is still a tie, the tied player with the highest income in the last game round wins the game.</p>
+				<p>
+					승점이 가장 높은 플레이어가 승리합니다.<br/>
+					동점이면 그중 자기 적재함에 상품이 더 많은 플레이어가 승리합니다.<br/>
+					여전히 동점이면 그중 마지막 라운드에서 수입이 더 많았던 플레이어가 승리합니다.
+				</p>
 			{{/1.I}}
 			{{#2.I}}
 				<p>The players get victory points (VP) for their population on the city cards, see the table and example for <b>Final Scoring</b>.</p>
@@ -1422,7 +1454,7 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2 mod{{world.0}}"><h1>Final Scoring</h1></div>
+			<div class="col-md-2 col-xs-2 mod{{world.0}}"><h1>최종 점수 계산</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
@@ -1616,6 +1648,8 @@
 						} else {
 							module['parts']['13p'] = 20;
 						}
+						module['money']['fixed'] = false;
+						module['money']['increasing'] = true;
 					}
 				},
 			},
