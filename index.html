@@ -23,7 +23,7 @@
 					<button class="mod2 btn stateon"><img src="img/modules/icon-mod2.png" alt="Race (2)" title="경주 (2)" /></button>
 					<button class="mod3 btn stateon"><img src="img/modules/icon-mod3.png" alt="Privileges (3)" title="특권 (3)" /></button>
 					<button class="mod4 btn stateon"><img src="img/modules/icon-mod4.png" alt="Military (4)" title="군사 (4)" /></button>
-					<button class="mod5 btn stateon"><img src="img/modules/icon-mod5.png" alt="Explorin (5)" title="탐험 (5)" /></button>
+					<button class="mod5 btn stateon"><img src="img/modules/icon-mod5.png" alt="Explorin (5)" title="탐사 (5)" /></button>
 					<button class="mod6 btn stateon"><img src="img/modules/icon-mod6.png" alt="Roads (6)" title="도로 (6)" /></button>
 					<button class="mod7 btn stateon"><img src="img/modules/icon-mod7.png" alt="Majorities (7)" title="우위 (7)" /></button>
 					<button class="mod8 btn stateon"><img src="img/modules/icon-mod8.png" alt="Production (8)" title="생산 (8)" /></button>
@@ -110,20 +110,20 @@
 			<div class="heading">
 				{{#order.clockwise}}
 					<h2>시계방향으로 차례 진행</h2>
-					{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}<p>Common capital in center of map</p>{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}
-					{{^mapnum.4}}{{^mapnum.5}}<p>수도선택은 차례 순서 역순</p>{{/mapnum.5}}{{/mapnum.4}}
+					{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}<p>중앙에 있는 1번 도시가 공동 수도</p>{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}
+					{{^mapnum.4}}{{^mapnum.5}}<p>수도 선택은 차례 순서 역순</p>{{/mapnum.5}}{{/mapnum.4}}
 				{{/order.clockwise}}
 				{{#order.income}}
 					<h2>라운드 갱신형 차례진행</h2>
 					<p>(수입이 많은이에서 적은이 순)</p>
 				{{/order.income}}
 				{{#order.vp}}
-					<h2>라운드 갱신형 {{owner}} 차례진행</h2>
-					<p>(according to victory points from fewest to most)</p>
+					<h2>라운드 갱신형 차례 진행</h2>
+					<p>(승점이 낮은 이에서 높은 이 순)</p>
 				{{/order.vp}}
 				{{#order.shares}}
 					<h2>라운드 갱신형 차례 진행</h2>
-					<p>(according to share values from high to low)</p>
+					<p>(주가가 높은 회사에서 낮은 회사 순)</p>
 				{{/order.shares}}
 			</div>
 		</div>
@@ -133,7 +133,7 @@
 				{{#money.fixed}}<p>플레이어마다 ${{money.amount}}</p>{{/money.fixed}}
 				{{#money.increasing}}<p>턴 순서에 따라 $60, $70, $80, $90 (2♟: $60, $80)</p>{{/money.increasing}}
 				{{#money.shares}}<p>각플레이어 ♟: ($600 / 플레이어 수)</p>{{/money.shares}}
-				{{#3.III}}<p>픞레이어 마다 추가금 $20</p>{{/3.III}}
+				{{#3.III}}<p>플레이어 마다 추가금 $20</p>{{/3.III}}
 			</div>
 		</div>
 	</div>
@@ -157,7 +157,7 @@
 	<div class="row section">
 		<div class="col-md-2 col-xs-2"><h1>게임 준비</h1></div>
 		<div class="col-md-10 col-xs-10">
-			{{#5}}<p>모든 지도 타일을 종류별로 구별해서 따로 쌓습니다. 쌓은 각 타일 더미를 옆으로 한 줄이 되게 배치하고, 도시-물-초원-들판-산-사막 순서로 놓습니다. {{#1}}{{^1.III}}도시 타일 더미는 가장 작 은 숫자 도시가 맨 위에, 10번 도시가 맨 아래에 있도록 순서대로 쌓습니다.{{/1.III}}{{/1}}</p>{{/5}}
+			{{#5}}<p>모든 지도 타일을 종류별로 구별해서 따로 쌓습니다.<br/>쌓은 각 타일 더미를 옆으로 한 줄이 되게 배치하고, 도시-물-초원-들판-산-사막 순서로 놓습니다.{{#1}}{{^1.III}}<br/>도시 타일 더미는 가장 작 은 숫자 도시가 맨 위에, 10번 도시가 맨 아래에 있도록 순서대로 쌓습니다.{{/1.III}}{{/1}}</p>{{/5}}
 			<p>
 				지도 {{map.value}}.
 				{{#1}}{{^1.III}}도시는 상품이 보이는 면으로 놓습니다. {{#8}}도시를 빈 상태로 둡니다.{{/8}}{{^8}}도시마다 그 도시에 있는 원형 심볼과 같은 상품 4개씩 놓습니다.{{/8}}{{/1.III}}{{/1}}
@@ -174,25 +174,26 @@
 			</p>
 			{{^7}}
 				{{#6.I}}
-					<p>지도 옆에 우위 판을 사막이 있는 면으로 놓고, 각{{owner}}의 표시 토큰을 우위 판의 아래 에 놓습니다</p>
+					<p>지도 옆에 우위 판을 사막이 있는 면으로 놓고, 각 {{owner}}의 표시 토큰을 우위 판의 아래 에 놓습니다</p>
 				{{/6.I}}
 				{{#6.II}}
-					<p>Place the majority board next to the game map with{{^2.III}}out{{/2.III}}{{#2.III}}{{^9.I}}{{^5.I}}out{{/5.I}}{{/9.I}}{{/2.III}} the column for deserts showing and place {{^2.III}}5 of the{{/2.III}}{{#2.III}}{{^9.I}}5 of the{{/9.I}}{{#9.I}}the 6{{/9.I}}{{/2.III}} marking tokens for each {{owner}} below this board.</p>
+					<p>지도 옆에 우외 판을 사막이 {{^2.III}}없는{{/2.III}}{{#2.III}}{{#5.I}}있는{{/5.I}}{{#9.I}}있는{{/9.I}}{{^9.I}}{{^5.I}}없는{{/5.I}}{{/9.I}}{{/2.III}} 면으로 놓고, 각 지형 열 아래에 승점 5점씩을 놓습니다.</p>
 				{{/6.II}}
 			{{/7}}
 			{{#7}}
-				<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each {{owner}} below this board.</p>
+				<p>우위 판을 사막이 보이는 면으로 게임 지도 옆에 놓고, 그 아래에 플레이어별로 표시 토큰을 놓습니다.</p>
 			{{/7}}
-			{{#1.II}}<p>Place the goods price board next to the game map and place 1 each of the goods tiles on space "20" of it.</p>{{/1.II}}
+			{{#1.II}}<p>상품 가격 판에 있는 "20"칸에 각 상품 토큰 1개씩을 놓습니다.</p>{{/1.II}}
 			{{#9}}<p>
-				{{^9.III}}Prepare the game for 5 stock companies. {{/9.III}}
-				{{^1.II}}Place the share value board next to the game map. {{/1.II}}
-				{{#1.II}}The goods price board is used to track the prices of shares in addition to goods. {{/1.II}}
-				{{#9.II}}
-					The stock companies each get the following money for their company assets: blue & orange each get $100, white & purple each get $150, green gets $200.
-				{{/9.II}}
+				{{^9.III}}주식회사 5개를 준비합니다.{{/9.III}}
+				{{^1.II}} 주가 판을 게임 지도 옆에 놓습니다.{{/1.II}}
+				{{#1.II}} 상품 가격 판은 상품 가격과 주식의 가격을 표시하기 위해 사용합니다.{{/1.II}}
+				{{#9.II}} 주식회사들은 자산으로 다음과 같이 갖습니다. 파란색, 주황색 각각 $100씩, 하얀색, 보라색 각각 $150씩, 초록색 $200.{{/9.II}}
 				{{#9.III}}
-					Each player is CEO of a small private stock company and takes the president&rsquo;s share as his title deed. He places the remaining 8 shares with the dark side in front of himself. Mark the share values of all players at $20 on the share value{{#1.II}}/goods price{{/1.II}} board. {{^3}}{{^7.I}}Depending on the # of players lay out the matching player order cards and place 1 resident of each player next to these cards.{{/7.I}}{{/3}}
+					플레이어는 작은 개인 주식회사의 CEO가 되고, 해당하는 주식회사의 사장 증권을 가져갑니다.<br/>
+					각자 남은 주식 증권 8주는 어두운 면으로 자기 앞에 놓습니다.<br/>
+					모든 플레이어는 주가{{#1.II}}/상품 가격{{/1.II}} 판에서 주가를 $20에 맞춰 놓습니다.
+					{{^3}}{{^7.I}}<br/>플레이어의 수에 따라 해당하는 차례 순서를 놓고, 각자 주민 1개씩을 그 카드 옆에 놓습니다.{{/7.I}}{{/3}}
 				{{/9.III}}
 			</p>{{/9}}
 			{{#3}}
@@ -214,18 +215,18 @@
 			{{/3}}
 			{{#2.III}}
 				{{^5.I}}{{^6}}{{^7}}
-					{{^9.I}}<p>Majority {{^4.I}}board and {{/4.I}}markers not needed in this combination.</p>{{/9.I}}
-					{{#9.I}}{{^5.II}}<p>Majority {{^4.II}}board and {{/4.II}}markers not needed in this combination.</p>{{/5.II}}{{/9.I}}
+					{{^9.I}}<p>우위 {{^4.I}}판과 {{/4.I}}마커는 이 조합에서 필요하지 않습니다.</p>{{/9.I}}
+					{{#9.I}}{{^5.II}}<p>우위 {{^4.II}}판과 {{/4.II}}마커는 이 조합에서 필요하지 않습니다.</p>{{/5.II}}{{/9.I}}
 				{{/7}}{{/6}}{{/5.I}}
-				{{#1.I}}<p>Place 1 good of each type with 5 VP on it next to the map.</p>{{/1.I}}
-				{{#3.I}}<p>Place two factories with 10 VP each next to the map.</p>{{/3.I}}
+				{{#1.I}}<p>승점 5점이 놓인 상품 5개를 지도 옆에 놓습니다.</p>{{/1.I}}
+				{{#3.I}}<p>승점 10점이 놓인 공장을 지도 옆에 놓습니다.</p>{{/3.I}}
 				{{#4.I}}
-					{{^6}}{{^7}}<p>Place the majority board next to the game map.</p>{{/7}}{{/6}}
-					<p>Place 3 VP next to the first city space of the majority board, 4 VP next to the second space, and so forth.</p>
+					{{^6}}{{^7}}<p>우위 판을 게임 지도 옆에 놓습니다.</p>{{/7}}{{/6}}
+					<p>우위 판의 첫 번째 도시 칸 옆에 승점 3점을 놓고, 두번째 칸에 4점씩 놓고, 세번째 칸에 5점씩 놓고, ...</p>
 				{{/4.I}}
 				{{#5.I}}
-					{{^6}}{{^7}}<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each {{owner}} below this board.</p>{{/7}}{{/6}}
-					<p>Place 5 VP below each terrain column of the majority board. {{#6}}Place 6 other tokens, such as settlements, per {{owner}} below the majority board to track exploration.{{/6}}{{#7}}Place 6 other tokens, such as roads, per player below the majority board to track exploration.{{/7}}</p>
+					{{^6}}{{^7}}<p>우위 판을 사막이 보이는 면으로 게임 지도 옆에 놓고, 각 지형 열 아래에 플레이어마다 표시 토큰을 이 판 아래에 놓습니다.</p>{{/7}}{{/6}}
+					<p>우위 판의 각 지역 열 아래에 승점 5점씩 놓습니다.{{#6}} 탐사 표시를 위해 우위 판 아래에 플레이어마다 6개의 다른 토큰(정착지 같은)을 놓습니다.{{/6}}{{#7}} 탐사 표시를 위해 우위 판 아래에 플레이어마다 6개의 다른 토큰(길 같은)을 놓습니다.{{/7}}</p>
 				{{/5.I}}
 				{{#6.I}}<p>Place 5 VP below each terrain column of the majority board.</p>{{/6.I}}
 				{{#7.I}}<p>Place 10 VP next to the first row of the majority board, and 20 VP next to the second row of the majority board.</p>{{/7.I}}
@@ -265,8 +266,9 @@
 				{{^order.clockwise}}
 					{{#order.shares}}Players choose a start player for the first SR. Capitals are placed when companies are established.{{/order.shares}}
 					{{^order.shares}}
-						Round based {{owner}} order as shown in Phase 1. {{^9.II}}Capitals are placed in Phase 1 of the first round.{{/9.II}}{{#9.II}}Capitals are placed when companies are established.{{/9.II}}
-						{{#order.income}}Depending on the # of players place the matching player order cards and 1 resident of each player next to the map.{{/order.income}}
+						라운드 플레이어 순서는 1단계와 같습니다.<br/>
+						{{^9.II}}수도는 첫 라운드의 1단계에 놓습니다.{{/9.II}}{{#9.II}}수도는 주식회사가 설립될 때 놓습니다.{{/9.II}}
+						{{#order.income}}플레이어 수에 따라 일치하는 플레이어 차례 순서 카드와 각 플레이어의 주민을 지도 옆에 놓습니다.{{/order.income}}
 						{{#order.vp}}
 							{{^9.II}}
 								<p>2♟, 3♟, 4♟: Depending on the # of players, take the corresponding starting and scoring cards. Place the 2 starting cards next to the map. Then shuffle the corresponding scoring cards separated by their backs of I, II, III and place them in 3 face down rows next to the starting cards.</p>
@@ -334,30 +336,30 @@
 					{{#priv.I.2}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-2.png" /></div><div class="col-xs-8"><strong>I (2)</strong> 플레이어는 도시에 정착지를 놓을 때마다, 일회성 추가 수입 $15 을 받습니다.(3H 단계 : 수입)</div></div></div>{{/priv.I.2}}
 					{{#priv.I.3}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-3.png" /></div><div class="col-xs-8"><strong>I (3)</strong> 주식회사의 주식 증권 100%를 플레이어들이 가지고 있을 때, 주식 회사의 주가를 (W10이 아닌) W20 올립니다.(주식 라운드(SR))</div></div></div>{{/priv.I.3}}
 					{{#priv.I.4}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-4.png" /></div><div class="col-xs-8"><strong>I (4)</strong> 플레이어는 방어할 때 보호받으며 공격자의 명중에 1을 합니다. 이 플레이어는 그렇게 해서 남은 명중에 대해서만 주사위를 굴립니다. (3G 단계: 전투{{#2}} 포함하면 3D 단계: 주민{{/2}})</div></div></div>{{/priv.I.4}}
-					{{#priv.I.5}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-5.png" /></div><div class="col-xs-8"><strong>I (5)</strong> 배송한 상품에서 수입을 얻을 때，플레이어는 배송한 상품마다 수입 $10씩을 얻습니다. (3H 단계: 수입)</div></div></div>{{/priv.I.5}}
-					{{#priv.I.6}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-6.png" /></div><div class="col-xs-8"><strong>I (6)</strong> When selling goods, the player gets an additional income of $10 for each sold good. (Phase 3 H: Income)</div></div></div>{{/priv.I.6}}
-					{{#priv.I.7}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-7.png" /></div><div class="col-xs-8"><strong>I (7)</strong> The stock company must pay at max maintenance costs of $20. All additional costs are compensated. (Phase 4: Dividends)</div></div></div>{{/priv.I.7}}
+					{{#priv.I.5}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-5.png" /></div><div class="col-xs-8"><strong>I (5)</strong> 플레이어는 추가 수입 $10을 얻습니다. (3H 단계: 수입)</div></div></div>{{/priv.I.5}}
+					{{#priv.I.6}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-6.png" /></div><div class="col-xs-8"><strong>I (6)</strong> 배송한 상품에서 수입을 얻을 때, 플레이어는 배송한 상품마다 수입 $10씩을 얻습니다. (3H 단계: 수입)</div></div></div>{{/priv.I.6}}
+					{{#priv.I.7}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-7.png" /></div><div class="col-xs-8"><strong>I (7)</strong> 이 주식회사는 최대 유지비가 $20까지입니다. 그를 초과한 비용은 무시합니다. (4 단계: 배당)</div></div></div>{{/priv.I.7}}
 					{{#priv.I.8}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-8.png" /></div><div class="col-xs-8"><strong>I (8)</strong> 플레이어는 수송 차량을 더 큰 적재함이나 더 많은 이동력으로 업그레이드할 때마다 $15를 덜 냅니다. (3C 단계: 구매)</div></div></div>{{/priv.I.8}}
-					{{#priv.I.9}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-9.png" /></div><div class="col-xs-8"><strong>I (9)</strong> The player only needs 1 resident for determining the building costs of roads connecting a forest (same number as for grassland). (Phase 3 D: Residents)</div></div></div>{{/priv.I.9}}
-					{{#priv.I.10}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-10.png" /></div><div class="col-xs-8"><strong>I (10)</strong> After the player placed all explorer tokens accordingly next to the stacks, he may take 1 of these explorer tiles and newly place it next to another pile with 1 or more other explorer tiles. ({{#residents}}Phase 3 D: Residents{{/residents}}{{^residents}}Phase 3 E: Transport Trolley{{/residents}}) Example: Rachel may take the explorer tile next to the stack of water tiles and place it next to the stack of grassland. Sadly, she cannot choose the stack of city tiles, as no explorer tiles are already next to that stack.</div></div></div>{{/priv.I.10}}
-					{{#priv.I.11}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-11.png" /></div><div class="col-xs-8"><strong>I (11)</strong> 플레이어는 승점 2점을 얻습니다.{{#7.I}} (이 승점도 플레이어 차례 순서를 결정하는데 영향을 미칩니다.){{/7.I}} (최종 점수 계산)</div></div></div>{{/priv.I.11}}
-					{{#priv.I.12}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-12.png" /></div><div class="col-xs-8"><strong>I (12)</strong> The player counts this card as 1 additional field on the majority board. (Majorities)</div></div></div>{{/priv.I.12}}
+					{{#priv.I.9}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-9.png" /></div><div class="col-xs-8"><strong>I (9)</strong> 플레이어가 숲과 연결되는 도로를 건설할 때, 숲 타일이 초원 타일인 것처럼 건설 비용을 계산합니다. (3D 단계: 주민)</div></div></div>{{/priv.I.9}}
+					{{#priv.I.10}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-10.png" /></div><div class="col-xs-8"><strong>I (10)</strong> 플레이어가 탐험가 마커 모두를 지도 타일 더미에 놓은 다음, 탐험가 마커 1개를 탐험가 마커가 놓인 다른 지도 타일 더미로 이동시킬 수 있습니다. ({{#residents}}3D 단계: 주민{{/residents}}{{^residents}}3E 단계: 수송 차량{{/residents}})<br/><br/>예: 채미는 물 타일 더미에 놓인 탐험가 마커를 초원 타일 더미로 이동시킬 수 있습니다. 하지만 도시 타일 더미에는 탐험가 마커가 놓여 있지 않으므로, 탐험가 마커를 도시 타일 더미로 이동시킬 수는 없습니다.</div></div></div>{{/priv.I.10}}
+					{{#priv.I.11}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-11.png" /></div><div class="col-xs-8"><strong>I (11)</strong> 플레이어는 승점 2점을 얻습니다.{{#7.I}} (이 승점도 플레이어 차례 순서를 결정하는 데 영향을 미칩니다.){{/7.I}} (최종 점수 계산)</div></div></div>{{/priv.I.11}}
+					{{#priv.I.12}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-12.png" /></div><div class="col-xs-8"><strong>I (12)</strong> 플레이어는 우위 판에 자기 들판이 1개 더 있는 것처럼 표시합니다. (우위)</div></div></div>{{/priv.I.12}}
 				</div>
 				{{/priv.I.exists}}
 				{{#priv.II.exists}}
 				<h3>Step II</h3>
 				<div class="row privileges">
-					{{#priv.II.1}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-1.png" /></div><div class="col-xs-8"><strong>II (1)</strong> The stock company may only pay 50% dividends of its income and still raises its share value by $10. The company pays $1 dividends for each full $20 income to each share ($2 to the president‘s share). (Phase 4: Dividends)</div></div></div>{{/priv.II.1}}
-					{{#priv.II.2}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-2.png" /></div><div class="col-xs-8"><strong>II (2)</strong> After determining the new player order, the player does not pay taxes. (Phase 1: Player Order)</div></div></div>{{/priv.II.2}}
-					{{#priv.II.3}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-3.png" /></div><div class="col-xs-8"><strong>II (3)</strong> The player always pays $20 for each factory (instead of $20, $30, $40). (Phase 3 F: Factories)</div></div></div>{{/priv.II.3}}
-					{{#priv.II.4}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-4.png" /></div><div class="col-xs-8"><strong>II (4)</strong> The player only pays $8 for each resident (instead of $10). (Phase 3 C: Purchase)</div></div></div>{{/priv.II.4}}
+					{{#priv.II.1}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-1.png" /></div><div class="col-xs-8"><strong>II (1)</strong> 주식회사는 수입의 50%만 배당해도 되며, 그렇게 하고도 주가가 $10 오릅니다. 주식회사는 자기 수입 $20마다 $1씩 각 주식 증권에 배당합니다. (사장 증권에는 $2) (4 단계: 배당)</div></div></div>{{/priv.II.1}}
+					{{#priv.II.2}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-2.png" /></div><div class="col-xs-8"><strong>II (2)</strong> 새 플레이어 순서를 정한 다음, 플레이어는 세금을 내지 않습니다. (1 단계: 차례 순서)</div></div></div>{{/priv.II.2}}
+					{{#priv.II.3}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-3.png" /></div><div class="col-xs-8"><strong>II (3)</strong> 플레이어는 공장 1개를 건설할 때 항상 @20만 냅니다. ($20, $30, $40이 아니라). (3F 단계: 공장)</div></div></div>{{/priv.II.3}}
+					{{#priv.II.4}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-4.png" /></div><div class="col-xs-8"><strong>II (4)</strong> 플레이어는 주민 1개 구매 비용으로 $8만 냅니다. ($10이 아니라). (3C 단계: 구매)</div></div></div>{{/priv.II.4}}
 					{{#priv.II.5}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-5.png" /></div><div class="col-xs-8"><strong>II (5)</strong> 차례마다 한 번, 플레이어의 수송 차량은 추가 이동력(MP) 1을 얻습니다. (3E 단계: 수송 차량)<br/><br/>예: 아인이는 남은 이동력을 3을 써서 자기 수송 차량을 초원에서 2번 도시 옆 칸으로 이동시켰습니다. 이 특권 카드의 능력으로 이 수송 차량은 2번 도시로 이동할 수 있습니다.</div></div></div>{{/priv.II.5}}
-					{{#priv.II.6}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-6.png" /></div><div class="col-xs-8"><strong>II (6)</strong> The player may deliver 1 additional good to one of his trading houses. (Phase 3 H: Income, Game End{{#1}}, Phase 3 E: Transport Trolley{{/1}})</div></div></div>{{/priv.II.6}}
+					{{#priv.II.6}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-6.png" /></div><div class="col-xs-8"><strong>II (6)</strong> 플레이어는 자기 교역소 단 한 곳에 상품 1개를 더 배송할 수 있습니다. (3H 단계: 수입, 게임 종료{{#1}}, 3E 단계: 수송 차량{{/1}})</div></div></div>{{/priv.II.6}}
 					{{#priv.II.7}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-7.png" /></div><div class="col-xs-8"><strong>II (7)</strong> {{#1}}{{^1.III}}플레이어가 수송 차량을 산으로 이동시킬 때 이동력(MP)이 1만 듭니다. (초원과 같은 이동력). (3E 단계: 수송 차량){{/1.III}}{{/1}}{{#4}}{{^4.III}}플레이어가 산에 있는 상대를 공격하면, 초원에 있는 상대를 공격하는 것처럼 모든 주사위 값에 +1을 합니다. (3G 단계: 전투){{/4.III}}{{/4}}{{#6}}{{^6.III}}플레이어가 산과 연결되는 도로를 건설할 때 드는 비용은 산 타일이 초원 타일인 것처럼 계산합니다. (3D: 주민){{/6.III}}{{/6}}{{#8.I}}플레이어가 산에 생산 설비를 건설할 때 주민 1개만 듭니다. (초원과 같은 비용) (3D 단계: 주민){{/8.I}}</div></div></div>{{/priv.II.7}}
-					{{#priv.II.8}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-8.png" /></div><div class="col-xs-8"><strong>II (8)</strong> The player only needs 1 resident for determining the building costs of roads connecting a city (same number as for grassland). (Phase 3 D: Residents)</div></div></div>{{/priv.II.8}}
-					{{#priv.II.9}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-9.png" /></div><div class="col-xs-8"><strong>II (9)</strong> 플레이어는 승점 3점을 얻습니다.{{#7}} (이 승점도 플레이어 차례 순서를 결정하는데 영향을 미칩니다.){{/7}} (최종 점수 계산)</div></div></div>{{/priv.II.9}}
-					{{#priv.II.10}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-10.png" /></div><div class="col-xs-8"><strong>II (10)</strong> The player counts this card as 1 additional forest on the majority board. (Majorities)</div></div></div>{{/priv.II.10}}
-					{{#priv.II.11}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-11.png" /></div><div class="col-xs-8"><strong>II (11)</strong> The player may use 1 resident for 2 actions during his turn. (Phase 3 D: Residents)</div></div></div>{{/priv.II.11}}
+					{{#priv.II.8}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-8.png" /></div><div class="col-xs-8"><strong>II (8)</strong> 플레이어가 도시와 연결되는 도로를 건설할 때 드는 비용은 타일이 초원 타일인 것처럼 계산합니다. (3D 단계: 주민)</div></div></div>{{/priv.II.8}}
+					{{#priv.II.9}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-9.png" /></div><div class="col-xs-8"><strong>II (9)</strong> 플레이어는 승점 3점을 얻습니다.{{#7}} (이 승점도 플레이어 차례 순서를 결정하는 데 영향을 미칩니다.){{/7}} (최종 점수 계산)</div></div></div>{{/priv.II.9}}
+					{{#priv.II.10}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-10.png" /></div><div class="col-xs-8"><strong>II (10)</strong> 플레이어는 우위 판에 자기 숲이 1개 더 있는 것처럼 표시합니다. (우위)</div></div></div>{{/priv.II.10}}
+					{{#priv.II.11}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-11.png" /></div><div class="col-xs-8"><strong>II (11)</strong> 플레이어의 주민 1개가 차례 중에 행동 2번을 할 수 있습니다. (3D 단계: 주민)</div></div></div>{{/priv.II.11}}
 					{{#priv.II.12}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l2-12.png" /></div><div class="col-xs-8"><strong>II (12)</strong> 플레이어는 추가 수입 $20을 얻습니다. (3H 단계: 수입)</div></div></div>{{/priv.II.12}}
 				</div>
 				{{/priv.II.exists}}
@@ -365,14 +367,14 @@
 				<h3>Step III</h3>
 				<div class="row privileges">
 					{{#priv.III.1}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-1.png" /></div><div class="col-xs-8"><strong>III (1)</strong> 플레이어는 자기 수송 차량을 도시로 이동시킬 때 이동력을 쓰지 않습니다. 플레이어는 남아 있는 이동력이 없는 상태에서도 자기 수송 차량을 도시에 인접한 칸에서 도시로 이동시킬 수 있습니다. (3E 단계: 수송 차량)</div></div></div>{{/priv.III.1}}
-					{{#priv.III.2}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-2.png" /></div><div class="col-xs-8"><strong>III (2)</strong> The player counts this card as 1 additional grassland on the majority board. (Majorities)</div></div></div>{{/priv.III.2}}
-					{{#priv.III.3}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-3.png" /></div><div class="col-xs-8"><strong>III (3)</strong> The player counts this card as 1 additional city on the majority board. (Majorities)</div></div></div>{{/priv.III.3}}
-					{{#priv.III.4}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-4.png" /></div><div class="col-xs-8"><strong>III (4)</strong> The player gets 1 additional dice, both for attack and defense. (Phase 3 G: Fight{{#2}}, Phase 3 D: Residents{{/2}})</div></div></div>{{/priv.III.4}}
-					{{#priv.III.5}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-5.png" /></div><div class="col-xs-8"><strong>III (5)</strong> The player gets an income of $10 for each tile he controls (instead of $5). (Phase 3 H: Income)</div></div></div>{{/priv.III.5}}
-					{{#priv.III.6}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-6.png" /></div><div class="col-xs-8"><strong>III (6)</strong> The player gets 5 victory points.{{#7.I}} (The victory points are considered for player order.){{/7.I}} (Final Scoring)</div></div></div>{{/priv.III.6}}
-					{{#priv.III.7}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-7.png" /></div><div class="col-xs-8"><strong>III (7)</strong> The player always pays $20 for each factory (instead of $20, $30, $40). (Phase 3 F: Factories)</div></div></div>{{/priv.III.7}}
-					{{#priv.III.8}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-8.png" /></div><div class="col-xs-8"><strong>III (8)</strong> The player does not pay for his trading houses, even if he reaches the cities as 2nd, 3rd and so on. (Phase 3 D: Residents)</div></div></div>{{/priv.III.8}}
-					{{#priv.III.9}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-9.png" /></div><div class="col-xs-8"><strong>III (9)</strong> Each turn, the player may build 1 legit road for free, meaning that he does not need active residents to build them. (Phase 3 D: Residents)</div></div></div>{{/priv.III.9}}
+					{{#priv.III.2}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-2.png" /></div><div class="col-xs-8"><strong>III (2)</strong> 플레이어는 우위 판에 자기 초원이 1개 더 있는 것처럼 표시합니다. (우위)</div></div></div>{{/priv.III.2}}
+					{{#priv.III.3}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-3.png" /></div><div class="col-xs-8"><strong>III (3)</strong> 플레이어는 우위 판에 자기 도시가 1개 더 있는 것처럼 표시합니다. (우위)</div></div></div>{{/priv.III.3}}
+					{{#priv.III.4}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-4.png" /></div><div class="col-xs-8"><strong>III (4)</strong> 플레이어는 공격할 때나 방어할 때 주사위 1개를 더 굴립니다. (3G 단계: 전투{{#2}}, 3D 단계: 주민{{/2}})</div></div></div>{{/priv.III.4}}
+					{{#priv.III.5}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-5.png" /></div><div class="col-xs-8"><strong>III (5)</strong> 플레이어는 자기가 지배하고 있는 타일마다 수입 $10을 얻습니다. ($5가 아니라). (3H 단계: 수입)</div></div></div>{{/priv.III.5}}
+					{{#priv.III.6}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-6.png" /></div><div class="col-xs-8"><strong>III (6)</strong> 플레이어는 승점 5점을 얻습니다.{{#7.I}} (이 승점도 플레이어 차례 순서를 결정하는 데 영향을 미칩니다.){{/7.I}} (최종 점수 계산)</div></div></div>{{/priv.III.6}}
+					{{#priv.III.7}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-7.png" /></div><div class="col-xs-8"><strong>III (7)</strong> 플레이어는 공장 1개를 건설할 때 항상 $20만 냅니다. ($20, $30, $40이 아니라). (3F 단계: 공장)</div></div></div>{{/priv.III.7}}
+					{{#priv.III.8}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-8.png" /></div><div class="col-xs-8"><strong>III (8)</strong> 플레이어는 그 도시에 두 번째 또는 그 이후에 교역소를 건설한다고 하더라도 건설 비용을 내지 않습니다. (3D 단계: 주민)</div></div></div>{{/priv.III.8}}
+					{{#priv.III.9}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l3-9.png" /></div><div class="col-xs-8"><strong>III (9)</strong> 차례마다 플레이어는 도로 건설 규칙에 맞는 도로 1개를 무료로 건설할 수 있습니다. 이 도로를 건설할 때 주민이 필요하지 않습니다. (3D: 주민)</div></div></div>{{/priv.III.9}}
 				</div>
 				{{/priv.III.exists}}
 			</div>
@@ -395,7 +397,7 @@
 		{{#2.II}}
 			<div class="note col-md-4 col-xs-4">
 				<img src="img/example-2-ii.png" style="width: 100%">
-				<h2>Example Income:</h2>
+				<h2>수입 예:</h2>
 				<p>
 					도일이는 이번 차례 중에 들판 1개와 숲 1개, 4번 도시에 첫 정착지를 놨고, 나희의 정착지가 이미 놓여 있는 1번 도시로 수송 차량을 이동했습니다.<br/>
 					도일이는 두 도시에 있던 주민을 해당하는 도시 카드 위쪽에 놨습니다.<br/>
@@ -408,11 +410,16 @@
 		{{#3}}
 			{{^3.III}}
 				<div class="note col-md-3 col-xs-4">
-					<h2>Calculation of taxes:</h2>
-					<p>To simplify this process, the {{^7.I}}{{^9.I}}first {{owner}}{{/9.I}}{{/7.I}}{{#7.I}}player with the highest income{{/7.I}}{{#9.I}}company with the highest income{{/9.I}} pays $2 taxes for each full $10 of this income, the other players except the {{^7.I}}{{^9.I}}last player{{/9.I}}{{/7.I}}{{#7.I}}player with the lowest income{{/7.I}}{{#9.I}}company with the lowest income{{/9.I}} pay $1 taxes for each full $10 of their income. The {{^7.I}}{{^9.I}}last {{owner}}{{/9.I}}{{/7.I}}{{#7.I}}player with the lowest income{{/7.I}}{{#9.I}}company with the lowest income{{/9.I}} pays $0 taxes.</p>
+					<h2>세금 계산:</h2>
+					<p>
+						이 과정은 다음과 같이 단순화됩니다.<br/>
+						{{^7.I}}{{^9.I}}첫 번째 플레이어{{/9.I}}{{/7.I}}{{#7.I}}최고 수입의 플레이어{{/7.I}}{{#9.I}}최고 수입의 주식회사{{/9.I}}는 자기 수입 $10마다 $2을 세금으로 냅니다.<br/>
+						{{^7.I}}{{^9.I}}마지막 플레이어{{/9.I}}{{/7.I}}{{#7.I}}최저 수입의 플레이어{{/7.I}}{{#9.I}}최저 수입의 주식회사{{/9.I}}를 제외한 다른 플레이어들은 자기 수입 $10마다 $1을 세금으로 냅니다.<br/>
+						{{^7.I}}{{^9.I}}마지막 플레이어{{/9.I}}{{/7.I}}{{#7.I}}최저 수입의 플레이어{{/7.I}}{{#9.I}}최저 수입의 주식회사{{/9.I}}는 $0을 세금으로 냅니다.
+					</p>
 					{{^7.I}}{{^9.I}}
-						<h2>Example:</h2>
-						<p>Camille gets an income of $68. Thus, she must pay $12 taxes for the full $60 of her income for being first.</p>
+						<h2>예:</h2>
+						<p>첫 번째 플레이어가 된 채미는 수입으로 $68을 얻었으므로, $60을 기준으로 한 $12을 세금으로 냅니다.</p>
 					{{/9.I}}{{/7.I}}
 				</div>
 				{{#7.I}}
@@ -428,10 +435,10 @@
 					</div>
 				{{/9.I}}
 				<div class="note col-md-3 col-xs-6">
-					<h2>Factory:</h2>
-					<p>The players pay the following prices for building a factory on a city.</p>
+					<h2>공장:</h2>
+					<p>플레이어가 도시에 공장을 건설할 때의 비용은 다음과 같습니다. 이 비용은 그 도시에 이미 건설된 공장 수에 따라 달라집니다.</p>
 					<table>
-						<tr><th>1st <span class="factory bigicon"></span></th><th>2nd <span class="factory bigicon"></span></th><th>3rd <span class="factory bigicon"></span></th></tr>
+						<tr><th>첫 번째 <span class="factory bigicon"></span></th><th>두 번째 <span class="factory bigicon"></span></th><th>세 번째 <span class="factory bigicon"></span></th></tr>
 						<tr><td>$20</td><td>$30</td><td>$40</td></tr>
 					</table>
 				</div>
@@ -468,17 +475,17 @@
 		{{/1}}
 		{{#2.I}}
 			<div class="note col-md-4 col-xs-6">
-				<h2>Final Scoring:</h2>
-				<p>The player gets the following victory points (VP) for their population on X city cards, whereby X equals the # of cities triggering the game end.</p>
+				<h2>최종 점수 계산:</h2>
+				<p>플레이어들은 도시 카드에 놓인 자기 인구 수에 따라 다음과 같은 승점을 받습니다. X는 게임 종료 조건에 해당하는 도시 수와 같습니다. 아래에 있는 <b>게임 종료</b>를 참조하세요</p>
 				<table>
-					<tr><th># of city cards with population</th><th>X - 3 and less</th><th>X - 2</th><th>X - 1</th><th>X</th><th>X + 1 and more</th></tr>
-					<tr><th>victory points (VP)</th><td>22 VP</td><td>26 VP</td><td>32 VP</td><td>40 VP</td><td>50 VP</td></tr>
+					<tr><th>도시 카드에 놓은 인구 수</th><th>X - 3 이하</th><th>X - 2</th><th>X - 1</th><th>X</th><th>X + 1 이상</th></tr>
+					<tr><th>승점</th><td>22점</td><td>26점</td><td>32점</td><td>40점</td><td>50점</td></tr>
 				</table>
-				{{^residents}}<p>The player gets 1 additional VP for each movement point of his transport trolley he used to move out of the last reached city.</p>{{/residents}}
+				{{^residents}}<p>플레이어는 마지막 도시에 도착할 때 남은 이동력만큼 추가 승점을 얻습니다.</p>{{/residents}}
 			</div>
 			<div class="note col-md-3 col-xs-3">
 				<img src="img/example-2-i.png" style="width: 100%">
-				<p><b>Example Final Scoring:</b> In a game with 3 players Camille triggers the game end, as she placed population on 8 city cards. She gets 40 VP. Paul has only 7 population on city cards. Thus, Paul gets 32 VP. {{^residents}}Anne moved her transport trolley another 3 MP out of the last reached city. She gets an additional 3 VP.{{/residents}}</p>
+				<p><b>최종 점수 계산 예:</b> 3명이 한 게임에서 채미는 자기 인구 8개를 도시 카드에 놓아 게임 종료 조건을 당성했습니다. 채미는 승점 40점을 얻습니다. 도일이는 자기 인구 7개를 도시 카드에 놓았으므로 승점 32점을 얻습니다.{{^residents}}아인이는 수송 차량의 이동력 3이 남은 상태로 마지막 도시에 도착했습니다. 아인이는 추가 승점 3점을 얻습니다.{{/residents}}</p>
 			</div>
 		{{/2.I}}
 		{{#4}}
@@ -775,9 +782,22 @@
 
 	{{#capture}}
 		{{#3}}{{^3.III}}{{^9.I}}{{^7.I}}
-			<p>At game start, all players make a secret bid with their starting money ($0 is a valid bid). Starting with the highest bidder, each player chooses a position in the player order{{^9.II}}{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}, all capitals are placed in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}} and his capital on the map.{{/mapnum.5}}{{/mapnum.4}}{{/9.II}}{{#9.II}} for the first share round (SR).{{/9.II}} In case of a tie, randomly draw lots for the order of choice (the losers get $2 for each lost draw).</p>
+			<p>
+				게임이 시작될 때 모든 플레이어는 자기 시작 자금을 사용해 비밀 입찰을 진행합니다. ($0을 입찰할 수도 있습니다.)<br/>
+				가장 큰 값을 입찰한 플레이어부터 시작해 모든 플레이어의 차례 순서를 정합니다.<br/>
+				{{^9.II}}{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}모든 수도는 중심 도시에 놓입니다.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}그리고 수도를 지도에 놓습니다.{{/mapnum.5}}{{/mapnum.4}}{{/9.II}}
+				{{#9.II}}첫 주식 라운드(SR)의 순서도 같습니다.{{/9.II}}<br/>
+				같은 값을 입찰하면 이 플레이어들끼리 무작위로 뽑기를 통해 차례를 정합니다. (무작위 뽑기를 할 때마다, 뽑히지 않은 플레이어는 $2을 받습니다.)<br/>
+			</p>
+			<p>
+				두 번째 라운드부터는 이전 라운드의 수입이 많은 플레이어부터 적은 플레이어 순으로 차례가 결정됩니다.<br/>
+				(수입이 같은 플레이어들은 이전 라운드에서의 차례 역순으로 합니다.)<br/>
+				새로운 차례에 따라 플레이어들은 이전 라운드의 수입에 대한 세금을 냅니다.<br/>
+				첫 번째 플레이어는 이전 라운드 수입 중 기준액의 20%를 내고, 마지막 플레이어는 0%, 다른 모든 플레이어는 10%를 냅니다.<br/>
+				위쪽에 있는 <b>세금 계산</b>을 참조하세요.<br/>
+				첫 번째 플레이어가 더 높은 세금을 내기 때문에 두 번째 플레이어보다 실제 수입이 적을 수 있습니다.
+			</p>
 			{{#9.II}}<p>The stock company order for the 1st business round (BR) is determined in reverse order of establishment. If stock companies are only established in later SRs, just for once they are first in stock company order in the next BR!</p>{{/9.II}}
-			<p>Starting with the 2nd round, determine the {{owner}} order according to the income of the former round, from high to low (in case of a tie reverse the {{owner}} order of the former round for the tied {{owners}}). According to the new {{owner}} order the {{owners}} must pay taxes for their last income: The 1st {{owner}} pays 20%, the last pays 0%, and all other {{owners}} pay 10% of their last income, see left for <b>Calculation of taxes</b>. Because of higher taxes the 1st {{owner}} may get a lower income compared to the 2nd.</p>
 		{{/7.I}}{{/9.I}}{{/3.III}}{{/3}}
 		{{#7.I}}
 			{{^9.II}}
@@ -806,7 +826,7 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 1: {{^company}}Player{{/company}}{{#company}}Company{{/company}} Order</h1></div>
+			<div class="col-md-2 col-xs-2"><h1>1 단계: 차례 순서</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
@@ -814,11 +834,27 @@
 
 	{{#3}}{{^3.III}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2 mod3"><h1>Phase 2: Privileges</h1></div>
+			<div class="col-md-2 col-xs-2 mod3"><h1>2 단계: 특권</h1></div>
 			<div class="col-md-10 col-xs-10">
-				<p>If there are still unsold privileges from the former round, place the price token to the right of these privileges. The starting bid for these privileges drops to $0. Draw new privileges and place them to the right of the price token, until you either draw 1 new privilege per {{owner}} or there are a # of privileges in the row of cards depending on the # of players: 4 (2♟), 5 (3♟), 6 (4♟) or 7 privileges (5 stock companies). The starting bid for the new privileges is $20.</p>
-				<p>All privileges are now auctioned from left to right, one at a time. {{^company}}Beginning with the 1st player, all players bid (or pass) in clockwise seating order around the table, until there is a highest bid.{{/company}}{{#company}}Beginning with the president of the 1st company, all players bid (or pass) for each of their companies in company turn order, until there is a highest bid.{{/company}} If a {{owner}} passes he may only bid again for the next privilege. The highest bidder pays the amount{{#company}} from the winning company{{/company}} to the bank and places the privilege face up in {{^company}}front of him{{/company}}{{#company}}the company&rsquo;s holdings{{/company}}. If the starting bid of the privilege was $20, and all {{owners}} pass, the privilege simply remains in the row of cards. If the starting bid of the privilege was $0 and all {{owners}} pass again, remove that privilege from the game!</p>
-				<p>The {{owner}} may only buy each type of privilege once, {{sagent}} may use {{fowns}} privileges immediately after purchase.</p>
+				<p>
+					이전 라운드에 팔리지 않고 남은 특권 카드들이 있다면, 가격 토큰을 이 특권 카드들의 오른쪽에 놓습니다.<br/>
+					이 특권 카드에 대한 최소 입찰가는 $0으로 내려갑니다.<br/>
+					새 특권 카드들을 뽑고 가격 토큰 오른쪽에 놓습니다.<br/>
+					플레이어 수만큼 새로운 카드를 뽑지만, 플레이어 수에 따라서 카드 열에 놓일 수 있는 특권 카드 최대 수 제한이 다음과 같이 있습니다. 4장(2♟) / 5장(3♟) / 6장(4♟) / 7장(주식회사 5개)
+					새로운 특권 카드에 대한 최소 입찰가는 $20입니다.
+				</p>
+				<p>
+					왼쪽에 있는 카드부터 오른쪽에 있는 카드 순서로 한 번에 하나씩 모든 특권 카드에 대한 경매가 진행됩니다.
+					첫 번째 플레이어부터 시작해서 시계 방향으로 돌아가며 모든 플레이어가 입찰하고, 가장 높은 입찰가가 결정될 때까지 진행됩니다.
+					패스를 선언한 플레이어는 다음 특권 카드에 대한 경매가 시작될 때까지 입찰할 수 없읍니다.
+					가장 높은 입찰가를 제시한 플레이어가 그 금액을 은행에 내고, 그 특권 카드를 앞면으로 자기 앞에 놓습니다.
+					최소 입찰가가 $20인 카드를 아무도 입찰하지 않고 모든 플레이어가 패스하면, 그 특권 카드는 팔리지 않고 특권 카드 열에 남아 있습니다.
+					최소 입찰가가 $0인 카드를 아무도 입찰하지 않고 모든 플레이어가 패스하면, 그 특권 카드는 게임에서 제거됩니다.
+				</p>
+				<p>
+					플레이어는 같은 종류의 특권 카드를 한 장만 살 수 있습니다.
+					플레이어는 특궡 카드를 산 즉시 사용할 수 있습니다.
+				</p>
 			</div>
 		</div>
 	{{/3.III}}{{/3}}
@@ -1023,9 +1059,9 @@
 			{{/1.III}}
 			{{#1.III}}
 				<p>
-					The {{agent}} may transport {{#8}}{{^8.III}}1 good of any type or {{/8.III}}{{/8}}up to 2 of {{fowns}} exhausted residents per cargo hold.
-					He may load and unload the transport trolley any number of times.
-					{{#8}}{{^8.III}}If he unloads goods on a land tile or a city, without one of {{fowns}} trading houses, the goods remain there until any {{owner}} loads them again onto {{owns}} transport trolley.{{/8.III}}{{/8}}
+					플레이어는 적재함 1칸마다 {{#8}}{{^8.III}}아무 상품 1개 또는 {{/8.III}}{{/8}}비활성화된 자기 주민 2개까지를 실을 수 있습니다.<br/>
+					플레이어는 수송 차량에 싣거나 내리는 것을 원하는 만큼 할 수 있습니다.
+					{{#8}}{{^8.III}}<br/>플레이어가 육지 타일이나, 자기 교역소가 없거나, 자기 교역소가 있더라도 교역소의 제한에 도달한 도시에 상품을 내리면, 이 상품은 아무 플레이어가 수송 차량에 싣기 전까지 그 자리에 남이 있습니다.{{/8.III}}{{/8}}
 				</p>
 			{{/1.III}}
 			<p>
@@ -1094,10 +1130,17 @@
 
 	{{#3}}{{^3.III}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2 mod3"><h1>Phase 3 F: Factories</h1></div>
+			<div class="col-md-2 col-xs-2 mod3"><h1>3F 단계: 공장</h1></div>
 			<div class="col-md-10 col-xs-10">
-				<p>Each round, the {{agent}} may buy at max 1 factory on each city, If the {{owner}} has 1 settlement there and pays the matching costs, see left for the table Factory.{{#3.I}} The {{owner}} immediately gets 5 victory points (VP) for building the factory.{{/3.I}} On a city, the {{owners}} in common may build a total of 3 factories.
-				<p>The {{owner}} marks {{owns}} factory with {{owns}} settlement. If the {{owner}} owns several factories in the same city, {{^company}}he{{/company}}{{#company}}it{{/company}} stacks them below {{owns}} settlement.</p>
+				<p>
+					라운드 마다 플레이어는 자기 정착지가 있는 도시마다 공장을 최대 1개씩 건설할 수 있으며, 건설한 만큼 비용을 냅니다.<br/>
+					공장의 건설 비용은 그 도시의 몇 번째 공장이냐에 따라 달라집니다.<br/>
+					위쪽의 <b>공장</b> 표를 참조하세요.<br/>
+					한 도시에는 공장이 3개까지만 (어느 플레이어의 것이든 상관없이) 건설될 수 있습니다.<br/>
+					플레이어는 자기 정착지로 자기 공장을 표시합니다.<br/>
+					한 플레이어가 한 도시에 공장을 여러 개 가지고 있으면, 이들을 자기 정착지 밑에 쌓아놓습니다.<br/>
+					{{#3.I}}플레이어는 공장을 건설할 때 즉시 승점 5점을 얻고 승점 토큰을 가져갑니다.{{/3.I}}
+				</p>
 			</div>
 		</div>
 	{{/3.III}}{{/3}}
@@ -1121,7 +1164,19 @@
 
 	{{#capture}}
 		{{#1.II}}
-			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus once-only money for each good delivered in <b>Phase 3 E</b>. The {{owner}} balances accounts separately for each good. He gets the price for the 1st good according to the goods price board and adjusts all prices: the price for the delivered good drops 3 spaces, the prices for all other goods each rise 1 space. Then, the {{owner}} gets the price for the 2nd good etc.! The price for a type of goods cannot drop below the first "$10" space and cannot rise above $140. {{^8.I}}Finally, the {{agent}} places all delivered goods into the general storage.{{/8.I}}{{#8.I}}The player leaves their goods tokens on the trading houses. (If he used additional tokens under the goods price board to track deliveries, he returns those tokens into the general storage.) {{/8.I}}</p>
+			<p>
+				플레이어는 수도로부터 기본 수입 $20을 얻고, <b>3E 단계</b>에서 배송한 상품으로부터 일회성 수입을 얻습니다.<br/>
+				상품 종류마다 가격이 달리 조정됩니다.<br/>
+				상품 가격 판의 가격에 따라 첫 번째로 배송한 상품에 대한 수입을 받고 난 다음 모든 상품의 가격을 조정합니다.<br/>
+				첫 번째로 배송한 상품의 가격은 3칸 내려가고, 다른 모든 상품의 가격은 1칸 올라갑니다.<br/>
+				그런 다음 플레이어는 같은 방식으로 두 번째로 배송한 상품에 대한 수입을 받고, 이런 식으로 모든 상품에 대한 수입을 받습니다.<br/>
+				한 상품의 가격은 $10 미만으로 내려가지는 않으며, $140을 초과해서 올라가지도 않습니다.<br/>
+				{{^8.I}}마지막으로, 플레이어는 배송한 상품 모두를 일반 저장고에 놓습니다.{{/8.I}}
+				{{#8.I}}
+					The player leaves their goods tokens on the trading houses.
+					(If he used additional tokens under the goods price board to track deliveries, he returns those tokens into the general storage.)
+				{{/8.I}}
+			</p>
 			{{#4}}{{^8.I}}<p>If the {{owner}} delivers goods to a city without his settlements, he must pay $1 for each full $10 of this sale to the owner of the city, or in case of a free city, payment goes to the bank.</p>{{/8.I}}{{/4}}
 		{{/1.II}}
 		{{#2.II}}
@@ -1137,7 +1192,7 @@
 			{{#4}}<p>If a {{agent}} neutralizes a tile from another {{owner}}, the next {{owner}} placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain). If he conquers that tile he gets that income.</p>{{/4}}
 		{{/2.II}}
 		{{#3.II}}
-			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus $15 for each of {{owns}} factories.{{^company}} All {{owners}} place their income for now to one side, until they pay taxes in the next Phase 1.{{/company}}</p>
+			<p>플레이어는 수도로부터 기본 수입 $20을 얻고, 자기 공장마다 $15씩을 얻습니다.{{^company}}<br/>플레이어들은 다음 라운드의 <b>1단계</b>에서 세금을 내기 전까지 이번 라운드에서 얻은 수입을 따로 분리해 둡니다.{{/company}}</p>
 		{{/3.II}}
 		{{#4.II}}
 			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus $5 for each additionally owned tile. The {{owners}} also receive a bonus income for different types of land tiles (non city tiles), see the example <b>Income</b>.</p>
@@ -1200,7 +1255,7 @@
 		{{#9.III}}<p>The players place their income for now separately from their cash. After all players got their income, the players with the highest income raise their share values by $20. All other players raise their share values by $10. Finally flip all shares sold to the bank during this round, so their dark sides are face up again.</p>{{/9.III}}
 
 		{{^company}}{{#3.I}}
-			<p>The players place their income for now to one side, until they pay taxes in the next Phase 1.</p>
+			<p>플레이어는 다음 라운드의 <b>1 단계</b>에서 세금을 내기 전까지 이번 라운드에 얻은 수입을 따로 분리해 둡니다.</p>
 		{{/3.I}}{{/company}}
 	{{/capture}}
 	{{#hascapture}}
@@ -1213,8 +1268,8 @@
 <script id="template_scoring" type="x-tmpl-mustache">
 	{{#capture}}
 		{{#2.III}}
-			{{#1.I}}<p>Award 5 VP to the first {{owner}} delivering one of the good types a second time from the stack set aside for this purpose.</p>{{/1.I}}
-			{{#3.I}}<p>Award 10 VP to the first {{owner}} having at least 1 factory in 3 cities, and to the first {{owner}} having 3 factories in 1 city.</p>{{/3.I}}
+			{{#1.I}}<p>각 상품 종류마다 그 상품을 두 번 배송한 첫 플레이어</p>{{/1.I}}
+			{{#3.I}}<p>도시 3개 각각에 자기 공장 1개 이상을 건설한 첫 플레이어 / 한 도시에 자기 공장 3개를 건설한 첫 플레이어는 승점 10점을 받습니다.</p>{{/3.I}}
 			{{#4.I}}<p>Award VP to a {{owner}} when they conquer a free city from the stacks set aside on the majority board (3 for the first free city, 4 for the second, etc).</p>{{/4.I}}
 			{{#5.I}}<p>Award 5VP from the stack set aside on the corresponding column of the majority board to the first {{owner}} to explore one of the 6 terrain types (no water) three times.</p>{{/5.I}}
 			{{#6.I}}<p>Award 5 VP from the stack set aside on the corresponding column of the majority board to the first {{owner}} to connect one of the 6 terrain types (no water) with {{owns}} roads a third time.</p>{{/6.I}}
@@ -1234,7 +1289,7 @@
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2 mod2"><h1>Mid-Term Scorings</h1></div>
+			<div class="col-md-2 col-xs-2 mod2"><h1>중간 점수 계산</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
@@ -1283,7 +1338,7 @@
 			{{/1.I}}
 			{{#2.I}}
 				{{^residents}}
-					<p>The game ends at the end of the turn, after at least 1 player placed 9 population on city cards.</p>
+					<p>플레이어 1명 이상이 자기 인구 9개를 도시 카드에 놓은 라운드를 마치면 게임이 끝납니다.</p>
 				{{/residents}}
 				{{#residents}}
 					{{#4}}
@@ -1297,7 +1352,7 @@
 				{{/residents}}
 			{{/2.I}}
 			{{#3.I}}
-				<p>The game ends at the end of the round after a total of at least 20 factories stand in the cities.</p>
+				<p>도시 전체에 건설된 공장이 총 20개 이상인 라운드를 마치면 게임이 끝납니다.</p>
 			{{/3.I}}
 			{{#4.I}}
 				<p>The game ends immediately after the end of the active player&rsquo;s turn, if the active player:</p>
@@ -1317,9 +1372,9 @@
 				{{^4}}{{^9.II}}<p>Depending on the # of players, the game ends at the end of the round after at least 1 player connects 7 (2♟), 6 (3♟) or 5 (4♟) cities to his roads.</p>{{/9.II}}{{/4}}
 			{{/6.I}}
 			{{#7.I}}
-				<p>The game ends immediately after the 3rd scoring is turned face up. The <b>Final Scoring</b> takes place, see above.</p>
+				<p>회사들은 3번째 승점 계산 카드가 펼쳐지면 <b>최종 점수 계산</b>을 하고 게임이 끝납니다. 위를 참조하세요.</p>
 				{{^9}}
-					<p>The player with the most VP wins the game! In case of a tie, the tied player with the most residents and settlements on the game map wins.</p>
+					<p>승점이 가장 높은 플레이어가 승리합니다. 동점이면 그중 지도 위에 주민과 정착지가 더 많은 플레이어가 승리합니다.</p>
 				{{/9}}				
 			{{/7.I}}
 			{{#8.I}}
@@ -1347,59 +1402,65 @@
 	{{#capture}}
 		{{#9}}
 			{{#9.II}}
-				<p>The players determine the victory points (VP) of the 5 stock companies.</p> 
+				<p>플레이어들은 주식회사 5개의 승점을 확인합니다.</p> 
 			{{/9.II}}
 			{{#9.III}}
-				<p>The players determine the victory points (VP) of the stock companies.</p> 
+				<p>플레이어들은 주식회사들의 승점을 확인합니다.</p> 
 			{{/9.III}}
 			{{#1.I}}
-				<p>The companies score victory points (VP) for the delivered goods, see left for the table <b>Victory Points (VP)</b>.</p>
+				<p>회사는 배송한 상품에 따라 승점을 얻습니다. 위쪽에 있는 <b>승점</b>표를 참조하세요.</p>
 			{{/1.I}}
 			{{#2.I}}
-				<p>The companies get victory points (VP) for their residents on the city cards, see the table and example for <b>Final Scoring</b>.</p>
-				{{^residents}}<p>The companies get additional VP for remaining movement points of his transport trolley. </p>{{/residents}}
+				<p>회사들은 도시 카드에 놓인 자기 인구 수에 따라 승점을 얻습니다. 위쪽에 있는 <b>최종 점수 계산</b> 표와 예를 참조하세요.</p>
+				{{^residents}}<p>회사는 자기 수송 차량에 남은 이동력만큼 추가 승점을 얻습니다.</p>{{/residents}}
 			{{/2.I}}
 			{{#3.I}}
-				<p>The companies get victory points (VP) during the game for building factories and getting certain privileges.</p>
+				<p>회사들은 게임 중에 건설한 공장과 특정 특권 카드로 인해서 승점을 얻습니다.</p>
 			{{/3.I}}
 			{{#4.I}}
-				<p>The companies get the following victory points (VP): 3 VP for each owned land tile, 5 VP for each owned city.</p>
+				<p>회사들은 다음과 같이 승점을 얻습니다. 자기가 지배하는 육지 타일마다 승점 3점씩, 자기가 지배하는 도시마다 승점 5점씩.</p>
 			{{/4.I}}
 			{{#5.I}}
-				<p>The companies score victory points (VP) during the game for exploring, settling and activating tiles.</p>
+				<p>회사들은 게임 중에 탐사, 정착, 수확하면서 승점을 얻습니다.</p>
 			{{/5.I}}
 			{{#6.I}}
-				<p>The companies get victory points (VP) for each of their tiles based on the majority table, see the table and example for <b>Final Scoring</b>.</p>
+				<p>회사들은 우위 판에 자기 표시 토큰이 놓인 상태에 따라 승점을 얻습니다. 위쪽에 있는 표와 <b>최종 점수 계산 예<b/>를 참조하세요.</p>
 			{{/6.I}}
 			{{#7.I}}
-				<p>The companies have earned VP in 3 scoring rounds during the game.</p>
+				<p>회사들은 게임 중에 3번의 점수 계산 라운드를 통해 승점을 얻습니다.</p>
 			{{/7.I}}
 			{{#8.I}}
-				<p>The companies take the goods {{#1}}on top of their trading houses{{/1}}{{^1}}in front of the company board{{/1}} and may score {{#4}}2 goods{{/4}}{{^4}}1 good{{/4}} for each of their trading houses{{^4}} (up to 2 goods for the headquarters in his capital){{/4}}. The company gets victory points (VP) for all scored goods, see the table and example <b>Final Scoring</b>. Before scoring, the company may exchange goods in a ratio of 2:1 into different goods types, to get more valuable sets.</p>
+				<p>
+					회사들은 {{#1}}자기 교역소 위에 놓인{{/1}}{{^1}}회사 판 앞의{{/1}} 상품을 가져가고, 자기 교역소마다 {{#4}}상품 2개{{/4}}{{^4}}상품 1개{{/4}}만 점수 계산에 사용할 수 있게 제한됩니다.{{^4}} (자기 수도에 있는 본부는 상품 2개까지만){{/4}}<br/>
+					회사들은 점수 계산에 사용한 상품 모두에서 승점을 얻습니다. 위쪽에 있는 표와 <b>최종 점수 계산</b> 예를 참조하세요.<br/>
+					점수 계산을 하기 전에 더 높은 가치를 가진 상품 세트를 만들기 위해 자기 상품을 2:1 비율로 다른 상품으로 바꿀 수 있습니다.
+				</p>
 			{{/8.I}}
 			{{#7.III}}
-				<p>The companies get {{^9.I}}additional {{/9.I}}victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
+				<p>회사들은 최종 점수 계산할 때 우위를 달성한 지형에 따라 {{^9.I}}추가 {{/9.I}}점수를 얻습니다. 위쪽에 있는 표와 <b>최종 점수 계산 예</b>를 참조하세요.</p>
 			{{/7.III}}
 			{{#9.I}}
-				<p>The players determine their wealth: Each player counts his money and adds the actual share value of each of his own shares according to the share value board to his money (the president&rsquo;s share counts twice). {{#7.III}}The share value of each share is $1 higher for each VP of the stock company.{{/7.III}}</p>
-				<p>The player with the biggest wealth wins the game! In case of a tie, all tied players share the victory.</p>
+				<p>플
+					레이어들은 각자 자기 재산을 확인합니다. 플레이어들은 각자 자기가 가지고 있는 돈과 자기가 가지고 있는 주식 증권들을 현재 주가에 따라 현금화해서 더합니다. (사장 증권은 주식 증권 2주짜리로 계산합니다.)
+					{{#7.III}}주식회사가 얻은 승점 1점마다 주가에 $1을 더합니다.{{/7.III}}</p>
+				<p>현금화한 재산이 가장 많은 플레이어가 승리합니다. 동점이면 이 플레이어들 모두 승리합니다.</p>
 			{{/9.I}}
 			{{#9.II}}
-				<p>The best stock companies (having the most VP) get bonus VP, see table <b>Bonus VP at the Final Scoring</b>.</p>
-				<p>The players get VP for each of their shares equal to the total number of VP of the matching stock companies (the president&rsquo;s share counts twice!).</p>
-				<p>The player with the most VP wins the game! In case of a tie, all tied players share the victory.</p>
+				<p>승점이 가장 높은 주식회사는 추가 승점을 얻습니다. 위쪽에 있는 <b>추가 승점</b>과 <b>최종 점수 계산</b> 표를 참조하세요.</p>
+				<p>플레이어는 주식 증권 1주마다 해당하는 주식회사의 승점만큼을 자신의 승점으로 얻습니다. (사장 증권은 주식 증권 2주짜리로 계산합니다.)</p>
+				<p>가장 승점이 높은 플레이어가 승리합니다. 동점이면 이 플레이어들 모두 승리합니다.</p>
 			{{/9.II}}
 			{{#9.III}}
-				<p>The best stock companies (having the most VP) get bonus VP, see table <b>Bonus VP at the Final Scoring</b>.</p>
-				<p>The players get VP for each of their shares equal to the total number of VP of the matching stock companies (the players do not get VP for the president&rsquo;s share!).</p>
-				<p>The player with the most VP wins the game! In case of a tie, all tied players share the victory.</p>
+				<p>승점이 가장 높은 주식회사는 추가 승점을 얻습니다. 위쪽에 있는 <b>최종 점수 계산 때 추가 승점 표</b>를 참조하세요.</p>
+				<p>플레이어는 주식 증권 1주마다 해당하는 주식회사의 총 승점만큼을 자신의 승점으로 얻습니다. (사장 증권으로는 승점을 받지 않습니다.)</p>
+				<p>가장 승점이 높은 플레이어가 승리합니다. 동점이면 이 플레이어들 모두 승리합니다.</p>
 			{{/9.III}}
 		{{/9}}
 		{{^9}}
 			{{#1.I}}
 				<p>플레이어들은 배송한 상품에 따라 승점을 얻습니다.<br/>위쪽에 있는 <b>최종 점수 계산</b> 표를 참조하세요.</p>
 				{{#7.III}}
-					<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
+					<p>플레이어는 최종 점수 계산할 때 우위를 달성한 지형에 따라 추가 점수를 얻습니다. 위쪽에 있는 표와 <b>최종 점수 계산 예</b>를 참조하세요.</p>
 				{{/7.III}}
 				<p>
 					승점이 가장 높은 플레이어가 승리합니다.<br/>
@@ -1408,47 +1469,51 @@
 				</p>
 			{{/1.I}}
 			{{#2.I}}
-				<p>The players get victory points (VP) for their population on the city cards, see the table and example for <b>Final Scoring</b>.</p>
+				<p>플레이어들은 도시 카드에 놓은 자기 인구 수에 따라 승점을 얻습니다.<br/>위쪽에 있는 <b>최좀 점수 계산</b> 표와 예를 참조하세요.</p>
 				{{#7.III}}
-					<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
+					<p>플레이어는 최종 점수 계산할 때 우위를 달성한 지형에 따라 추가 점수를 얻습니다. 위쪽에 있는 표와 <b>최종 점수 계산 예</b>를 참조하세요.</p>
 				{{/7.III}}
-				{{^residents}}<p>The players get additional VP for remaining movement points of his transport trolley. The player with the most VP wins the game. In case of a tie all tied players win the game!</p>{{/residents}}
-				{{#residents}}<p>The player with the most VP wins the game! In the case of a tie, the tied player with the most residents and settlements on the map wins the game.</p>{{/residents}}
+				{{^residents}}<p>플레이어는 자기 수송 차량에 남은 이동력만큼 추가 승점을 얻습니다. 승점이 가장 높은 플레이어가 승리합니다. 동점이면 이 플레이어들 모두 승리합니다!</p>{{/residents}}
+				{{#residents}}<p>승점이 가장 높은 플레이어가 승리합니다. 동점이면 그중 지도 위에 주민과 정착지가 더 많은 플레이어가 승리합니다.</p>{{/residents}}
 			{{/2.I}}
 			{{#3.I}}
-				<p>The players get victory points (VP) during the game for building factories and getting certain privileges.</p>
+				<p>플레이어는 게임 중에 건설한 공장과 특정 특권 카드로 인해서 승점을 얻습니다.</p>
 				{{#7.III}}
-					<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
+					<p>플레이어는 최종 점수 계산할 때 우위를 달성한 지형에 따라 추가 점수를 얻습니다.<br/>위쪽에 있는 표와 <b>최종 점수 계산 예</b>를 참조하세요.</p>
 				{{/7.III}}
-				<p>The player with the most VP wins the game! In case of a tie, the tied player with the most money wins the game.</p>
+				<p>승점이 가장 높은 플레이어가 승리합니다. 동점이면 그중 돈이 더 많은 플레이어가 승리합니다.</p>
 			{{/3.I}}
 			{{#4.I}}
-				<p>The players get the following victory points (VP): 3 VP for each owned land tile, 5 VP for each owned city.</p>
+				<p>플레이어들은 다음과 같이 승점을 얻습니다. 자기가 지배하는 육지 타일마다 승점 3점씩, 자기가 지배하는 도시마다 승점 5점씩.</p>
 				{{#7.III}}
-					<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
+					<p>플레이어는 최종 점수 계산할 때 우위를 달성한 지형에 따라 추가 점수를 얻습니다.<br/>위쪽에 있는 표와 <b>최종 점수 계산 예</b>를 참조하세요.</p>
 				{{/7.III}}
-				<p>The player with the most VP wins the game! In case of a tie, the tied player with more armies on the map wins the game.</p>
+				<p>승점이 가장 높은 플레이어가 승리합니다. 동점이면 그중 지도 위에 더 많은 군대가 있는 플레이어가 승리합니다.</p>
 			{{/4.I}}
 			{{#5.I}}
-				<p>The players score victory points (VP) during the game for exploring, settling and activating tiles.</p>
+				<p>플레이어들은 게임 중에 탐사, 정착, 수확하면서 승점을 얻습니다.</p>
 				{{#7.III}}
-					<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
+					<p>플레이어는 최종 점수 계산할 때 우위를 달성한 지형에 따라 추가 점수를 얻습니다.<br/>위쪽에 있는 표와 <b>최종 점수 계산 예</b>를 참조하세요.</p>
 				{{/7.III}}
-				<p>The player with the most VP wins the game! In case of a tie, the tied player with the most residents (not settlements) on the map wins the game.</p>
+				<p>승점이 가장 높은 플레이어가 승리합니다. 동점이면 그중 지도 위에 더 많은 주민(정착지는 제외)이 있는 플레이어가 승리합니다.</p>
 			{{/5.I}}
 			{{#6.I}}
-				<p>The players get victory points (VP) for each of their tiles based on the majority table, see the table and example for <b>Final Scoring</b>.</p>
+				<p>플레이어들은 우위 판에 자기 표시 토큰이 놓인 상태에 따라 승점을 얻습니다. 위쪽에 있는 표와 <b>최종 점수 계산 예<b/>를 참조하세요.</p>
 				{{#7.III}}
-					<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
+					<p>플레이어는 최종 점수 계산할 때 우위를 달성한 지형에 따라 추가 점수를 얻습니다.<br/>위쪽에 있는 표와 <b>최종 점수 계산 예</b>를 참조하세요.</p>
 				{{/7.III}}
-				<p>The player with the most VP wins the game. {{#4}}In case of a tie the tied player with the most residents on tiles with neutral roads wins.{{/4}}{{^4}}In case of a tie, the tied player with the most residents on tiles with his roads wins.{{/4}}</p>
+				<p>승점이 가장 높은 플레이어가 승리합니다.{{#4}} 동점이면 그 중 중립 도로가 있는 타일에 자기 주민이 더 많은 플레이어가 승리합니다.{{/4}}{{^4}} 동점이면 그중 자기 도로가 있는 타일에 자기 주민이 더 많은 플레이어가 승리합니다.{{/4}}</p>
 			{{/6.I}}
 			{{#8.I}}
-				<p>The {{agent}} takes the goods {{#1}}on top of his trading houses{{/1}}{{^1}}{{^company}}front of himself{{/company}}{{#company}}his company&rsquo;s holdings{{/company}}{{/1}} and may score {{#4}}2 goods{{/4}}{{^4}}1 good{{/4}} for each of his trading houses{{^4}} (up to 2 goods for the headquarters in his capital){{/4}}. The player gets victory points (VP) for all scored goods, see the table and example <b>Final Scoring</b>. Before scoring the player may exchange goods in a ratio of 2:1 into different goods types, to get more valuable sets.</p>
+				<p>
+					회사들은 {{#1}}자기 교역소 위에 놓인{{/1}}{{^1}}{{^company}}플레이어 {{/company}}{{#company}}회사 {{/company}} 앞의{{/1}} 상품을 가져가고, 자기 교역소마다 {{#4}}상품 2개{{/4}}{{^4}}상품 1개{{/4}}만 점수 계산에 사용할 수 있게 제한됩니다.{{^4}} (자기 수도에 있는 본부는 상품 2개까지만){{/4}}<br/>
+					회사들은 점수 계산에 사용한 상품 모두에서 승점을 얻습니다. 위쪽에 있는 표와 <b>최종 점수 계산</b> 예를 참조하세요.<br/>
+					점수 계산을 하기 전에 더 높은 가치를 가진 상품 세트를 만들기 위해 자기 상품을 2:1 비율로 다른 상품으로 바꿀 수 있습니다.
+				</p>
 				{{#7.III}}
-					<p>The players get additional victory points (VP) for majorities during the final scoring, see table and example of the <b>Final Scoring</b>.</p>
+					<p>플레이어는 최종 점수 계산할 때 우위를 달성한 지형에 따라 추가 점수를 얻습니다.<br/>위쪽에 있는 표와 <b>최종 점수 계산 예</b>를 참조하세요.</p>
 				{{/7.III}}
-				<p>The player with the most VP wins the game! In case of a tie, the tied player with the most plants wins the game.</p>
+				<p>승점이 가장 높은 플레이어가 승리합니다. 동점이면 그중 생산 설비가 더 많은 플레이어가 승리합니다.</p>
 			{{/8.I}}
 		{{/9}}
 	{{/capture}}
@@ -1542,7 +1607,7 @@
 	var modules;
 
 	var parts = {
-		'2': {'name': '상품', 'max': 48},
+		'2': {'name': '상품', 'max': 49},
 		'3': {'name': '가림토큰', 'max': 30},
 		'4': {'name': '도시 카드', 'max': 10},
 		'5': {'name': '가격 토큰', 'max': 1},
