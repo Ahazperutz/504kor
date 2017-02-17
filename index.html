@@ -251,8 +251,8 @@
 					<p>도시 카드 10장을 지도 옆에 앞면으로 놓습니다.</p>
 			{{/2.III}}{{/2}}
 			{{#6}}
-				{{^4}}<p>Each {{owner}} gets {{^company}}19{{/company}}{{#company}}14{{/company}} roads in {{owns}} color. If necessary the {{agent}}s may build more roads and need to use suitable replacement parts for these additional roads.</p>{{/4}}
-				{{#4}}<p>Place a shared pool of 40 neutral roads next to the game board, they can be used by all {{owners}}. If necessary the {{agent}}s may build more roads and need to use suitable replacement parts for these additional roads.</p>{{/4}}
+				{{^4}}<p>플레이어들은 자기 색깔의 도로 {{^company}}19{{/company}}{{#company}}14{{/company}}개씩을 갖습니다.<br/>도로를 그 이상 지으려면, 다른 알맞은 대체품을 가져와서 도로처럼 사용합니다.</p>{{/4}}
+				{{#4}}<p>40개의 중립 도로를 지도 옆에 도로 공급처를 놓고 공동으로 사용합니다.<br/>도로를 그 이상 지으려면, 다른 알맞은 대체품을 가져와서 도로처럼 사용합니다.</p>{{/4}}
 			{{/6}}
 			{{#company}}
 				<p>Lay out the {{#9.II}}{{#7.I}}scoring{{/7.I}}{{^7.I}}company order{{/7.I}}{{/9.II}}{{^9.II}}player order{{/9.II}} cards for 5 companies for the business rounds (BR) and place 1 resident of each company next to these cards. 1 player gets the starting player card for the 1st share round (SR).</p>
@@ -539,13 +539,13 @@
 		{{/5}}
 		{{#6}}
 			<div class="note col-md-4 col-xs-6">
-				<h2>Road:</h2>
-				<p>The player needs a # of active residents on 1 or both tiles to build a road there (depending on the more expensive terrain).</p>
+				<h2>도로:</h2>
+				<p>플레이어는 도로를 건설하기 위해서는 두 타일 중 비싼 쪽만큼의 활성화된 자기 주민이 필요합니다.<br/>이 주민은 두 타일 중 한 타일에만 그만큼 있어도 되고, 두 타일에 있는 자기 주민을 합쳐 그만큼 있어도 됩니다.</p>
 				<table>
 					<tr><th><span class="city bigicon"></span> / <span class="mountain bigicon"></span></th><th><span class="forest bigicon"></span> / <span class="desert bigicon"></span></th><th><span class="grain bigicon"></span> / <span class="grass bigicon"></span></th></tr>
-					<tr><td>3 residents</td><td>2 residents</td><td>1 resident</td></tr>
+					<tr><td>주민 3</td><td>주민 2</td><td>주민 1</td></tr>
 				</table>
-				<p>Additionally the player needs +1 resident for each already build opposing road between 2 concerned tiles.</p>
+				<p>도로를 건설하려는 두 타일 사이에 이미 상대의 도로가 건설돼 있다면, 상대의 도로마다 활성화된 자기 주민이 1개씩 더 필요합니다.</p>
 			</div>
 
 			{{#6.I}}
@@ -564,8 +564,8 @@
 
 			{{#6.II}}
 				<div class="note col-md-3 col-xs-4">
-					<h2>Example Income:</h2>
-					<p>Anne gets a total of $75: $20 (Base income for the capital) + $10 (1 additional city) + $25 (1 grassland, 2 forest, 2 fields) + $10 (1 mountain) + $10 (1 set). The 3rd forest does not give her income in the moment, as until now she only connected 2 cities.</p>
+					<h2>수입 예:</h2>
+					<p>아인이는 총 $75의 수입을 얻습니다.<br/>수도로 인한 기본 수입 $20 + 추가적인 도시 1개로 인한 $10 + 초원 1개, 숲 2개, 들판 2개로 인한 수입 $25 + 산 1개로 인한 수입 $10 + 모든 지형 1세트로 인한 수입 $10<br/>현재 두 도시만 아인이의 도로망에 연결돼 있으므로, 세번째 숲은 아무런 수입도 주지 않습니다.</p>
 				</div>
 			{{/6.II}}
 		{{/6}}
@@ -595,13 +595,13 @@
 		{{/7.II}}
 		{{#7.III}}
 			<div class="note col-md-4 col-xs-8">
-				<h2>Final Scoring:</h2>
-				<p>The player gets additional victory points (VP) for majorities. In case of a tie all players with the majority get the stated VP.</p>
+				<h2>최종 점수 계산:</h2>
+				<p>플레이어들은 해당 지형에서 우위를 달성하면 다음과 같이 추가 승점을 얻습니다.<br/>우위를 달성한 플레이어가 여럿이라면 이들 모두 표시된 승점을 얻습니다.</p>
 				<table>
 					<tr><th><span class="city bigicon"></span></th><th><span class="grass bigicon"></span></th><th><span class="forest bigicon"></span></th><th><span class="grain bigicon"></span></th><th><span class="mountain bigicon"></span></th><th><span class="desert bigicon"></th></tr>
 					<tr><td>6 VP</td><td>6 VP</td><td>5 VP</td><td>4 VP</td><td>3 VP</td><td>2 VP</td></tr>
 				</table>
-				<p><b>Example Final Scoring:</b> Camille has majorities for forests and mountains. She gets additional 8 VP.</p>
+				<p><b>최종 점수 계산 예:</b> 아인이는 숲과 산에서 우위를 달성했습니다. 아인이는 승점 8점(=5+3)을 얻습니다.</p>
 			</div>
 		{{/7.III}}
 		{{#8}}
@@ -840,20 +840,20 @@
 					이전 라운드에 팔리지 않고 남은 특권 카드들이 있다면, 가격 토큰을 이 특권 카드들의 오른쪽에 놓습니다.<br/>
 					이 특권 카드에 대한 최소 입찰가는 $0으로 내려갑니다.<br/>
 					새 특권 카드들을 뽑고 가격 토큰 오른쪽에 놓습니다.<br/>
-					플레이어 수만큼 새로운 카드를 뽑지만, 플레이어 수에 따라서 카드 열에 놓일 수 있는 특권 카드 최대 수 제한이 다음과 같이 있습니다. 4장(2♟) / 5장(3♟) / 6장(4♟) / 7장(주식회사 5개)
+					플레이어 수만큼 새로운 카드를 뽑지만, 플레이어 수에 따라서 카드 열에 놓일 수 있는 특권 카드 최대 수 제한이 다음과 같이 있습니다. 4장(2♟) / 5장(3♟) / 6장(4♟) / 7장(주식회사 5개)<br/>
 					새로운 특권 카드에 대한 최소 입찰가는 $20입니다.
 				</p>
 				<p>
-					왼쪽에 있는 카드부터 오른쪽에 있는 카드 순서로 한 번에 하나씩 모든 특권 카드에 대한 경매가 진행됩니다.
-					첫 번째 플레이어부터 시작해서 시계 방향으로 돌아가며 모든 플레이어가 입찰하고, 가장 높은 입찰가가 결정될 때까지 진행됩니다.
-					패스를 선언한 플레이어는 다음 특권 카드에 대한 경매가 시작될 때까지 입찰할 수 없읍니다.
-					가장 높은 입찰가를 제시한 플레이어가 그 금액을 은행에 내고, 그 특권 카드를 앞면으로 자기 앞에 놓습니다.
-					최소 입찰가가 $20인 카드를 아무도 입찰하지 않고 모든 플레이어가 패스하면, 그 특권 카드는 팔리지 않고 특권 카드 열에 남아 있습니다.
+					왼쪽에 있는 카드부터 오른쪽에 있는 카드 순서로 한 번에 하나씩 모든 특권 카드에 대한 경매가 진행됩니다.<br/>
+					첫 번째 플레이어부터 시작해서 시계 방향으로 돌아가며 모든 플레이어가 입찰하고, 가장 높은 입찰가가 결정될 때까지 진행됩니다.<br/>
+					패스를 선언한 플레이어는 다음 특권 카드에 대한 경매가 시작될 때까지 입찰할 수 없읍니다.<br/>
+					가장 높은 입찰가를 제시한 플레이어가 그 금액을 은행에 내고, 그 특권 카드를 앞면으로 자기 앞에 놓습니다.<br/>
+					최소 입찰가가 $20인 카드를 아무도 입찰하지 않고 모든 플레이어가 패스하면, 그 특권 카드는 팔리지 않고 특권 카드 열에 남아 있습니다.<br/>
 					최소 입찰가가 $0인 카드를 아무도 입찰하지 않고 모든 플레이어가 패스하면, 그 특권 카드는 게임에서 제거됩니다.
 				</p>
 				<p>
-					플레이어는 같은 종류의 특권 카드를 한 장만 살 수 있습니다.
-					플레이어는 특궡 카드를 산 즉시 사용할 수 있습니다.
+					플레이어는 같은 종류의 특권 카드를 한 장만 살 수 있습니다.<br/>
+					플레이어는 특권 카드를 산 즉시 사용할 수 있습니다.
 				</p>
 			</div>
 		</div>
@@ -903,7 +903,7 @@
 			<p><b>Example:</b> If the {{owner}} owns 4 plants, {{sagent}} may only buy up to 6 residents.</p>
 		{{/8.III}}
 		{{#residents}}
-			<p>The {{agent}} may buy residents for $10 each {{#company}}(paying from his company's holdings){{/company}} and place them on the board. (subject to placement rules)</p>
+			<p>플레이어는 새로운 주민을 살 수 있으며, 새로 산 주민마다 $10을 {{#company}}(자신의 회사 자산에서) {{/company}}은행에 냅니다. (배치 규칙의 적용을 받음)</p>
 		{{/residents}}
 	{{/capture}}
 	{{#hascapture}}
@@ -1001,25 +1001,53 @@
 			{{/5.II}}
 		{{/5}}
 		{{#6}}
-			<p><b>Roads:</b> If the {{owner}} has 1 settlement each on two adjacent tiles, {{sagent}} may connect both tiles with 1 of his roads. To build a road he needs a the number of active residents equal to the more expensive of the two terrain types, see the table <b>Road</b>. {{^6.III}}He places 1 of {{fowns}} used residents back into his supply and places 1 road. The remaining residents are exhausted from the build and will be available again in the next round. {{/6.III}}{{#6.III}}All of the used residents are exhausted and are available again in the next round.{{/6.III}}</p>
-			{{^6.III}}<p>The {{agent}} must build {{fowns}} roads in a connected network. His 1st road must start in {{fowns}} capital, afterwards, the network may branch out in any direction.</p>{{/6.III}}
-			{{#6.III}}<p>The {{agent}} may build {{fowns}} roads on any tiles, they do not need to start in {{fowns}} capital and do not need to be connected.</p>{{/6.III}}
+			<p>
+				<b>도로:</b> 플레이어가 두 인접한 타일 각각에 자기 정착지 1개씩을 가지고 있을 때, 이 두 타일을 자기 도로 1개로 연결할 수 있습니다.<br/>
+				도로를 건설하기 위해서는 두 타일 중 비싼 쪽의 지형만큼 활성화된 자기 주민이 필요합니다.<br/>
+				위쪽에 있는 <b>도로</b> 표를 참조하세요.<br/>
+				{{^6.III}}사용된 주민 중 1개를 자기 저장고에 놓고, 도로 1개를 해당 타일 사이에 놓습니다.<br/>도로를 건설하는 데 사용되고 남은 주민은 다음 라운드에 활성화되기 전까지는 비활성화됩니다.{{/6.III}}
+				{{#6.III}}도로 건설에 사용된 모든 주민은 다음 라운드에서 다시 활성화되기 전까지는 비활성화됩니다.{{/6.III}}
+			</p>
+			{{^6.III}}<p>플레이어는 반드시 기존 자기 도로망과 연결되게 도로를 건설해야 합니다.<br/>첫 번째 도로는 반드시 자기 수도에서 시작해야 합니다.<br/>그런 다음 도로망은 어느 방향으로도 뻗어 나갈 수 있습니다.</p>{{/6.III}}
+			{{#6.III}}<p>플레이어는 아무 타일에나 도로를 건설할 수 있습니다.<br/>도로는 수도에서 시작할 필요가 없으며, 모든 자기 도로가 연결될 필요도 없습니다.</p>{{/6.III}}
 			{{#4}}
 				<p>
-					The {{agent}}s build neutral roads, so there is always only 1 road between 2 tiles.
-					{{^6.III}}The roads built by a {{agent}} must be a connected with {{fowns}} capital solely across tiles controlled by that {{owner}}.{{/6.III}}
-					{{#6.I}}The {{owner}} only counts a land tile on the majority board, if {{^company}}he is the first who{{/company}}{{#company}}it is the first company that{{/company}} connects that land tile with 1 road. Multiple {{owners}} may count a city each once, if they control that city during the game AND connect it via roads solely across their own tiles to their capital. Each {{owner}} counts {{owns}} capital, when {{sagent}} builds {{owns}} first road.{{/6.I}}
-					{{#6.II}}The {{owner}} counts these tiles on the majority board (including {{owns}} capital{{^7}}, but no deserts{{/7}}). If the {{owner}} loses the control of a tile, {{sagent}} must subtract all tiles on the majority board, which now are not connected anymore via roads to {{fowns}} capital solely across {{owns}} own tiles.{{/6.II}}
+					플레이어들은 중립 도로를 건설합니다. 그러므로 두 타일을 연결하는 도로는 항상 1개만 존재합니다.<br/>
+					{{^6.III}}플레이어는 오직 자신이 지배한 타일을 거쳐 자기 수도와 연결되도록 도로를 건설해야 합니다.<br/>{{/6.III}}
+					{{#6.I}}
+						어떤 지형 타일을 자기 도로망에 연결한 첫 번째 {{^company}}플레이어{{/company}}{{#company}}회사{{/company}}만이 우위 판에서 해당 지형의 자기 표시 토큰을 올립니다.<br/>
+						다른 지형과 달리, 한 도시로는 여러 플레이어가 우위 토큰을 한 번씩 올릴 수 있습니다.<br/>
+						플레이어가 도시 하나를 점령하고, <b>또한</b> 그 도시를 자기가 지해바흔ㄴ 타일만을 통해 자기 수도와 도로로 연결했다면, 우위 판에서 도시 칸의 자기 표시 토큰을 한 칸 올립니다.<br/>
+						플레이어들은 자기 수도에 첫 번째 도로를 건설할 때 우위 판에서 도시 칸의 자기 표시 토큰을 한 칸 올립니다.<br/>
+					{{/6.I}}
+					{{#6.II}}
+						각 플레이어는 자기가 지배하는 타일 중 자신의 도로망으로 연결한 모든 타일(수도 포함, 사막 제외)만큼을 우위 판에서 올립니다.<br/>
+						플레이어가 타일에 대한 지배권을 잃으면, 즉시 자신의 도로망에서 끊어진 모든 타일만큼 우위 판에서 해당 지형의 표시 토큰을 그만큼 내립니다.
+					{{/6.II}}
 				</p>
-				<p>The {{agent}} may move {{fowns}} active residents any distance along roads on {{owns}} own tiles without exhausting them in this way.</p>
-				{{^4.III}}<p>If the {{agent}} moves 1 or more residents onto an opposing tile, he may build 1 road onto that tile, too (even though {{^company}}he{{/company}}{{#company}}the company{{/company}} has no settlement there and must fight in <b>Phase 3 G</b>).</p>{{/4.III}}
+				<p>플레이어는 활성화된 자기 주민을 자기가 지배하는 타일에 있는 도로 통해서라면 얼마만큼이건 비활성화시키지 않고 이동시킬 수 있습니다.</p>
+				{{^4.III}}<p>플레이어가 자기 주민 1개 이상을 상대의 타일로 이동시키면, 그 타일과 연결되는 도로 1개를 건설할 수 있습니다. (그 상대의 타일에 자기 정착지가 없어도 가능합니다. 그런 다음 <b>3G 단계</b>에 전투를 치룹니다.)</p>{{/4.III}}
 			{{/4}}
 			{{^4}}
-				<p>The {{agent}} may move {{fowns}} active units any distance along {{owns}} roads without exhausting them in this way.</p>
-				{{#6.I}}<p>Directly after building a road, the {{owner}} counts all the new tiles {{sagent}} connected on the majority board (including {{fowns}} capital). This way, each tile may be counted by multiple {{owners}}!</p>{{/6.I}}
-				{{#6.II}}<p>Directly after building a road, the {{owner}} counts all the new tiles {{sagent}} connected on the majority board (including {{fowns}} capital{{^7}}, but no deserts{{/7}}). This way, each tile may be counted by multiple {{owners}}! Each city has demand for the different types of terrain, so the {{owner}}&rsquo;s goal is to connect one of each of the terrain types for each of the cities {{sagent}} connects with {{fowns}} roads.</p>{{/6.II}}
-				{{#2}}<p>{{^6.III}}If the {{agent}} changes {{fowns}} capital, he cannot start a new network. {{/6.III}}If the {{agent}} removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st {{owner}}, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of {{owns}} own roads, if it is connected to {{owns}} other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}</p>{{/2}}
-				{{^2}}{{#7.I}}<p>{{^6.III}}If the{{agent}} changes {{fowns}} capital, he cannot start a new network. {{/6.III}}If the {{agent}} removes 1 settlement from the map, his roads to that tile turn neutral{{^6.III}}, and he subtracts that tile on the majority board{{/6.III}}. The 1st {{owner}}, who owns 1 settlement each on both these tiles, exchanges the neutral road with one of {{owns}} own roads, if it is connected to {{owns}} other roads and he does not own a road there.{{^6.III}} He counts it on the majority board.{{/6.III}}</p>{{/7.I}}{{/2}}
+				<p>플레이어는 자기 도로를 통해서라면 활성화된 자기 주민을 얼마만큼이건 비활성화시키지 않고 이동시킬 수 있습니다.</p>
+				{{#6.I}}<p>도로를 건설한 직후에, 플레이어는 우위 판에서 자기가 도로로 연결한 새로운 타일에 해당하는 지형에서 자기 표시 토큰을 올립니다. (수도에 도로를 건설할 때도)<br/>이렇게 해서 한 타일이 여러 플레이어의 표시 마커를 올리는 데 사용될 수 있습니다.</p>{{/6.I}}
+				{{#6.II}}<p>
+					도로를 건설한 직후에, 플레이어는 우위 판에서 자기가 도로로 연결한 새로운 타일에 해당하는 지형에서 자기 표시 토큰을 올립니다. (수도에 도로를 건설할 때도{{^7}}, 사막은 제외{{/7}})<br/>
+					이렇게 해서 한 타일이 여러 플레이어의 표시 마커를 올리는 데 사용될 수 있습니다.<br/>
+					도시들이 각기 다른 지형을 요구하므로, 플레이어의 목표는 도로로 도시마다 각 종류의 지형을 하나씩 연결하는 것입니다.
+				</p>{{/6.II}}
+				{{#2}}<p>
+					{{^6.III}}플레이어가 자기 수도를 바꿔도 새로운 도로망을 건설할 수 없으며 여전히 기존 도로망을 확장해야 합니다.<br/>{{/6.III}}
+					플레이어가 지도에서 자기 정착지를 제거하면, 그 정착지가 있던 타일과 연결된 그 플레이어의 도로는 중립으로 바뀝니다.{{^6.III}} 그리고, 우위 판에서도 해당 지형만큼 내립니다.{{/6.III}}<br/>
+					그 다음 처음으로 해당 중립 도로 양쪽 타일에 자기 정착지를 놓은 플레이어는 (그 두 타일을 연결한 자신의 도로가 없고, 그 타일까지 자기 도로망이 연결돼 있다면) 그 도로를 자기 도로로 바꿉니다.<br/>
+					{{^6.III}}그리고, 우위 판에서 해당 지형만큼 자신의 표시 토큰을 올립니다.{{/6.III}}
+				</p>{{/2}}
+				{{^2}}{{#7.I}}<p>
+					{{^6.III}}플레이어가 자기 수도를 바꿔도 새로운 도로망을 건설할 수 없으며 여전히 기존 도로망을 확장해야 합니다.<br/>{{/6.III}}
+					플레이어가 지도에서 자기 정착지를 제거하면, 그 정착지가 있던 타일과 연결된 그 플레이어의 도로는 중립으로 바뀝니다.{{^6.III}} 그리고, 우위 판에서도 해당 지형만큼 내립니다.{{/6.III}}<br/>
+					그 다음 처음으로 해당 중립 도로 양쪽 타일에 자기 정착지를 놓은 플레이어는 (그 두 타일을 연결한 자신의 도로가 없고, 그 타일까지 자기 도로망이 연결돼 있다면) 그 도로를 자기 도로로 바꿉니다.<br/>
+					{{^6.III}}그리고, 우위 판에서 해당 지형만큼 자신의 표시 토큰을 올립니다.{{/6.III}}
+				</p>{{/7.I}}{{/2}}
 			{{/4}}
 		{{/6}}
 		{{#7}}{{^6.I}}{{^6.II}}
@@ -1042,7 +1070,7 @@
 	{{/residents}}{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2"><h1>Phase 3 D: Residents</h1></div>
+			<div class="col-md-2 col-xs-2"><h1>3D 단계: 주민</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
@@ -1207,7 +1235,12 @@
 			{{^2}}{{#7.I}}<p>If the {{agent}} removes {{fowns}} settlement and then the tile is completely empty, the next {{owner}} placing a new first settlement on that tile also takes 1 income token.</p>{{/7.I}}{{/2}}
 			{{#4}}<p>If a {{agent}} neutralizes a tile from another {{owner}}, the next {{owner}} placing a first settlement on that tile also takes 1 income token. If he conquers that tile he gets that income token.</p>{{/4}}
 		{{/5.II}}
-		{{#6.II}}<p>The {{owner}} gets $20 base income for {{owns}} capital, plus $10 for each additional city connected to {{owns}} capital(via road network). Furthermore each of {{owns}} connected cities gives the {{owner}} money for 1 land tile of each type (except deserts): he gets $5 for grassland, field & forest, $10 for mountain, plus a bonus of $10 for each set containing 1 city, 1 grassland, 1 field, 1 forest, 1 mountain (no desert), see the example <b>Income</b>.</p>{{/6.II}}
+		{{#6.II}}<p>
+			플레이어는 수도로부터 기본 수입 $20을 얻고, 자기 도로망에 연결된 <span class="city icon"></span>마다 $10을 얻습니다.<br/>
+			그리고 자기 도로망에 연결된 도시 숫자를 기준으로 <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>마다 $5씩, <span class="mountain icon"></span>마다 $10씩을 얻습니다.<br/>
+			<span class="city icon"></span>, <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>, <span class="mountain icon"></span> 1개씩(사막 제외)으로 이뤄진 세트마다 $10을 얻습니다.<br/>
+			위쪽에 있는 <b>수입</b> 예를 참조하세요.
+		</p>{{/6.II}}
 		{{#7.II}}<p>The {{owner}} gets $20 base income for {{owns}} capital, plus income for the majorities as stated above, see table and example <b>Income</b>.</p>{{/7.II}}
 		{{#8.II}}
 			<p>{{^1}}During this phase, the {{owner}} gets 1 matching good for each of his plants from the general storage.{{/1}}{{#1}}The {{agent}} may sell goods already delivered to his trading houses.{{/1}} He may sell {{^4}}1 good{{/4}}{{#4}}2 goods{{/4}} to each of {{fowns}} trading houses{{^4}} (up to 2 goods to the headquarters in {{owns}} capital){{/4}}. {{^1}}Afterwards, he places the sold goods back into the general storage.{{/1}}{{#1}}Afterwards, the goods remain on the trading houses.{{/1}}</p>
