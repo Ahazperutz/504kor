@@ -174,7 +174,7 @@
 			</p>
 			{{^7}}
 				{{#6.I}}
-					<p>지도 옆에 우위 판을 사막이 있는 면으로 놓고, 각 {{owner}}의 표시 토큰을 우위 판의 아래 에 놓습니다</p>
+					<p>지도 옆에 우위 판을 사막이 있는 면으로 놓고, 각 플레이어의 표시 토큰을 우위 판의 아래 에 놓습니다</p>
 				{{/6.I}}
 				{{#6.II}}
 					<p>지도 옆에 우외 판을 사막이 {{^2.III}}없는{{/2.III}}{{#2.III}}{{#5.I}}있는{{/5.I}}{{#9.I}}있는{{/9.I}}{{^9.I}}{{^5.I}}없는{{/5.I}}{{/9.I}}{{/2.III}} 면으로 놓고, 각 지형 열 아래에 승점 5점씩을 놓습니다.</p>
@@ -290,16 +290,26 @@
 			</p>
 			{{#4}}
 				{{#9}}
-					{{^9.III}}<p>The stock companies may choose any capitals at the edge of the map.</p>{{/9.III}}
-					{{#9.III}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9.III}}
+					{{^9.III}}<p>주식회사들은 지도의 가장자리에 있는 아무 도시나 수도로 선택할 수 있습니다.</p>{{/9.III}}
+					{{#9.III}}<p>
+						플레이어의 수에 따라 다음과 같이 수도를 선택합니다.<br/>
+						2♟: 서로 마주 보는 도시를 수도로 선택합니다.<br/>
+						3♟: 서로 같은 거리만큼 떨어진 도시를 수도로 선택합니다.<br/>
+						4♟: 수도로 선택되지 않은 도시 둘이 서로 마주 보게 수도를 선택합니다.
+					</p>{{/9.III}}
 				{{/9}}
-				{{^9}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9}}
+				{{^9}}<p>
+					플레이어의 수에 따라 다음과 같이 수도를 선택합니다.<br/>
+					2♟: 서로 마주 보는 도시를 수도로 선택합니다.<br/>
+					3♟: 서로 같은 거리만큼 떨어진 도시를 수도로 선택합니다.<br/>
+					4♟: 수도로 선택되지 않은 도시 둘이 서로 마주 보게 수도를 선택합니다.
+				</p>{{/9}}
 				{{#1}}{{^1.III}}{{^company}}<p>When playing with 2♟/4♟ Players cannot choose cities 5 or 10 for their capital. (This allows all players to comply with both rules for capital placement.)</p>{{/company}}{{/1.III}}{{/1}}
 				{{#8}}
-					{{^8.III}}<p>Place 1 barrack on all free cities. These barracks are considered trading houses.</p>{{/8.III}}
-					{{#8.III}}<p>Place 1 barrack and 1 militia on all free cities which are not chosen as capitals.</p>{{/8.III}}
+					{{^8.III}}<p>수도로 선택되지 않은 모든 자유 도시에 막사 1개씩을 놓습니다. 이 막사는 교역소로 간주합니다.</p>{{/8.III}}
+					{{#8.III}}<p>수도로 선택되지 않은 모든 자유 도시에 막사와 민병대를 각각 1개씩 놓습니다.</p>{{/8.III}}
 				{{/8}}
-				{{^8}}<p>Place 1 barrack and 1 militia on all free cities which are not chosen as capitals.</p>{{/8}}
+				{{^8}}<p>수도로 선택되지 않은 모든 자유 도시에 막사와 민병대를 각각 1개씩 놓습니다.</p>{{/8}}
 			{{/4}}
 			{{#2}}{{^2.III}}
 				<p>
@@ -383,13 +393,13 @@
 </script>
 <script id="template_examples" type="x-tmpl-mustache">
 	{{#capture}}
-		{{#4}}{{#5}}<p>Place 1 barrack and 1 militia on all free cities which are explored during the game.</p>{{/5}}{{/4}}
+		{{#4}}{{#5}}<p>게임 중에 발견된 모든 자유 도시에 막사 1개씩을 놓습니다.</p>{{/5}}{{/4}}
 		{{#9.I}}<p>Play the game in the following order of turns: SR, BR, BR, SR, BR, SR, BR, SR, BR, game end.</p>{{/9.I}}
 		{{#9.II}}<p>Play the game in <b>alternating</b> turns: SR, BR, SR, BR, SR, BR, etc.</p>{{/9.II}}
 	{{/capture}}
 	{{#hascapture}}
 	<div class="row section">
-		<div class="col-md-2 col-xs-2 {{#4}}{{#5}}mod5{{/5}}{{/4}}{{#9.I}} mod9{{/9.I}}{{#9.II}} mod9{{/9.II}}"><h1>Playing the Game</h1></div>
+		<div class="col-md-2 col-xs-2 {{#4}}{{#5}}mod5{{/5}}{{/4}}{{#9.I}} mod9{{/9.I}}{{#9.II}} mod9{{/9.II}}"><h1>게임 진행</h1></div>
 		<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 	</div>
 	{{/hascapture}}
@@ -491,49 +501,49 @@
 		{{#4}}
 			{{^4.III}}
 				<div class="note col-md-12 col-xs-12">
-					<h2>Fight Sequence:</h2>
+					<h2>전투 진행:</h2>
 					<ol>
-						<li>The attacker rolls 1 die for each attacking army. For each hit he removes 1 defending army (excess hits are forfeited).</li>
-						<li>Only if the defender suffers losses, he rolls 1 die for each of his removed armies. For each hit he removes 1 attacking army (excess hits are forfeited).</li>
-						<li>If all defending armies are removed and at least 1 attacking army survives, the attacker conquers the tile and exchanges 1 resident into 1 settlement. If at least 1 defending army survives, the attacker retreats all surviving armies into any adjacent areas under his control (in which are actual no fights).</li>
+						<li>공격자가 공격 중인 군대 1개마다 주사위 1개씩을 굴립니다. 공격자는 명중 1개마다 방어 중인 군대 1개를 제거합니다. (남은 명중은 버려집니다.)</li>
+						<li>방어자는 피해를 당했을 때만 제거된 군대 1개마다 주사위 1개를 굴립니다. 방어자는 명중 개마다 공격 중인 군대 1개를 제거합니다. (남은 명중은 버려집니다.)</li>
+						<li>모든 방어 중인 군대가 제거되고 공격 중인 군대가 1개 이상 살아남으면, 공격자가 그 타일을 점령하고 주민 1개를 정착지 1개로 바꿉니다. 방어 중인 군대가 1개 이상 살아남으면, 공격자는 살아남은 자기 군대 모두를 자기가 지배하는 인접한 타일 중 현재 전투가 없는 곳으로 후퇴시킵니다. 어느 군대도 살아남지 못하면 타일은 중립화됩니다.</li>
 					</ol>
 				</div>
 				<div class="note col-md-4 col-xs-6">
-					<h2>Dice Results:</h2>
+					<h2>주사위 결과:</h2>
 					<table>
-						<tr><th>dice result</th><th class="dice">⚀⚁</th><th class="dice">⚂⚃</th><th class="dice">⚄⚅</th></tr>
-						<tr><th>attack</th><td>0 hits</td><td>1 hit</td><td>2 hits</td></tr>
-						<tr><th>defense</th><td>0 hits</td><td colspan="2">1 hit</td></tr>
+						<tr><th>주사위 결과</th><th class="dice">⚀⚁</th><th class="dice">⚂⚃</th><th class="dice">⚄⚅</th></tr>
+						<tr><th>공격</th><td>명중 0개</td><td>명중 1개</td><td>명중 2개</td></tr>
+						<tr><th>방어</th><td>명중 0개</td><td colspan="2">명중 1개</td></tr>
 					</table>
 				</div>
 				<div class="note col-md-4 col-xs-6">
-					<p>If the attacker attacks an opponent on...</p>
-					<p>... <span class="mountain bigicon"></span> or <span class="city bigicon"></span>: -1 for each single die roll of the attacker.</p>
-					<p>... <span class="grass bigicon"></span> or <span class="grain bigicon"></span>: +1 for each single die roll of the attacker.</p>
+					<p>공격자가 다음에 있는 상대를 공격하면...</p>
+					<p>... <span class="mountain bigicon"></span> / <span class="city bigicon"></span>: 공격자가 굴린 주사위마다 그 결과 값에 -1</p>
+					<p>... <span class="grass bigicon"></span> / <span class="grain bigicon"></span>: 공격자가 굴린 주사위마다 그 결과 값에 +1</p>
 				</div>
 			{{/4.III}}
 			{{#4.II}}
 				<div class="note col-md-3 col-xs-6">
-					<h2>Example Income:</h2>
-					<p>In addition to her capital Camille additionally controls 2 wood, 3 grasslands, 1 mountain and 2 city tiles. She gets an income of $70 = $20 (base income for the capital) + $40 (8 additional tiles) + $10 (3 different types of land tiles).</p>
+					<h2>수입 예:</h2>
+					<p>채미는 수도와 더불어 숲 2개, 초원 3개, 산 1개, 도시 2개를 지배하고 있습니다. 채미는 수입으로 $70을 받습니다. (수도로 인한 기본 수입 $20 + 타일 8개로 인한 수입 $40 + 도시가 아닌 지형 종류 3가지로 인한 수입 $10)</p>
 				</div>
 			{{/4.II}}
 			{{#4.III}}
 				<div class="note col-md-3 col-xs-6">
-					<h2>Fight Sequence:</h2>
-					<p>If the attacker moves 1 army onto an opposing tile, both players each remove 1 army on that tile. This process is repeated if necessary, until the last defending army is removed and the tile is neutralized.</p>
+					<h2>전투 진행:</h2>
+					<p>공격자가 군대 1개를 상대의 타일로 이동시키면, 공격자는 그 타일에 있는 자신의 군대와 방어자의 군대 1개씩을 제거합니다. 필요하다면 이 과정을 그 타일에 있는 방어 중인 군대가 마지막으로 제거돼서 타일을 중립화할 때까지 반복합니다.</p>
 				</div>
 			{{/4.III}}
 		{{/4}}
 		{{#5}}
 			<div class="note col-md-3 col-xs-4">
-				<h2>Example Exploring:</h2>
+				<h2>탐사 예:</h2>
 				<img src="img/exploring-example.png" style="width: 100%">
 			</div>
 			{{#5.II}}
 				<div class="note col-md-3 col-xs-4">
-					<h2>Example Income:</h2>
-					<p>During the first few rounds Rachel explored 8 tiles and placed settlements first onto 6 tiles. Thus, she gets an income of $90 = $20 (base income for the capital) + $40 (8 explored tiles) + $30 (6 first settlements).</p>
+					<h2>수입 예:</h2>
+					<p>처음 몇 라운드가 진행되는 동안 나희는 타일 8개를 발견하고 타일 6개에 첫 정착지를 놨습니다. 나희는 수입으로 $90을 받습니다. (수도로 인한 기본 수입 $20 + 발견한 타일 8개로 인한 수입 $40 + 첫 정착지 6개로 인한 수입 $30)</p>
 				</div>
 			{{/5.II}}
 		{{/5}}
@@ -550,15 +560,15 @@
 
 			{{#6.I}}
 				<div class="note col-md-4 col-xs-6">
-					<h2>Final Scoring:</h2>
-					<p>The player gets the following victory points (VP) for each of his tiles according to the majority board.</p>
+					<h2>최종 점수 계산:</h2>
+					<p>플레이어는 우위 판에서의 상태에 따라 다음과 같이 승점을 얻습니다.</p>
 					<table>
 						<tr><th><span class="city bigicon"></span> / <span class="mountain bigicon"></span></th><th><span class="forest bigicon"></span> / <span class="grain bigicon"></span> / <span class="grass bigicon"></span></th><th><span class="desert bigicon"></th></tr>
 						<tr><td>3 VP</td><td>2 VP</td><td>1 VP</td></tr>
 					</table>
-					<p>Additionally 3 VP for each set consisting of 1 city, 1 grassland, 1 field, 1 forest, 1 mountain (no desert).</p>
-					<h2>Example Final Scoring:</h2>
-					<p>Anne scores a total of 58 VP: 27 (5 cities, 4 mountains) + 22 (4 grasslands, 2 forests, 5 fields) + 3 (3 deserts) + 6 (2 sets of all terrain types excluding desert).</p>
+					<p>플레이어는 도시, 초원, 들판, 숲, 산 1개씩으로 (사막은 포함되지 않음) 이뤄진 세트 하나마다 추가 승점 3점을 얻습니다.</p>
+					<h2>최종 점수 계산 예:</h2>
+					<p>아인이는 승점 58점을 얻습니다. 도시 5개와 산 4개로 인한 승점 27점(=9x3) + 초원 4개, 숲 2개, 들판 5개로 인한 승점 22점(=11x2) + 사막 3개로 인한 승점 3점(=3x1) + 사막을 제외한 모든 지형 2세트로 인한 승점 6점</p>
 				</div>
 			{{/6.I}}
 
@@ -922,82 +932,98 @@
 			{{/2.III}}
 		{{/2}}
 		{{#4}}
-			<p>All residents and settlements (including the headquarters in the capital) count as armies. The {{agent}} attacks opponents with {{fowns}} residents, but defends {{fowns}} tiles with all {{owns}} armies he has there.</p>
+			<p>모든 주민과 정착지(수도에 있는 본부 포함)를 군대로 간주합니다. 플레이어는 자기 주민으로 상대를 공격하며, 자기 타일을 방어할 때는 그곳에 있는 모든 자기 군대를 사용합니다.</p>
 			<p>
-				Only 1 {{owner}} may have a settlement on a tile.
+				한 타일에는 한 플레이어만 정착지를 놓을 수 있습니다.<br/>
 				{{^4.III}}
-					{{^2}}If the {{agent}} attacks an opponent by moving residents onto one of {{owns}} tiles, these residents are exhausted and cannot leave the tile. The {{agent}} will resolve all fights on tiles in <b>Phase 3 G</b>, where he attacks an opponent. He decides, in which order he resolves these fights.{{/2}}
+					{{^2}}플레이어가 상대를 공격하기 위해 주민을 상대 타일로 이동시키면, 이 주민은 비활성화 상태가 되며 전투가 끝나기 전까지 이 타일을 떠날 수 없습니다.<br/>플레이어는 <b>3G 단계</b>에서 상대를 공격한 모든 타일에서 전투를 처리합니다.<br/>어떤 전투부터 처리할지는 현재 차례인 플레이어가 정합니다.{{/2}}
 					{{#2}}
-						After the {{agent}} has moved all requested residents onto an opposing tile, these residents are exhausted. A fight follows immediately, see <b>Fight Sequence</b> and table <b>Dice Results</b>. If at least 1 defender survives the attack, the attacker cannot attack this tile again in the same round. The {{agent}} may move additional active residents onto neutralized or conquered tiles.
+						플레이어가 공격에 사용하고자 하는 모든 주민을 상대의 타일로 이동시킨 다음, 이 주민들은 비활성화 상태가 됩니다.<br/>
+						그리고 즉시 전투가 일어납니다. 위쪽에 있는 <b>전투 진행</b>과 <b>주사위 결과</b> 표를 참조하세요.<br/>
+						이 전투에서 방어자의 군대가 1개 이상 살아남으면, 공격자는 이번 라운드 중에는 그 타일을 다시 공격할 수 없습니다.<br/>
+						플레이어가 그 타일을 중립화하거나 점령하면, 그 타일에 활성화된 자기 주민을 추가로 이동시킬 수 있습니다.
 					{{/2}}
 				{{/4.III}}
-				{{#4.III}}As soon as the {{agent}} moves a resident onto an opposing tile, a fight follows immediately, see <b>Fight Sequence</b>.{{/4.III}}
+				{{#4.III}}플레이어가 상대의 타일로 주민을 이동하면, 즉시 전투가 일어납니다. 위쪽에 있는 <b>전투 진행</b>을 참조하세요.{{/4.III}}
 			</p>
-			{{#8}}{{^8.III}}<p>There are no fights in cities, so any number of {{owners}} may have their own trading houses there. The trading houses of free cities also count when calculating prices of {{agent}} trading houses. If the {{agent}} conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8.III}}{{/8}}
+			{{#8}}{{^8.III}}<p>도시에서는 전투가 일어나지 않습니다. 그러므로 도시에는 몇명의 플레이어든 자기 교역소를 갖고 있을 수 있습니다.<br/>자유 도시의 교역소도 교역소 건설 비용을 계산할 때 포함합니다.<br/>공격자가 육지 타일을 점령하면, 그곳에 있는 생산 설비도 같이 얻습니다.<br/>육지 타일을 중립화하기만 했다면 생산 설비는 소유주 없이 버려진 채로 남아 있습니다.</p>{{/8.III}}{{/8}}
 			{{^8}}
-				<p>The free cities defend themselves with their barracks and militia.</p>
+				<p>자유 도시는 막사와 민병대로 스스로를 방어합니다.</p>
 				{{^4.III}}{{#2}}
-					{{#3}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. If the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3}}
+					{{#3}}<p>공격자가 상대의 도시를 중립화하거나 점령하면, 그곳에 있던 공장 1개를 파괴합니다. 공격자가 도시를 점령하면, 그곳에 남아 있는 공장도 같이 얻습니다.</p>{{/3}}
 				{{/2}}{{/4.III}}
 				{{#4.III}}
-					{{#3}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. If the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/3}}
+					{{#3}}<p>공격자가 상대의 도시를 중립화하거나 점령하면, 그곳에 있던 공장 1개를 파괴합니다. 공격자가 도시를 점령하면, 그곳에 남아 있는 공장도 같이 얻습니다.</p>{{/3}}
 				{{/4.III}}
 				<p>
-					{{#4.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies. {{/4.I}}
+					{{#4.I}}수도가 공격당하면, 본부는 3개짜리 군대가 되며 수도를 방어하는 데 사용됩니다.{{/4.I}}
 					{{#2}}
-						{{^4.I}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies.{{/4.I}} 
-						If the capital of the defender is neutralized or conquered, the defender immediately chooses a new capital by replacing his settlement on one of his cities with his headquarters.
-						{{#4.I}}If the defender does not control another city, the game ends, see <b>Game End</b>.{{/4.I}}
-						{{^4.I}}{{^company}}If the defender only controls the capital (and possibly additional land tiles), his capital cannot be attacked.{{/company}}{{/4.I}}
-						{{#company}}If the defender does not control another city, the attacker also conquers all other tiles of the defender and exchanges the armies with its own. If it only neutralizes the opposing capital, the defender loses all of his tiles without the attacker conquering them. Afterwards, the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).{{/company}}
+						{{^4.I}}수도가 공격당하면, 본부는 3개짜리 군대가 되며 수도를 방어하는 데 사용됩니다.{{/4.I}} 
+						방어자의 수도가 중립화되거나 점령되면, 방어자는 즉시 자기 도시 중 하나를 새로운 수도로 정하고 그 도시에 있는 자기 정착지를 자기 본부로 바꿉니다.
+						{{#4.I}}이 방어자가 지배하는 다른 도시가 없다면 게임이 끝납니다. 위에 있는 <b>게임 종료</b>를 참조하세요.{{/4.I}}
+						{{^4.I}}{{^company}}이 방어자가 수도 이외의 다른 도시를 지배하고 있지 않다면, 그 수도는 공격당하지 않습니다.{{/company}}{{/4.I}}
+						{{#company}}
+							이 방어자가 다른 도시를 지배하고 있지 않다면, 공격자는 방어자의 모든 다른 타일 역시 점령하며, 방어자의 군대도 자기 것으로 교체합니다.
+							상대의 수도를 중립화하기만 했다면 방어자가 모든 타일을 잃을 뿐, 공격자는 이들을 점령하지 않습니다.
+							그런 다음 플레이어들은 패배한 주식회사의 모든 주식을 보상 없이 잃습니다.
+							패배한 주식회사는 다음 주식 라운드(SR)에서 아무 플레이어에 의해서 새로 설립될 수 있습니다.
+						{{/company}}
 					{{/2}}
-					{{^4.I}}{{^2}}{{#company}}If the capital is attacked, the headquarters defends itself last and counts as 3 armies, see <b>Phase 3 G</b>.{{/company}}{{/2}}{{/4.I}}
-					{{^2}}{{^company}}{{^4.I}}The capital of another player cannot be attacked.{{/4.I}}{{/company}}{{/2}}
+					{{^4.I}}{{^2}}{{#company}}수도가 공격당하면, 본부는 3개짜리 군대가 되며 수도를 방어하는 데 사용됩니다. 위에 있는 <b>3G 단계</b>를 참조하세요.{{/company}}{{/2}}{{/4.I}}
+					{{^2}}{{^company}}{{^4.I}}상대의 수도를 공격할 수 없습니다.{{/4.I}}{{/company}}{{/2}}
 				</p>
 				{{^4.I}}{{#company}}<p>
-					If the attacking stock company conquers an opposing capital by immediately moving 1 additional active resident onto the neutralized city, it also conquers all other tiles of the defender by exchanging the armies with its own.
-					{{#2.III}} If the attacking stock company neutralizes the last capital of the defender, it may conquer that capital immediately after the fight by moving 1 additional active resident onto the neutralized city.{{/2.III}} 
-					If the attacker only neutralizes the capital, the defender loses all of his tiles without the attacker conquering them. Afterwards, the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).
-					{{#1.1}} Place all delivered goods of that company separately next to the map, as they still count for the game end!{{/1.1}}
+					공격자가 방어자의 수도를 중립화했을 때, 공격자는 전투가 끝난 다음에 중립화된 수도로 활성화된 주민을 이동시켜서 그 수도를 바로 점령할 수 있습니다. 또한 방어자의 모든 다른 타일 역시 점령하며, 방어자의 군대도 자기 것으로 교체합니다.
+					{{#2.III}} 공격자가 방어자의 마지막 수도를 중립화했 때, 공격자는 전투가 끝난 다음에 중립화된 수도로 활성화된 주민을 이동시켜서 그 수도를 바로 점령할 수 있습니다.{{/2.III}} 
+					상대의 수도를 중립화하기만 했다면 방어자가 모든 타일을 잃을 뿐, 공격자는 이들을 점령하지 않습니다.
+					그런 다음 플레이어들은 패배한 주식회사의 모든 주식을 보상 없이 잃습니다.
+					패배한 주식회사는 다음 주식 라운드(SR)에서 아무 플레이어에 의해서 새로 설립될 수 있습니다.
+					{{#1.I}} 패배한 주식회사가 배송한 모든 상품은 지도 옆에 따로 둡니다. 이 상품들도 게임 종료 조건을 달성하는 데 사용됩니다.{{/1.I}}
 				</p>{{/company}}{{/4.I}}
 			{{/8}}
 		{{/4}}
-		{{#5.I}}<p>The {{agent}} may explore an adjacent unknown space with 1 active resident. He places that resident back into {{fowns}} storage (if the resident explores water, instead it is placed exhausted on the starting tile).</p>{{/5.I}}
+		{{#5.I}}<p>플레이어는 활성화된 자기 주민 1개로 인접한 미지의 칸 1개를 탐사할 수 있습니다. 그런 다음, 플레이어는 그 주민을 자기 저장고로 되돌려 놓습니다. (예외: 물을 발견하면 그 주민을 비활성화된 상태로 탐사 직전에 있던 타일에 놓습니다.)</p>{{/5.I}}
 		{{#5.II}}
-			{{#2}}<p>The {{agent}} may explore any number of adjacent unknown spaces with 1 active resident. After exploring he places that resident back into his storage (except if it explores only water, instead it is placed exhausted on the starting tile).</p>{{/2}}
-			{{^2}}{{#4}}<p>The {{agent}} may explore an adjacent unknown space with 1 active resident. After exploring the tile he places that resident back into his storage (except if it explores water, instead it is placed exhausted on the starting tile).</p>{{/4}}{{/2}}
-			{{^2}}{{^4}}<p>The {{agent}} may explore an adjacent unknown space with 1 active resident. Afterwards, the resident is exhausted on the starting tile.</p>{{/4}}{{/2}}
+			{{#2}}<p>플레이어는 활성화된 자기 주민 1개로 인접한 미지의 칸을 원하는 만큼 탐사할 수 있습니다. 플레이어는 그 주민을 자기 저장고로 되돌려 놓습니다. (예외: 물을 발견하면 그 주민을 비활성화된 상태로 탐사 직전에 있던 타일에 놓습니다.)</p>{{/2}}
+			{{^2}}{{#4}}<p>플레이어는 활성화된 자기 주민 1개로 인접한 미지의 칸 1개를 탐사할 수 있습니다. 플레이어는 그 주민을 자기 저장고로 되돌려 놓습니다. (예외: 물을 발견하면 그 주민을 비활성화된 상태로 탐사 직전에 있던 타일에 놓습니다.)</p>{{/4}}{{/2}}
+			{{^2}}{{^4}}<p>플레이어는 활성화된 자기 주민 1개로 인접한 미지의 칸 1개를 탐사할 수 있습니다. 그런 다음 그 주민을 비활성화된 상태로 탐사 직전에 있던 타일에 놓습니다.</p>{{/4}}{{/2}}
 		{{/5.II}}
-		{{#5.III}}<p>The {{agent}} may explore any number of adjacent unknown spaces with 1 active resident. He places that resident back into {{fowns}} storage (except if it explores only water, instead it is placed exhausted on the starting tile).</p>{{/5.III}}
+		{{#5.III}}<p>플레이어는 활성화된 자기 주민 1개로 인접한 미지의 칸을 원하는 만큼 탐사할 수 있습니다. 그런 다음, 플레이어는 그 주민을 자기 저장고로 되돌려 놓습니다. (예외: 물을 발견하면 그 주민을 비활성화된 상태로 탐사 직전에 있던 타일에 놓습니다.)</p>{{/5.III}}
 		{{#5}}
-			<p><b>Exploring:</b> After choosing the destination space, the {{agent}} places the explorer tiles next to the following stacks, until he placed all 6 tiles.</p>
+			<p><b>탐사:</b> 목적지 칸을 선택한 다음, 플레이어는 탐험가 마커 6개를 섞고, 다음의 규칙에 따라 지도 타일 더미 옆에 탐험가 마커를 놓습니다.</p>
 			<ol>
-				<li><b>City:</b> # of explorer tiles = # of tiles between the destination space and the closest city (Across existing land tiles). New cities are never located adjacent to other cities!</li>
-				<li><b>Water:</b> # of explorer tiles = # of tiles between the destination space and the central city (across linear distance, even across water or empty spaces), or 0 if next to an existing water tile. New water tiles are never located adjacent to other water tiles!</li>
-				<li><b>Land tiles:</b> 1 explorer tile next to each stack, in the following order: grassland, forest field, mountain, desert.</li>
-				<li><b>Remaining explorer tiles:</b> 1 additional explorer tile next to each stack, which already received 1 or more explorer tiles, in the following order: city, water, grassland, forest, field, mountain desert, if necessary repeatedly.</li>
+				<li><b>도시:</b> 이 옆에는 '목적지 칸과 가장 가까운 도시 사이에 있는 육지 타일수'만큼 탐험가 마커를 놓습니다. 육지 타일은 현재 지도에 존재하는 것들만 셉니다. 도시끼리는 절대 인접하게 놓지 않으므로, 도시 타일 옆 칸을 탐사할 때는 이 더미에 탐험가 마커를 놓지 않습니다.</li>
+				<li><b>물:</b> 이 옆에는 '목적지 칸과 중앙 도시 사이에 있는 지도 타일 수'만큼 탐험가 마커를 놓습니다. 직선거리로 타일 숫자를 세며, 그 사이에 물이나 빈칸이 있어도 됩니다. 물끼리는 절대 인접하게 놓지 않으므로, 물 타일 옆 칸을 탐사할 때는 이 더미에 탐험가 마커를 놓지 않습니다.</li>
+				<li><b>육지 타일:</b> 초원-숲-들판-산-사막 더미 순으로 탐험가 마커 1개씩을 놓습니다.</li>
+				<li><b>남은 탐험가 마커:</b> 이미 탐험가 마커가 1개 이상 있는 각 지도 타일 더미마다 도시-물-초원-숲-들판-산-사막 순으로 탐험가 마커를 1개씩 추가합니다. 필요하다면 반복합니다.</li>
 			</ol>
-			<p>Afterwards, the {{agent}} rolls 1 die and places the corresponding map tile on the destination space. See the example <b>Exploring</b>.</p>
-			{{#mapnum.1}}<p>The {{agent}}s may only explore in a distance of 4 spaces around the central city. Thus, following the adjacency rules above, the {{agent}}s will not always explore all cities or water tiles.</p>{{/mapnum.1}}
-			{{#1}}{{^1.III}}{{^8}}<p>When placing a city, place 4 goods onto that city, matching the small circular symbol.</p>{{/8}}{{/1.III}}{{/1}}
+			<p>그런 다음, 플레이어는 주사위 1개를 굴려 나온 숫자에 해당하는 지도 타일을 발견하고 탐사 목적지 칸에 놓습니다. 위쪽에 있는 <b>탐사 예</b>를 참조하세요.</p>
+			{{#mapnum.1}}<p>플레이어들은 중앙 도시에서 4칸 떨어진 칸까지만 탐사할 수 있습니다. 그러므로 앞서 설명한 도시/물 인접 불가 규칙 때문에, 경우에 따라 모든 도시와 물 타일이 사용되지 않을 수 있습니다.</p>{{/mapnum.1}}
+			{{#1}}{{^1.III}}{{^8}}<p>도시를 놓을때 그 도시에 있는 원형 심볼과 같은 상품 4개를 놓습니다.</p>{{/8}}{{/1.III}}{{/1}}
 			{{#5.I}}
 				{{#2.III}}<p>
-					The {{agent}} counts that tile on the majority board.
-					{{#6.II}}Note: Use another token like a settlement to track exploration. Do not add this to the count of your road network.{{/6.II}}
-					{{#7.II}}Note: Use another token like a road to track exploration. Do not add this to the count of your majorities.{{/7.II}}
+					플레이어는 우위 판위의 해당 타일을 계산합니다.
+					{{#6.II}}Note: 탐사를 추적하기 위해 정착지 같은 다른 토큰을 사용하세요. 도로 네트워크의 수에 추가하지 마세요.{{/6.II}}
+					{{#7.II}}Note: 탐사를 추적하기 위해 도로 같은 다른 토큰을 사용하세요. 우위의 수에 추가하지 마세요.{{/7.II}}
 				</p>{{/2.III}}
-				<p>The {{owner}} immediately gets 1 victory point (VP) for each explored tile, including water. Then, place a stack of 2 "1 VP" tokens on each explored land tile and a stack of 4 "1 VP" tokens on each explored city.</p>
-				<p>During the game the {{owner}} gets additional victory points (VP) by taking them from the appropriate tiles:</p>
+				<p>플레이어는 탐사할 때마다 그 즉시 승점 1점을 얻고 승점 토큰을 가져갑니다. (어떤 타일을 발견했는지는 상관없습니다.) 그런 다음, 발견된 육지 타엘에 승점 1점짜리 토큰 2개를 놓고, 발견된 도시 타일에 승점 1점짜리 토큰 4개를 놓습니다.</p>
+				<p>게임 중에 플레이어는 다음과 같은 방법으로 타일에 놓인 승점 토큰을 얻을 수 있습니다.</p>
 				<ol>
-					<li>The {{owner}} gets the first VP for placing the collectively 1st settlement on the tile.</li>
-					<li>The {{owner}} gets other VP from tiles, if they exhaust 1 resident for the harvest action on the corresponding tile (On cities the {{agent}} needs to do this for each of the last three VP tokens). The {{owner}} does not get this VP, if {{sagent}} exhausts {{fowns}} resident for another action that tile.</li>
+					<li>플레이어가 타일에 첫 정착지를 놓을 때 그 타일에 있는 승점 1점을 얻습니다.</li>
+					<li>플레이어가 한 타일에서 주민 1개를 비활성화시켜서 수확 행동을 하면, 그 타일에 있는 승점 1점을 얻습니다. (플레이어는 이 행동을 도시에 남은 승점 3점 각각에 대해서 할 수 있습니다.) 플레이어가 자기 주민을 비활성화시켜서 다른 행동을 할 때는 이 승점을 얻을 수 없습니다.</li>
 				</ol>
 
 			{{/5.I}}
 			{{#5.II}}
-				{{#3.I}}<p>The {{agent}} may move any number of {{fowns}} active residents from adjacent tiles onto the just explored tile without exhausting them in this way.</p>{{/3.I}}
-				{{#4.I}}<p>Depending on the terrain the {{owner}} discovers or receives the following. <span class="desert icon"></span> empty, <span class="grass icon"></span> & <span class="forest icon"></span> 1 own settlement, <span class="grain icon"></span> 1 own settlement + 1 own exhausted resident, <span class="mountain icon"></span> 1 militia. The {{owner}} that defeats this militia gets a once-only $20. <span class="city icon"></span> 1 barrack and 1 militia. The {{owner}} does not get income tokens for discovered settlements!</p>{{/4.I}}
-				{{#2.III}}{{#9.I}}<p>The {{agent}} counts that tile on the majority board.</p>{{/9.I}}{{/2.III}}
+				{{#3.I}}<p>플레이어는 방금 발견한 타일로 인접한 타일에서 활성화된 자기 주민을 원하는 만큼 이동시킬 수 있으며, 이들은 이렇게 이동해도 비활성화되지 않습니다.</p>{{/3.I}}
+				{{#4.I}}<p>플레이어는 탐사할 때마다 발견한 지형에 따라 다음을 받거나 발견합니다.<br/>
+					<span class="desert icon"></span>: 아무것도 없습니다.<br/>
+					<span class="grass icon"></span> / <span class="forest icon"></span>: 자기 정착지 1개<br/>
+					<span class="grain icon"></span>: 자기 정착지 1개와 비활성화된 자기 주민 1개,<br/>
+					<span class="mountain icon"></span>: 민병대 1개. 이 민병대를 물리친 플레이어는 일회성으로 $20을 얻습니다.<br/>
+					<span class="city icon"></span>: 막사 1개와 민병대 1개. 플레이어는 발견한 정착지로부터는 수입 토큰을 받지 않습니다.
+				</p>{{/4.I}}
+				{{#2.III}}{{#9.I}}<p>플레이어는 우위 판위의 해당 타일을 계산합니다.</p>{{/9.I}}{{/2.III}}
 			{{/5.II}}
 		{{/5}}
 		{{#6}}
@@ -1176,16 +1202,21 @@
 	{{#capture}}
 		{{^2}}
 			{{#4}}{{^4.III}}
-				<p>A fight happens, if armies of 2 different {{owners}} are on the same tile. See <b>Fight Sequence</b> and table <b>Dice Results</b>.</p>
-				{{#3}}{{^3.III}}{{^8.I}}{{^8.II}}<p>If the attacker neutralizes an opposing city, 1 existing factory there is destroyed. If the attacker later conquers the city with 1 additional resident, he gets the remaining factories there.</p>{{/8.II}}{{/8.I}}{{/3.III}}{{/3}}
-				{{#8}}{{^8.III}}<p>There are no fights in cities, so any number of {{owners}} may have their own trading houses there. If the {{agent}} conquers a land tile, he also conquers an existing plant. If the land tile is neutralized, the plant remains abandoned for now.</p>{{/8.III}}{{/8}}
+				<p>두 플레이어의 군대가 있는 타일에서 전투가 일어납니다. 위에 있는 <b>전투 진행</b>과 <b>주사위 결과</b> 표를 참조하세요.</p>
+				{{#3}}{{^3.III}}{{^8.I}}{{^8.II}}<p>공격자가 상대의 도시를 중립화하거나 점령하면, 그곳에 있던 공장 1개를 파괴합니다. 공격자가 도시를 점령하면, 그곳에 남아 있는 공장도 같이 얻습니다.</p>{{/8.II}}{{/8.I}}{{/3.III}}{{/3}}
+				{{#8}}{{^8.III}}<p>도시에서는 전투가 일어나지 않습니다. 그러므로 도시에는 몇 명의 플레이어든 자기 교역소를 갖고 있을 수 있습니다. 공격자가 육지 타일을 점령하면, 그곳에 있는 생산 설비도 같이 얻습니다. 육지 타일을 중립화하기만 했다면 생산 설비는 소유주 없이 버려진 채로 남아 있습니다.</p>{{/8.III}}{{/8}}
 			{{/4.III}}{{/4}}
-			{{#4.II}}{{#9.I}}<p>If the attacking stock company conquers an opposing capital, it also conquers all other tiles of the defender and exchanges the armies with its own. If it only neutralizes the opposing capital, the defender loses all of his tiles without the attacker conquering them. Afterwards, the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).</p>{{/9.I}}{{/4.II}}
+			{{#4.II}}{{#9.I}}<p>
+				공격 중인 주식회사가 상대의 수도를 점령하면, 주식회사는 방어자의 모든 다른 타일 역시 점령하며, 방어자의 군대도 자기 것으로 교체합니다.
+				상대의 수도를 중립화하기만 했다면 방어자가 모든 타일을 잃을 뿐, 공격자는 이들을 점령하지 않습니다.
+				그런 다음 플레이어들은 패배한 주식회사의 모든 주식을 보상 없이 잃습니다.
+				패배한 주식회사는 다음 주식 라운드(SR)에서 아무 플레이어에 의해서 새로 설립될 수 있습니다.
+			</p>{{/9.I}}{{/4.II}}
 		{{/2}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2 mod4"><h1>Phase 3 G: Fight</h1></div>
+			<div class="col-md-2 col-xs-2 mod4"><h1>3G 단계: 전투</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
@@ -1223,17 +1254,17 @@
 			<p>플레이어는 수도로부터 기본 수입 $20을 얻고, 자기 공장마다 $15씩을 얻습니다.{{^company}}<br/>플레이어들은 다음 라운드의 <b>1단계</b>에서 세금을 내기 전까지 이번 라운드에서 얻은 수입을 따로 분리해 둡니다.{{/company}}</p>
 		{{/3.II}}
 		{{#4.II}}
-			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus $5 for each additionally owned tile. The {{owners}} also receive a bonus income for different types of land tiles (non city tiles), see the example <b>Income</b>.</p>
+			<p>플레이어는 수도로부터 기본 수입 $20을 얻고, 지배하고 있는 타일마다 $5씩을 얻습니다. 그리고 자기가 지배하는 육지 지형 종류(도시는 제외)에 따라 추가 수입을 얻습니다. 위쪽에 있는 <b>수입</b> 예를 참조하세요.</p>
 			<table>
-				<tr><th># of different types of land tiles</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
-				<tr><th>bonus income</th><td>$0</td><td>$5</td><td>$10</td><td>$20</td><td>$30</td></tr>
+				<tr><th>육지 지형 종류 수(도시 제외)</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+				<tr><th>추가 수입</th><td>$0</td><td>$5</td><td>$10</td><td>$20</td><td>$30</td></tr>
 			</table>
 		{{/4.II}}
 		{{#5.II}}
-			<p>The {{owner}} gets $20 base income for {{owns}} capital, plus $5 for each tile he explored (including water) plus $5 for each settlement, which the player placed first on a tile. For a better overview, the {{agent}} places 1 income token for each explored tile and settlement in {{^company}}front of himself{{/company}}{{#company}}his company&rsquo;s holdings{{/company}}, see the example <b>Income</b>.</p>
-			{{#2}}<p>If the {{agent}} removes {{fowns}} settlement and then the tile is completely empty, the next {{owner}} placing a new first settlement on that tile also takes 1 income token.</p>{{/2}}
-			{{^2}}{{#7.I}}<p>If the {{agent}} removes {{fowns}} settlement and then the tile is completely empty, the next {{owner}} placing a new first settlement on that tile also takes 1 income token.</p>{{/7.I}}{{/2}}
-			{{#4}}<p>If a {{agent}} neutralizes a tile from another {{owner}}, the next {{owner}} placing a first settlement on that tile also takes 1 income token. If he conquers that tile he gets that income token.</p>{{/4}}
+			<p>플레이어는 수도로부터 기본 수입 $20을 얻고, 자기가 발견한 타일 1개(물 타일 포함)마다 $5를 얻고, 타일에 첫 정착지를 놓을 때마다 $5씩을 얻습니다.<br/>이를 표시하기 위해 플레이어는 타일을 발견하거나 첫 정착지를 놓을 때마다 수입 토큰을 자기 앞에 놓습니다.<br/>위에 있는 <b>수입 예</b>를 참조하세요.</p>
+			{{#2}}<p>플레이어가 자기 정착지를 제거해 그 타일에 정착지가 하나도 남지 않으면, 다른 플레이어가 그 타일에 새로운 첫 정착지를 놓고 수입 토큰을 받을 수 있습니다.</p>{{/2}}
+			{{^2}}{{#7.I}}<p>플레이어가 자기 정착지를 제거해 그 타일에 정착지가 하나도 남지 않으면, 다른 플레이어가 그 타일에 새로운 첫 정착지를 놓고 수입 토큰을 받을 수 있습니다.</p>{{/7.I}}{{/2}}
+			{{#4}}<p>다른 플레이어에 의해 중립화되면, 다른 플레이어가 그 타일에 새로운 첫 정착지를 놓고 수입 토큰을 받을 수 있습니다.<br/>정복한 경우에도 수입 토큰을 받을 수 있습니다.</p>{{/4}}
 		{{/5.II}}
 		{{#6.II}}<p>
 			플레이어는 수도로부터 기본 수입 $20을 얻고, 자기 도로망에 연결된 <span class="city icon"></span>마다 $10을 얻습니다.<br/>
@@ -1388,21 +1419,24 @@
 				<p>도시 전체에 건설된 공장이 총 20개 이상인 라운드를 마치면 게임이 끝납니다.</p>
 			{{/3.I}}
 			{{#4.I}}
-				<p>The game ends immediately after the end of the active player&rsquo;s turn, if the active player:</p>
+				<p>현재 차례인 플레이어가 아래 조건 중 하나를 달성한 차례를 마치면 게임이 끝납니다.</p>
 				<ol>
-					<li>In <b>Phase 3 C</b> buys all his residents from his storage</li>
-					<li>In <b>Phase 3 D/3 G</b> places his last settlement from his storage on the map (if the player attacks opponents on additional tiles, these fights are cancelled)</li>
-					{{^8.II}}{{^2}}<li>In <b>Phase 3 G</b> neutralizes or conquers the capital of another player. If the attacker conquers the capital, he also conquers all other tiles of the defender and exchanges the armies with his own. If the player does not have enough settlements and residents, he chooses the conquered tiles. If he neutralizes the capital, the defender loses all of his tiles without the attacker conquering them.</li>{{/2}}{{/8.II}}
-					{{^8.II}}{{#2}}<li>In <b>Phase 3 D</b> neutralizes or conquers the last capital of another player.</li>{{/2}}{{/8.II}}
+					<li><b>3C 단계</b>에서 자기 저장고에 있는 자기 주민을 모두 사거나</li>
+					<li><b>3D/3G 단계</b>에서 자기 저장고에 있는 마지막 정착지를 지도 위에 놓거나(현재 차례인 플레이어가 처리하지 않은 다른 타일에서의 공격은 취소됩니다.)</li>
+					{{^8.II}}{{^2}}<li><b>3G 단계</b>에서 다른 플레이어의 수도를 중립화하거나 점령했을 때.<br/>
+						공격자가 수도를 점령하면, 공격자는 방어자의 모든 다른 타일 역시 점령하며, 방어자의 군대도 자기 것으로 교체합니다.<br/>
+						공격자가 놓을 정착지나 주민이 모자라면, 공격자는 어떤 타일을 점령해서 자기 것으로 교체할지 선택할 수 있습니다.<br/>수도를 중립화하기만 했다면 방어자가 모든 타일을 잃을 뿐, 공격자는 이들을 점령하지 않습니다.
+					</li>{{/2}}{{/8.II}}
+					{{^8.II}}{{#2}}<li><b>3D 단계</b>에서 상대의 마지막 도시를 중립화하거나 점령했을 때도 게임이 끝납니다.</li>{{/2}}{{/8.II}}
 				</ol>
 			{{/4.I}}
 			{{#5.I}}
-				<p>The game ends at the end of the round if only 7 or fewer map tiles are still unexplored.</p>
+				<p>탐사되지 않은 지도 타일이 7개 이하만 남은 라운드를 마치면 게임이 끝납니다.</p>
 			{{/5.I}}
 			{{#6.I}}
-				{{#4}}<p>The game ends at the end of the round after the players commonly build exactly 40 roads.</p>{{/4}}
-				{{^4}}{{#9.II}}<p>The game ends at the end of the round after at least 1 stock company connects 4 cities to its roads.</p>{{/9.II}}{{/4}}
-				{{^4}}{{^9.II}}<p>Depending on the # of players, the game ends at the end of the round after at least 1 player connects 7 (2♟), 6 (3♟) or 5 (4♟) cities to his roads.</p>{{/9.II}}{{/4}}
+				{{#4}}<p>지도 전체에 건설된 도로가 총 40개 이상인 라운드를 마치면 게임이 끝납니다.</p>{{/4}}
+				{{^4}}{{#9.II}}<p>주식회사 1개 이상이 자기 도로로 도시 4개를 연결한 라운드를 마치면 게임이 끝납니다.</p>{{/9.II}}{{/4}}
+				{{^4}}{{^9.II}}<p>게임에 참가한 플레이어의 수에 따라 종료 조건이 달라집니다. 플레이어 1명 이상이 자기 도로로 도시 7개(2♟) / 6개(3♟) / 5개(4♟)를 연결한 라운드를 마치면 게임이 끝납니다.</p>{{/9.II}}{{/4}}
 			{{/6.I}}
 			{{#7.I}}
 				<p>회사들은 3번째 승점 계산 카드가 펼쳐지면 <b>최종 점수 계산</b>을 하고 게임이 끝납니다. 위를 참조하세요.</p>
