@@ -117,6 +117,10 @@
 					<h2>라운드 갱신형 차례진행</h2>
 					<p>(수입이 많은이에서 적은이 순)</p>
 				{{/order.income}}
+				{{#order.income_reverse}}
+					<h2>라운드 갱신형 차례진행</h2>
+					<p>(수입이 낮은 회사에서 높은 회사 순)</p>
+				{{/order.income_reverse}}
 				{{#order.vp}}
 					<h2>라운드 갱신형 차례 진행</h2>
 					<p>(승점이 낮은 이에서 높은 이 순)</p>
@@ -269,16 +273,17 @@
 						라운드 플레이어 순서는 1단계와 같습니다.<br/>
 						{{^9.II}}수도는 첫 라운드의 1단계에 놓습니다.{{/9.II}}{{#9.II}}수도는 주식회사가 설립될 때 놓습니다.{{/9.II}}
 						{{#order.income}}플레이어 수에 따라 일치하는 플레이어 차례 순서 카드와 각 플레이어의 주민을 지도 옆에 놓습니다.{{/order.income}}
+						{{#order.income_reverse}}플레이어 수에 따라 일치하는 플레이어 차례 순서 카드와 각 플레이어의 주민을 지도 옆에 놓습니다.{{/order.income_reverse}}
 						{{#order.vp}}
 							{{^9.II}}
-								<p>2♟, 3♟, 4♟: Depending on the # of players, take the corresponding starting and scoring cards. Place the 2 starting cards next to the map. Then shuffle the corresponding scoring cards separated by their backs of I, II, III and place them in 3 face down rows next to the starting cards.</p>
+								<p>2♟, 3♟, 4♟: 플레이어 수에 따라 해당하는 시작 카드와 점수 카드를 사용합니다. 시작 카드 2장을 지도 옆에 놓습니다. 그런 다음 해당하는 점수 카드를 뒷면에 따라 I, II, III 세 더미로 나눠서 섞고, 시작 카드 옆에서부터 뒷면으로 3열로 놓습니다.</p>
 							{{/9.II}}
 							{{#9.II}}
-								<p>Possibly, not all 5 stock companies are always active. Thus, the players take the following cards for each business round (BR):</p>
+								<p>주식회사 5개 모두가 항상 활성화되지 않을 수 있습니다. 따라서 플레이어들은 각 비즈니스 라운드(BR)에 다음과 같이 준비합니다.</p>
 								<ul>
-									<li>1. & 2. BR: Choose the starting card matching the number of active stock companies.</li>
-									<li>3. BR: Take the scoring cards with back I. Shuffle the card "1st scoring" with a # of <span class="glyphicon glyphicon-ok"></span> cards, so there is a face down card for each active stock company.</li>
-									<li>4. & 5. BR: Accordingly use the scoring cards with the back II or III.</li>
+									<li>1. & 2. BR: 활성화된 주식회사 수에 맞는 시작 카드를 선택합니다.</li>
+									<li>3. BR: 뒷면이 I인 점수 카드에서 활성화된 주식회사 수에 맞춰 '첫 번째 승점 계산'카드와 <span class="glyphicon glyphicon-ok"></span> 카드를 섞습니다. 그렇게 해서 활성화된 주식회사 수만큼 뒷면으로 놓인 카드가 존재하게 됩니다.</li>
+									<li>4. & 5. BR: 각각 뒷면이 II, III인 점수 카드를 사용해서 위의 규칙대로 합니다.</li>
 								</ul>
 							{{/9.II}}
 						{{/order.vp}}
@@ -581,26 +586,27 @@
 		{{/6}}
 		{{#7.I}}
 			<div class="note col-md-4 col-xs-8">
-				<h2>Scoring:</h2>
+				<h2>점수 계산:</h2>
+				<p>플레이어는 지형마다 우위를 달성하면 그에 따른 승점을 얻습니다.</p>
 				<table>
 					<tr><th></th><th><span class="city bigicon"></span></th><th><span class="grass bigicon"></span></th><th><span class="forest bigicon"></span></th><th><span class="grain bigicon"></span></th><th><span class="mountain bigicon"></span></th><th><span class="desert bigicon"></th></tr>
-					<tr><th>1st place</th><td>10 VP</td><td>10 VP</td><td>9 VP</td><td>8 VP</td><td>7 VP</td><td>6 VP</td></tr>
-					<tr><th>2nd place (not for 2 players)</th><td>6 VP</td><td>6 VP</td><td>5 VP</td><td>4 VP</td><td>3 VP</td><td>2 VP</td></tr>
+					<tr><th>1등</th><td>10 VP</td><td>10 VP</td><td>9 VP</td><td>8 VP</td><td>7 VP</td><td>6 VP</td></tr>
+					<tr><th>2등(2명이 할 때는 제외)</th><td>6 VP</td><td>6 VP</td><td>5 VP</td><td>4 VP</td><td>3 VP</td><td>2 VP</td></tr>
 				</table>
-				<p>In case of a tie for 1st place all concerned players each get 2 VP less (this applies for 2 players, too) and 0 VP for 2nd place. In case of a tie for 2nd place all concerned players get the stated VP.</p>
-				<p><b>Example Scoring:</b> In a game with 3 players Camille has majorities for cities, forests and a 2nd place for mountains. She gets 22 VP. Afterwards, she must remove 5 residents from the game map (1 resident for each 4 VP).</p>
+				<p>여러 플레이어가 공동 1등이면 해당하는 플레이어들은 승점을 2점씩 덜 받습니다. (2명이 게임할 때도 같은 규칙을 적용합니다.) 이러면 2등 점수는 없습니다. 여러 플레이어가 공동 2등이면 해당하는 모든 플레이어는 표시된 승점을 얻습니다.</p>
+				<p><b>점수 계산 예:</b> 3명이 게임을 할 때 채미는 도시와 숲에서 1등하고, 산에서 2등했습니다. 채미는 승점 22점(=10+9+3)을 얻고, 승점 토큰을 그만큼 가져갑니다. 그런 다음 게임 지도에서 주민 5개를 제거합니다. (승점 4점마다 주민 1개 제거) 만약 채미가 지도에서 주민과 정착지를 합쳐 4개밖에 제거할 수 없었다면, 채미는 제거하지 못한 2민 1개에 해당하는 승점 4점을 못 얻고 총 18점만 얻습니다.</p>
 			</div>
 		{{/7.I}}
 		{{#7.II}}
 			<div class="note col-md-4 col-xs-8">
-				<h2>Income:</h2>
-				<p>The player gets the # of tiles x $10 for each majority, up to the stated maximum.</p>
+				<h2>수입:</h2>
+				<p>플레이어는 우위를 달성한 지형마다 그 지형의 타일당 $10을 수입으로 얻습니다. 최대 수입은 다음과 같습니다.</p>
 				<table>
 					<tr><th><span class="city bigicon"></span></th><th><span class="grass bigicon"></span></th><th><span class="forest bigicon"></span></th><th><span class="grain bigicon"></span></th><th><span class="mountain bigicon"></span></th><th><span class="desert bigicon"></th></tr>
-					<tr><td>max. $50</td><td>max. $50</td><td>max. $45</td><td>max. $40</td><td>max. $35</td><td>max. $30</td></tr>
+					<tr><td>최대 $50</td><td>최대 $50</td><td>최대 $45</td><td>최대 $40</td><td>최대 $35</td><td>최대 $30</td></tr>
 				</table>
-				<p>In case of a tie all concerned players get the calculated income up to the stated maximum.</p>
-				<p><b>Example Income:</b> Camille has majorities for grasslands (2 tiles) and fields (5 tiles). She gets a total of $80 = $20 (base income for the capital) + $20 (for 2 grasslands) + $40 (maximum for 4 fields). The additional field only secures her majority, but does not increase her income!</p>
+				<p>우위를 달성한 플레이어가 여럿이라면 이들 모두 해당 지형의 수입을 받습니다.</p>
+				<p><b>수입 예:</b> 채미는 초원(지형 타일 2개)와 들판(지형 타일 5개)에서 우위를 달성했씁니다. 채미는 총 $80의 수입을 얻습니다. 수도로 인한 기본 수입 $20 + 초원 2개로 인한 수입 $20 + 들판 4개로 인한 수입 $40. 다섯 번째 들판 타일은 우위를 달성하는 데는 도움을 줬지만, 수입을 주지는 않습니다.</p>
 			</div>
 		{{/7.II}}
 		{{#7.III}}
@@ -616,21 +622,21 @@
 		{{/7.III}}
 		{{#8}}
 			<div class="note col-md-3 col-xs-6">
-				<h2>Plant:</h2>
-				<p>The player needs a # of active residents on the matching tile to build the plant.</p>
+				<h2>생산 설비:</h2>
+				<p>플레이어가 타일에 생산 설비를 건설하기 위해서는 그 타일에 다음과 같은 수의 활성화된 자기 주민이 필요합니다.</p>
 				<table>
 					<tr><th><span class="grass bigicon"></span> / <span class="grain bigicon"></span></th><th><span class="forest bigicon"></span> / <span class="water-adjacent bigicon"></span>*</th><th><span class="mountain bigicon"></span></th></tr>
-					<tr><th>1 resident</th><th>2 residents</th><th>3 residents</th></tr>
+					<tr><th>주민 1개</th><th>주민 2개</th><th>주민 3개</th></tr>
 				</table>
-				<p>* On a land tile next to water, the player may build 1 fish-plant.</p>
+				<p>* 플레이어는 물 타일과 인접한 육지 타일에 물고기 생산 설비 1개를 건설할 수 있습니다.</p>
 			</div>
 
 			{{^8.III}}
 				<div class="note col-md-3 col-xs-6">
-					<h2>Trading House:</h2>
-					<p>The player must pay money for his trading house, depending on the # of players/stock companies already having their trading houses in that city.</p>
+					<h2>교역소:</h2>
+					<p>플레이어가 도시에 자기 교역소를 건설할 때의 비용은 다음과 같습니다. 이 비용은 그 도시에 이미 건설된 교역소의 수에 따라 달라집니다.</p>
 					<table>
-						<tr><th>First</th><th>Second</th><th>Third</th><th>Fourth</th></tr>
+						<tr><th>첫 번째</th><th>두 번째</th><th>세 번째</th><th>네 번째</th></tr>
 						<tr><td>$0</td><td>$10</td><td>$20</td><td>$30</td></tr>
 					</table>
 				</div>
@@ -638,47 +644,60 @@
 
 			{{#8.I}}
 				<div class="note col-md-4 col-xs-6">
-					<h2>Final Scoring:</h2>
-					<p>The player gets 2 VP for each trading house (including his headquarters in the capital). Additionally the player gets VP for each set of different types of goods.</p>
+					<h2>최종 점수 계산:</h2>
+					<p>플레이어는 자기 교역소마다 승점 2점씩을 얻습니다. (수도에 있는 본부를 포함) 추가로 플레이어는 다른 종류의 상품으로 구성된 세트에서 각각 승점을 얻습니다.</p>
 					<table>
-						<tr><th># of different types of goods</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
-						<tr><th>Total VP</th><td>1 VP</td><td>3 VP</td><td>6 VP</td><td>10 VP</td><td>15 VP</td></tr>
+						<tr><th>한 세트를 이루는 상품 종 수</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+						<tr><th>총 승점</th><td>1 VP</td><td>3 VP</td><td>6 VP</td><td>10 VP</td><td>15 VP</td></tr>
 					</table>
-					<p><b>Example Final Scoring:</b> Paul owns 5 trading houses (including his headquarters) and can score up to 6 goods. He built a total of 9 plants and received 9 goods (3 wheat, 3 cattle, 2 fish, 1 wood). He misses ore for a complete set of 5 different goods, so he exchanges 1 wheat and 1 cattle for 1 ore. Afterwards, he gets 26 VP = 10 (for 5 trading houses) + 15 (set with 5 different goods) + 1 (set with 1 wheat). He scored the maximum number goods, so he does not get VP for the surplus cattle and fish.</p>
+					<p>
+						<b>최종 점수 계산 예:</b> 도일이는 교역소 5개(자기 본부 포함)를 가지고 있으므로 상품 6개까지 승점을 얻을 수 있습니다.<br/>
+						도일이는 생산 선비 9개를 건설했고 상품 9개를 얻었습니다. (곡식 3ㅐ, 가축 3개, 물고기 2개, 나무 1개)<br/>
+						5종류의 상품으로 이뤄진 세트 하나를 만들기에는 광물이 모자라므로, 곡식 1개와 가축 1개를 광물 1개로 바꿉니다.<br/>
+						그런 다음 승점 26점을 얻습니다. 교역소 5개로 인한 승점 10점 + 상품 5종류로 인한 15점 + 상품 1종류(곡식)로 인한 1점.<br/>
+						승점을 얻을 수 있는 최대 상품 수에 도달했으므로, 남은 가축과 물고기에서는 승점을 얻을 수 없습니다.
+					</p>
 				</div>
 			{{/8.I}}
 			{{#8.II}}
 				<div class="note col-md-4 col-xs-6">
-					<h2>Goods Sale:</h2>
-					<p>The player gets income for each set of different types of goods.</p>
+					<h2>수입:</h2>
+					<p>플레이어는 다른 종류의 상품으로 구성된 세트에서 수입을 얻습니다.</p>
 					<table>
-						<tr><th># of different types of goods</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
-						<tr><th>Income for each set</th><td>$10</td><td>$25</td><td>$45</td><td>$70</td><td>$100</td></tr>
+						<tr><th>한 세트를 이루는 상품 종 수</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+						<tr><th>세트 수입</th><td>$10</td><td>$25</td><td>$45</td><td>$70</td><td>$100</td></tr>
 					</table>
-					<p><b>Example Income:</b> Paul owns 5 trading houses (including his headquarters) and can sell up to 6 goods to them. He built 8 plants and now gets 8 goods (3 wheat, 2 cattle, 2 fish, 1 wood). He misses 1 ore for a complete set of 5 different goods, so he exchanges 1 wheat and 1 cattle for 1 ore. H e gets $130 = $20 (base income for his capital) + $100 (set with 5 different goods) + $10 (set with 1 good). He sold the maximum number of 6 goods to his trading houses and stores the surplus wheat face up in front of him for a later sale.</p>
+					<p>
+						<b>수입 예:</b> 도일이는 교역소 5개(자기 본부 포함)를 가지고 있으므로 상품 6개까지 팔 수 있습니다.<br/>
+						도일이는 생산 설비 8개를 건설했고 상품 8개(곡식 3개, 가축 2개, 물고기 2개, 나무 1개)를 가지고 있습니다.<br/>
+						도일이는 광물이 없어서 5종류의 상품으로 이뤄진 세트를 만들지 못했습니다.<br/>
+						그래서 곡식 1개와 가축 1개를 광물 1개로 교환했습니다.<br/>
+						그런 다음 수입으로 $130을 얻습니다. 수도로 인한 기본 수입 $20 + 각기 다른 5종으로 이뤄진 상품 세트로 인한 $100 + 물고기 하나로만 이뤄진 상품 세트로 인한 $10.<br/>
+						팔 수 있는 최대 상품 수에 도달했으므로, 남은 곡식은 앞면으로 자기 앞에 놓아 다음에 팔기 위해 남겨둡니다.
+					</p>
 				</div>
 			{{/8.II}}
 		{{/8}}
 		{{#9.I}}
 			<div class="note col-md-12 col-xs-12">
-				<p><b>Calculation of Dividends:</b> The company pays $1 dividends for each full $10 income to each share ($2 to the president&rsquo;s share)</p>
-				<p><b>Example:</b> The green company gets an income of $68. Thus, it pays $6 dividends. Camille is the only player owning 5 shares and gets $30. The company gets the remaining $38 for their company assets.</p>
+				<p><b>배당 계산:</b> 주식회사는 자기 수입 $10마다 $1씩 각 주식 증권에 배당합니다. (사장 증권에는 $2)</p>
+				<p><b>예:</b> 녹색 주식회사가 수입으로 $68을 얻었습니다. 그러므로 주식 증권 1주당 $6을 배당합니다. 이 주식회사의 증권 주식은 채미가 5주, 나머지 5주는 아직 팔리지 않고 주식회사에 남아 있습니다. 이 주식회사의 주식 증권 5주를 가진 채미는 $30을 받습니다. 녹색 주식회사는 남은 $38을 주식회사 자산으로 보관합니다.</p>
 			</div>
 		{{/9.I}}
 		{{#9.II}}
 			<div class="note col-md-12 col-xs-12">
-				<p><b>Calculation of Dividends:</b> The company pays $1 dividends for each full $20 income to each share ($2 to the president&rsquo;s share).</p>
+				<p><b>배당 계산:</b> 주식회사는 자기 수입 $20마다 $1씩 각 주식 증권에 배당합니다. (사장 증권에는 $2)</p>
 			</div>
 			<div class="note col-md-8 col-xs-8">
-				<p><b>Bonus VP at the Final Scoring:</b> The stock companies with the most victory points (VP) get additional VP.</p>
+				<p><b>최종 점수 계산 때 추가 승점:</b> 주식회사는 각자 받은 승점에 따라 추가 승점을 얻습니다.</p>
 				<table>
-					<tr><th>1st company</th><th>2nd company</th><th>3rd company</th><th>4th company</th><th>5th company</th></tr>
+					<tr><th>1등인 회사</th><th>2등인 회사</th><th>3등인 회사</th><th>4등인 회사</th><th>5등인 회사</th></tr>
 					<tr><td>5 VP</td><td>3 VP</td><td>2 VP</td><td>1 VP</td><td>0 VP</td></tr>
 				</table>
 			</div>
 			<div class="note col-md-4 col-xs-4">
-				<p>In case of a tie add the VP of the respective places for the concerned companies and divide them (round up).</p>
-				<p><b>Example:</b> If 2 companies share the 2nd place, each company gets additional 3 VP = (3 + 2) / 2.</p>
+				<p>승점이 동점인 주식회사가 여럿이라면 이 주식회사들은 해당하는 각 등수의 승점을 합한 뒤 나눠 갖습니다. (소수점 이하 반올림)</p>
+				<p><b>예:</b> 두 주식회사가 2등이라면, 두 주식회사는 승점 3점씩을 받습니다. (=(3+2)/2)</p>
 			</div>
 			
 			{{#2.I}}
@@ -731,17 +750,17 @@
 		{{/9.II}}
 		{{#9.III}}
 			<div class="note col-md-8 col-xs-8">
-				<p><b>Bonus VP at the Final Scoring:</b> The player&rsquo;s stock companies with the most victory points (VP) get additional VP.</p>
+				<p><b>최종 점수 계산 때 추가 승점:</b> 플레이어의 주식회사는 각자 받은 승점에 따라 추가 승점을 얻습니다.</p>
 				<table>
-					<tr><th></th><th>1st company</th><th>2nd company</th><th>3rd company</th><th>4th company</th></tr>
+					<tr><th></th><th>1등인 회사</th><th>2등인 회사</th><th>3등인 회사</th><th>4등인 회사</th></tr>
 					<tr><th>2 ♟</th><td>3 VP</td><td>0 VP</td><td></td><td></td></tr>
 					<tr><th>3 ♟</th><td>3 VP</td><td>1 VP</td><td>0 VP</td><td></td></tr>
 					<tr><th>4 ♟</th><td>4 VP</td><td>2 VP</td><td>1 VP</td><td>0 VP</td></tr>
 				</table>
 			</div>
 			<div class="note col-md-3 col-xs-4">
-				<p>In the case of a tie add the VP of the respective places for the concerned companies and divide them (round up).</p>
-				<p><b>Example:</b> In a game with 4 players, if 2 companies share the 2nd place, each company gets additional 2 VP = (2 + 1) / 2.</p>
+				<p>승점이 동점이 주식회사가 여럿이라면 이 주식회사들은 해당 등수의 승점을 합한 뒤 나눠 갖습니다. (소수점 이하 반올림)</p>
+				<p><b>예:</b> 4명이 게임을 하고 있을 때, 두 주식회사가 2등이라면, 두 주식회사는 승점 2점씩을 받습니다. (=(2+1)/2)</p>
 			</div>
 		{{/9.III}}
 	</div>
@@ -822,8 +841,10 @@
 		{{/7.I}}
 		{{#9.III}}{{^3}}{{^7.I}}
 			<p>
-				At the start of the game the turn order is randomly determined. {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}All capitals are placed in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}Players choose capitals in reverse turn order.{{/mapnum.5}}{{/mapnum.4}} 
-				Starting with the 2nd round determine the player order according to the income of the former round, from low to high. In case of a tie simply reverse the player order of the concerned players.
+				게임이 시작될 때 차례 순서는 무작위로 결정됩니다.<br/>
+				{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}모든 수도는 중심 도시에 놓습니다.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}플레이어는 차례 역순으로 수도를 선택합니다.{{/mapnum.5}}{{/mapnum.4}}<br/>
+				두 번째 라운드가 시작될 때 이전 라운드의 소득에 따라 낮은 순서에서 높은 순서로 차례 순서를 결정합니다.<br/>
+				수입이 같으면 해당하는 주식회사들은 이전 라운드에서의 차례 순서 역순입니다.
 			</p>
 		{{/7.I}}{{/3}}{{/9.III}}
 		{{#company}}{{^3.I}}{{^7.I}}
@@ -885,10 +906,19 @@
 
 	{{#9.III}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2 mod9"><h1>Phase 3 B: Stock Dealing</h1></div>
+			<div class="col-md-2 col-xs-2 mod9"><h1>3B 단계: 주식 거래</h1></div>
 			<div class="col-md-10 col-xs-10">
-				<p>The player may buy any number of shares of the other players from the bank for the actual share value, if these were already sold in a former round to the bank (if their dark side is face up). The player cannot sell these shares again!</p>
-				<p>Additionally, the player may sell exactly 1 of his shares to the bank during his turn. He places the share for now with the light side face up into the bank and gets money according to the actual share value (this money is not considered as income!). Then, the share value drops by $10. The player cannot sell his president&rsquo;s share! The player may conduct this <b>sale during his complete turn</b> to get missing money for one of his actions!</p>
+				<p>
+					이전 라운드에 은행에 팔린 다른 플레이어의 주식 증권(어두운 면으로 놓인)이 있다면, 은행에서 그 주식 증권을 주가 판에 표시된 현재 주가에 원하는 수만큼 살 수 있습니다.<br/>
+					이렇게 산 주식 증권은 결코 은행에 다시 팔 수 없습니다.
+				</p>
+				<p>
+					그리고, 플레이어는 자기 차례에 자기 주식회사의 주식 증권 1주를 팔 수 있습니다.<br/>
+					이 플레이어는 은행에 이 주식 증권을 밝은 면으로 놓고, 주가 판에 표시된 현재 주가에 따라 돈을 받습니다. (이는 수입으로 간주하지 않습니다.)<br/>
+					그런 다음, 그 주식회사의 주가가 $10 내려갑니다.<br/>
+					플레이어는 자기 사장 증권을 팔 수 없습니다.<br/>
+					플레이어는 자기 차례에 행동에 쓸 돈이 모자라면, <b>차례 중 아무때나 자기 주식회사의 주식 증권을 팔 수 있습니다.</b>
+				</p>
 			</div>
 		</div>
 	{{/9.III}}
@@ -1006,7 +1036,7 @@
 					{{#6.II}}Note: 탐사를 추적하기 위해 정착지 같은 다른 토큰을 사용하세요. 도로 네트워크의 수에 추가하지 마세요.{{/6.II}}
 					{{#7.II}}Note: 탐사를 추적하기 위해 도로 같은 다른 토큰을 사용하세요. 우위의 수에 추가하지 마세요.{{/7.II}}
 				</p>{{/2.III}}
-				<p>플레이어는 탐사할 때마다 그 즉시 승점 1점을 얻고 승점 토큰을 가져갑니다. (어떤 타일을 발견했는지는 상관없습니다.) 그런 다음, 발견된 육지 타엘에 승점 1점짜리 토큰 2개를 놓고, 발견된 도시 타일에 승점 1점짜리 토큰 4개를 놓습니다.</p>
+				<p>플레이어는 탐사할 때마다 그 즉시 승점 1점을 얻고 승점 토큰을 가져갑니다. (어떤 타일을 발견했는지는 상관없습니다.) 그런 다음, 발견된 육지 타일에 승점 1점짜리 토큰 2개를 놓고, 발견된 도시 타일에 승점 1점짜리 토큰 4개를 놓습니다.</p>
 				<p>게임 중에 플레이어는 다음과 같은 방법으로 타일에 놓인 승점 토큰을 얻을 수 있습니다.</p>
 				<ol>
 					<li>플레이어가 타일에 첫 정착지를 놓을 때 그 타일에 있는 승점 1점을 얻습니다.</li>
@@ -1316,7 +1346,12 @@
 			{{/8.I}}
 			<p>Place the income of the stock company separate from the company assets to the side for now.</p>
 		{{/9.II}}
-		{{#9.III}}<p>The players place their income for now separately from their cash. After all players got their income, the players with the highest income raise their share values by $20. All other players raise their share values by $10. Finally flip all shares sold to the bank during this round, so their dark sides are face up again.</p>{{/9.III}}
+		{{#9.III}}<p>
+			플레이어는 자기가 얻은 수입을 자기 돈과 구별해서 따로 놓습니다.<br/>
+			모든 플레이어가 자기 수입을 받은 다음, 가장 많은 수입을 얻은 플레이어는 자기 주식회사의 주가를 $20 올립니다.<br/>
+			다른 플레이어는 자기 주식회사의 주가를 $10씩 올립니다.<br/>
+			마지막으로 이번 라운드 중에 은행에 팔린 주식 증권을 어두운 면으로 뒤집습니다.
+		</p>{{/9.III}}
 
 		{{^company}}{{#3.I}}
 			<p>플레이어는 다음 라운드의 <b>1 단계</b>에서 세금을 내기 전까지 이번 라운드에 얻은 수입을 따로 분리해 둡니다.</p>
@@ -1945,7 +1980,7 @@
 				'residents': false,
 				'map': {'priority': 1, 'func': explorer_map},
 				'order': {'priority': 4, 'clockwise': true},
-				'money': {'priority': 4, 'increasing': true},
+				'money': {'priority': 3, 'increasing': true},
 				'parts': {'24': 6, '21': 1},
 			},
 		},
@@ -2045,7 +2080,7 @@
 			'III': {
 				'residents': false,
 				'map': {'priority': 9, 'value': 0},
-				'order': {'priority': 3, 'income': true},
+				'order': {'priority': 3, 'income_reverse': true},
 				'money': {'priority': 9},
 				'parts': {'15s': 1, '31': 5, '32': 45, '20': 3},
 			},
