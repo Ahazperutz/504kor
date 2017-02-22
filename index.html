@@ -259,7 +259,10 @@
 				{{#4}}<p>40개의 중립 도로를 지도 옆에 도로 공급처를 놓고 공동으로 사용합니다.<br/>도로를 그 이상 지으려면, 다른 알맞은 대체품을 가져와서 도로처럼 사용합니다.</p>{{/4}}
 			{{/6}}
 			{{#company}}
-				<p>Lay out the {{#9.II}}{{#7.I}}scoring{{/7.I}}{{^7.I}}company order{{/7.I}}{{/9.II}}{{^9.II}}player order{{/9.II}} cards for 5 companies for the business rounds (BR) and place 1 resident of each company next to these cards. 1 player gets the starting player card for the 1st share round (SR).</p>
+				<p>
+					주식회사 5개가 비즈니스 라운드(BR) 동안에 사용할 {{#9.II}}{{#7.I}}점수{{/7.I}}{{^7.I}}회사 차례 순서{{/7.I}}{{/9.II}}{{^9.II}}차례 순서{{/9.II}} 카드를 놓고, 주식회사별로 주민 1개씩을 그 카드 옆에 놓습니다.<br/>
+					한 플레이어가 주식 라운드(SR)동안 사용할 시작 플레이어 카드를 갖습니다.
+				</p>
 			{{/company}}
 			<p>
 				{{#order.clockwise}}
@@ -268,7 +271,7 @@
 					{{^mapnum.4}}{{^mapnum.5}}마지막 플레이어부터 차례 순서 역순으로 수도를 선택합니다.{{/mapnum.5}}{{/mapnum.4}}
 				{{/order.clockwise}}
 				{{^order.clockwise}}
-					{{#order.shares}}Players choose a start player for the first SR. Capitals are placed when companies are established.{{/order.shares}}
+					{{#order.shares}}플레이어들은 첫 주식 라운드(SR)의 시작 플레이어를 정합니다.<br/>회사가 설립될 때 수도를 놓습니다.{{/order.shares}}
 					{{^order.shares}}
 						라운드 플레이어 순서는 1단계와 같습니다.<br/>
 						{{^9.II}}수도는 첫 라운드의 1단계에 놓습니다.{{/9.II}}{{#9.II}}수도는 주식회사가 설립될 때 놓습니다.{{/9.II}}
@@ -399,8 +402,8 @@
 <script id="template_examples" type="x-tmpl-mustache">
 	{{#capture}}
 		{{#4}}{{#5}}<p>게임 중에 발견된 모든 자유 도시에 막사 1개씩을 놓습니다.</p>{{/5}}{{/4}}
-		{{#9.I}}<p>Play the game in the following order of turns: SR, BR, BR, SR, BR, SR, BR, SR, BR, game end.</p>{{/9.I}}
-		{{#9.II}}<p>Play the game in <b>alternating</b> turns: SR, BR, SR, BR, SR, BR, etc.</p>{{/9.II}}
+		{{#9.I}}<p>게임은 다음과 같이 라운드를 진행합니다. SR - BR - BR - SR - BR - SR - BR - SR - BR - 게임 종료</p>{{/9.I}}
+		{{#9.II}}<p>게임은 다음과 같이 SR과 BR을 <b>번갈아가며</b> 진행합니다. SR - BR - SR - BR - SR - BR - ...</p>{{/9.II}}
 	{{/capture}}
 	{{#hascapture}}
 	<div class="row section">
@@ -662,7 +665,7 @@
 			{{#8.II}}
 				<div class="note col-md-4 col-xs-6">
 					<h2>수입:</h2>
-					<p>플레이어는 다른 종류의 상품으로 구성된 세트에서 수입을 얻습니다.</p>
+					<p>플레이어는 다른 종류의 상품으로 구성된 세트에서 각각 수입을 얻습니다.</p>
 					<table>
 						<tr><th>한 세트를 이루는 상품 종 수</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
 						<tr><th>세트 수입</th><td>$10</td><td>$25</td><td>$45</td><td>$70</td><td>$100</td></tr>
@@ -727,23 +730,23 @@
 			{{/6.I}}
 			{{#7.I}}
 				<div class="note col-md-4 col-xs-8">
-					<h2>Income:</h2>
-					<p>The company gets the # of tiles x $10 for each majority, up to the stated maximum.</p>
+					<h2>수입:</h2>
+					<p>플레이어는 우위를 달성한 지형마다 그 지형의 타일당 $10을 수입으로 얻습니다. 최대 수입은 다음과 같습니다.</p>
 					<table>
 						<tr><th><span class="city bigicon"></span></th><th><span class="grass bigicon"></span></th><th><span class="forest bigicon"></span></th><th><span class="grain bigicon"></span></th><th><span class="mountain bigicon"></span></th><th><span class="desert bigicon"></th></tr>
-						<tr><td>max. $50</td><td>max. $50</td><td>max. $45</td><td>max. $40</td><td>max. $35</td><td>max. $30</td></tr>
+						<tr><td>최대 $50</td><td>최대 $50</td><td>최대 $45</td><td>최대 $40</td><td>최대 $35</td><td>최대 $30</td></tr>
 					</table>
-					<p>In case of a tie all concerned companies get the calculated income up to the stated maximum.</p>
-					<p><b>Example Income:</b> The green company has majorities for grasslands (2 tiles) and fields (% tiles). The company gets a total of $80 = $20 (base income for the capital) + $20 (for 2 grasslands) + $40 (maximum for 4 fields). The additional field only secures the majority, but does not increase the company&rsquo;s income!</p>
+					<p>우위를 달성한 플레이어가 여럿이라면 이들 모두 해당 지형의 수입을 받습니다.</p>
+					<p><b>수입 예:</b> 채미는 초원(지형 타일 2개)와 들판(지형 타일 5개)에서 우위를 달성했씁니다. 채미는 총 $80의 수입을 얻습니다. 수도로 인한 기본 수입 $20 + 초원 2개로 인한 수입 $20 + 들판 4개로 인한 수입 $40. 다섯 번째 들판 타일은 우위를 달성하는 데는 도움을 줬지만, 수입을 주지는 않습니다.</p>
 				</div>
 			{{/7.I}}
 			{{#8.I}}
 				<div class="note col-md-4 col-xs-6">
-					<h2>Goods Sale:</h2>
-					<p>The company gets income for each set of different types of goods.</p>
+					<h2>수입:</h2>
+					<p>회사는 다른 종류의 상품으로 구성된 세트에서 각각 수입을 얻습니다.</p>
 					<table>
-						<tr><th># of different types of goods</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
-						<tr><th>Income for each set</th><td>$10</td><td>$25</td><td>$45</td><td>$70</td><td>$100</td></tr>
+						<tr><th>한 세트를 이루는 상품 종 수</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+						<tr><th>세트 수입</th><td>$10</td><td>$25</td><td>$45</td><td>$70</td><td>$100</td></tr>
 					</table>
 				</div>
 			{{/8.I}}
@@ -768,42 +771,64 @@
 <script id="template_phase12" type="x-tmpl-mustache">
 	{{#company}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2 mod9"><h1>Share Round</h1></div>
+			<div class="col-md-2 col-xs-2 mod9"><h1>주식 라운드</h1></div>
 			<div class="col-md-10 col-xs-10">
-				<p>During the SR, the players can choose the following actions: <b>deal shares, pass or quit</b>.</p>
-				<p><b>Dealing Shares:</b> When you take this action you buy 1 share and/or sell any number of shares. During the same SR a player can either buy or sell stocks from a given company; he cannot do both.</p>
+				<p>주식 라운드(SR)에서 플레이어는 다음 행동 중 하나를 선택할 수 있습니다. <b>주식 증권 0~1주 사고 주식 증권 원하는 만큼 팔기, 패스, 퇴장</b></p>
 				<p>
-					<b>Buying Shares:</b> The player pays the share value to the bank. {{#9.I}}If the company owns any shares, the player takes a share from the company and the company gets the fixed issue price (starting price) from the bank. Otherwise, t{{/9.I}}{{^9.I}}T{{/9.I}}he player takes a share from the bank. 
-					The player should place the share light side up in front of himself, to indicate that he cannot sell shares of that company this SR. Each player may only own a maximum of 50% of the shares of a single stock company. 
+					<b>주식 증권 거래하기:</b> 한 SR 중에, 플레이어는 모든 종류의 주식 증권을 거래할 수 있지만, 같은 종류의 주식 증권은 사거나 파는 것 중 하나만 할 수 있습니다.<br/>
+					<ul>
+					<li>
+						<b>주식 증권 사기:</b> 플레이어는 주식 증권을 산 돈을 은행에 냅니다.<br/>
+						{{#9.I}}주식회사가 주식을 보유하고 있으면, 주식회사의 주식을 받고, 그 주식회사는 은행에서 발행가만큼 돈을 받습니다.<br/>아니면, {{/9.I}}
+						은행의 주식을 받습니다.<br/>
+						플레이어는 이번 SR 중에 산 모든 주식 증권은 자기 앞에 밝은 면으로 놓아서, 이번 SR에 해당 회사의 주식을 팔 수 없음을 표시합니다.<br/>
+					</li>
+					<li>
+						<b>주식회사 설립하기:</b> 플레이어가 한 주식회사의 첫 번째 주식 증권을 살 때, 반드시 '2'짜리 사장 증권을 발행가의 두 배를 내고 사야 합니다.<br/>
+						이 플레이어가 그 주식회사의 사장이 됩니다.<br/>
+						주가 판에서 그 주식회사의 발행가에 해당하는 칸에 주가 토큰을 놓음으로써 주식회사가 설립됐음을 표시합니다. (그 칸에 다른 주식회사의 주카 토큰이 있다면, 그 위에 놓습니다.)<br/>
+						{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}첫 번째 SR동안 모든 수도는 중심 도시에 놓습니다.<br/>{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}
+						{{^mapnum.4}}{{^mapnum.5}}사장이 주식회사의 수도를 선택합니다.<br/>{{/mapnum.5}}{{/mapnum.4}}
+						비즈니스 라운드(BR)가 되면, 이 플레이어가 해당 주식회사를 위한 행동을 수행합니다.
+					{{#4}}{{^8.I}}{{^8.II}}
+					<li>
+						<b>"신입 보호" 예외 규칙:</b> 새로 설립된 주식회사는 자신의 첫 번째 BR을 진행하기 전까지는 다른 주식회사로부터 공격받지 않습니다.
+						An opposing stock company may only be attacked after it finishes its first BR. In other words, it is safe after establishing, as long as it only has a marked capital.
+					</li>
+					{{/8.II}}{{/8.I}}{{/4}}
+					</li>
+					<li>
+						<b>이후 주식 라운드에서 주식회사 설립:</b> 이후 라운드에 주식회사가 설립되면 {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}다른 주식회사가 정착지를 1개 이상 놓은 아무 도시를 {{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}다른 주식회사의 수도로 정하지 않은 아무 도시를 {{/mapnum.5}}{{/mapnum.4}}수도로 선택해서 놓을 수 있습니다.
+						{{#4}}{{^8.I}}{{^8.II}}<br/>만약 나중에 설립된 주식회사의 사장이 자신의 수도로서 다른 주식회사의 군대가 포함된 도시를 선택하면, 이들 군대는 모두 파괴되어 지도에서 제거됩니다.{{/8.II}}{{/8.I}}{{/4}}
+					</li>
+					<li>
+						<b>사장 교체:</b> 플레이어는 회사의 주식을 가장 많이 보유하고 있는 한 사장으로 남아있습니다. (동률 포함)<br/>
+						사장이 다른 플레이어보다 더 적은 주식을 보유하고 있다면, 해당 회사의 가장 많은 주식을 보유한 플레이어가 새 회장이되고, 사장의 "2"주식을 "1"주식 중 2 개와 교환해야 합니다.<br/>
+						가장 많이 가지고 있는 플레이어가 여럿이라면, 전임 사장과 시계 방향으로 가장 가까이에 앉은 플레이어가 새로운 사장이 됩니다.
+					</li>
+					<li>
+						<b>주식 증권 원하는 만큼 팔기:</b> 플레이어는 현재 주가로 주식을 팝니다. 플레이어가 주식 증권을 얼마나 많이 팔았는가와 상관 없이, 주식 증권이 팔린 주식회사의 주가는 $10 떨어집니다.<br/>
+						사장은 사장 증권을 팔 수 없습니다. 새로 사장이 되는 플레이어와 교환할 수 있습니다.<br/>
+						{{#9.I}}플레이어들 모두 합쳐 한 주식회사의 주식 증권은 최대 50%까지만 은행에 팔 수 있습니다.<br/>{{/9.I}}
+						{{#9.II}}플레이어들은 모두 1주짜리 주식 증권을 은행에 팔 수 있습니다. (사장 증권은 플레이어 누군가에게 남아 있어야 합니다.)<br/>{{/9.II}}
+						이번 SR 중에 어떤 회사의 주식 증권을 처음으로 팔았다면, 그 주식회사의 주민 1개를 자기 앞에 놓아서, 이번 SR에 해당 주식을 살 수 없음을 표시합니다.
+					</li>
+					</ul>
 				</p>
 				<p>
-					<b>Establishing a stock company:</b> If the player buys the first share of a stock company, he must buy the "2"-president&rsquo;s share for twice the fixed issue price and become the president of that stock company.
-					The president marks the issue price of that stock company on the share value board (if necessary he places the share value token on top of other tokens). {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}During the first SR all capitals are placed in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}The president then chooses his company&rsquo;s capital.{{/mapnum.5}}{{/mapnum.4}} In the business round (BR) he will make all of its actions.
-				</p>
-				{{#4}}{{^8.I}}{{^8.II}}<p><b>"Puppy Licence" provision:</b> An opposing stock company may only be attacked after it finishes its first BR. In other words, it is safe after establishing, as long as it only has a marked capital.</p>{{/8.II}}{{/8.I}}{{/4}} 
-				<p>
-					<b>Establishing in later SR:</b> If Stock Companies are established in later rounds they may place their capital {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}on any city, which already has 1 settlement of at least one other company{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}in any city, which is not already marked as a capital of another company{{/mapnum.5}}{{/mapnum.4}}. 
-					{{#4}}{{^8.I}}{{^8.II}}If the president chooses a city containing armies of another stock company as the capital, he destroys all these opposing armies and removes them from the map!{{/8.II}}{{/8.I}}{{/4}}
+					<b>패스:</b> 누구도 퇴장을 선언하지 않았다면, 플레이어는 한 SR 중에 자기 차례가 올 때마다 계속해서 패스를 선언할 수 있으며, 다시 주식 증권 거래를 할 수도 있습니다.<br/>
+					모든 플레이어가 연속적으로 패스하면, SR이 종료되고, 첫 패스한 플레이어가 시작 플레이어가 카드를 갖습니다.
 				</p>
 				<p>
-					<b>Being President:</b> A player remains as president of a company as long as they have the most shares of a company (equal most counts). If the president ever has fewer shares in their company than another player, 
-					the player with the most shares in that company becomes the new president, he must exchange 2 of his "1" shares for the president&rsquo;s "2" share. If there is a tie, it is broken in favour of the next player clockwise from the previous president.
+					<b>퇴장:</b> SR에서 퇴장을 선택한 첫 플레이어는, 시작 플레이어 카드를 가져와 X자가 쳐진 뒷면이 보이도록 자기 앞에 놓습니다.<br/>
+					이 플레이어가 다음 SR에서 시작 플레이어가 됩니다.<br/>
+					누군가가 퇴장을 선택한 다음부터 다른 플레이어들은 주식 증권 거래와 퇴장 중 하나만 선택할 수 있습니다.<br/>
+					SR은 모든 플레이어가 퇴장을 선택하거나, 모든 플레이어가 연속해서 패스를 선언하면 끝이 납니다.)
 				</p>
 				<p>
-					<b>Selling Shares:</b> The sale price always matches the actual share value. Independent of the number of sold shares, the share value of the concerned stock companies drops by $10. 
-					The president cannot sell the President&rsquo;s "2" share, however they can exchange their "2" share for two "1" shares with the next player who could become president during their sell shares action. 
-					{{#9.I}}The players together may only sell 50% of the shares of a single stock company to the bank. {{/9.I}}
-					{{#9.II}}The players may sell all "1"-shares to the bank (only the president&rsquo;s share must remain in the ownership of a player). {{/9.II}}
-					The first time a player sells shares of a company during the SR, he places 1 resident from that company&rsquo;s stocks in front of himself, to indicate that he cannot buy shares of that company this SR.
-				</p>
-				<p><b>Pass:</b> As long as nobody quits, a player may repeatedly pass and during the same SR may later deal shares, when it is his turn in the clockwise order. If all players pass consecutively the SR ends and the first passing player gets the starting player card.</p>
-				<p>
-					<b>Quit:</b> If the player quits first in the SR, he takes the starting player card and places it with the crossed out side face up in front of himself. He will be the new starting player 
-					in the next SR. After the first player quits, the other players now either must deal shares or quit, too. The SR ends, after all players quit (or if all players pass consecutively).
-				</p>
-				<p>
-					<b>End of the SR:</b> The companies whose shares are now 100% owned by players raise their stock price by $10{{#9.II}}, <b>AND</b> the companies whose shares were bought most during this SR also raise their stock price by $10 (stocks can raise from both in one SR){{/9.II}}.
-					Players flip all bought shares back to their dark sides and return residents back to the companies&rsquo; storages.
+					<b>주식 라운드(SR) 종료:</b> 주식 증권의 100%를 플레이어들이 가지고 있는 주식회사의 주가가 $10 오릅니다.<br/>
+					{{#9.II}}<b>그리고</b> 주식 증권의 이번 SR 중에 플레이어들이 가장 많은 주식 증권을 산 주식회사의 주가가 $10 오릅니다. (한 SR에 주가가 2번 오를 수 있습니다.)<br/>{{/9.II}}
+					플레이어들이 산 주식 증권을 어두운 면으로 뒤집고, 주식 라운드에 표시용으로 사용한 모든 주민을 해당 주식회사의 저장고로 되돌려 놓습니다.
 				</p>
 			</div>
 		</div>
@@ -814,7 +839,7 @@
 			<p>
 				게임이 시작될 때 모든 플레이어는 자기 시작 자금을 사용해 비밀 입찰을 진행합니다. ($0을 입찰할 수도 있습니다.)<br/>
 				가장 큰 값을 입찰한 플레이어부터 시작해 모든 플레이어의 차례 순서를 정합니다.<br/>
-				{{^9.II}}{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}모든 수도는 중심 도시에 놓입니다.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}그리고 수도를 지도에 놓습니다.{{/mapnum.5}}{{/mapnum.4}}{{/9.II}}
+				{{^9.II}}{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}모든 수도는 중심 도시에 놓습니다.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}그리고 수도를 지도에 놓습니다.{{/mapnum.5}}{{/mapnum.4}}{{/9.II}}
 				{{#9.II}}첫 주식 라운드(SR)의 순서도 같습니다.{{/9.II}}<br/>
 				같은 값을 입찰하면 이 플레이어들끼리 무작위로 뽑기를 통해 차례를 정합니다. (무작위 뽑기를 할 때마다, 뽑히지 않은 플레이어는 $2을 받습니다.)<br/>
 			</p>
@@ -830,14 +855,34 @@
 		{{/7.I}}{{/9.I}}{{/3.III}}{{/3}}
 		{{#7.I}}
 			{{^9.II}}
-				<p>At the start of the game the player order is randomly determined and 1 resident of each player is placed on the spaces of the 1st starting card. {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}All capitals are placed in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}Players choose capitals in reverse turn order.{{/mapnum.5}}{{/mapnum.4}}</p>
+				<p>
+					게임이 시작될 때 플레이어 차례 순서는 무작위로 정해집니다.<br/>
+					각 플레이어의 주민 1개씩을 차례 순서에 따라 첫 번째 시작 카드 위에 놓습니다.<br/>
+					{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}모든 수도는 중심 도시에 놓습니다.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}플레이어는 차례 역순으로 수도를 선택합니다.{{/mapnum.5}}{{/mapnum.4}}
+				</p>
 			{{/9.II}}
 			{{#9.II}}
-				<p>The stock company order for the 1st business round (BR) is determined in <b>reverse</b> order of establishment. If stock companies are only established in later share rounds (SR), just for once they are first in stock company order in the next BR, if necessary in reverse order of establishment!</p>
+				<p>
+					첫 번째 비즈니스 라운드(BR)에서의 주식회사들의 차례 순서는 설립된 순서의 <b>역순</b>입니다.<br/>
+					지난 주식 라운드(SR) 중에 설립된 주식회사가 있다면, 이 주식회사는 설립된 직후의 BR에서 첫 번째로 차례를 진행합니다.<br/>
+					지난 SR에서 설립된 주식회사가 여럿이라면 그중 설립된 순서 역순으로 합니다.
+				</p>
 			{{/9.II}}
-			<p>After all {{owners}} have taken one complete turn, the {{owner}} order is readjusted. For the 2nd turn set the new {{owner}} order by placing the residents on the spaces of the 2nd starting card and starting with the 3rd round separately on the face down scoring cards.</p>
-			<p>As long as the {{owners}} do not have victory points (VP), simply reverse the {{owner}} order of the former turn. As soon as the {{owners}} have VP, the new {{owner}} order is determined according to VP from few to most. The {{owner}} with the fewest VP is new starting {{owner}}, the {{owner}} with most VP is last. In case of a tie reverse the {{owner}} order of all concerned {{owners}} of the former turn.</p>
-			{{#3.II}}<p>Starting with the 2nd round the income is taxed according to the money, but the player order according to VP. In case of a tie for highest income, the player must pay 20%, whose turn is now earlier in player order. In case of a tie for lowest income, the player pays no taxes, whose turn is now later in the player order.</p>{{/3.II}}
+			<p>
+				모든 플레이어가 첫 번째 라운드의 자기 차례를 마친 다음, 플레이어 차례 순서가 조정됩니다.<br/>
+				두 번째 라운드에서 새로운 플레이어 차례 순서에 따라 두 번째 시작 카드에 주민을 놓고, 세 번째 라운드부터 새로운 플레이어 차례 순서에 따라 뒷면으로 놓인 점수 카드 각각에 차례 순서대로 주민 1개씩을 놓습니다.
+			</p>
+			<p>
+				플레이어가 승점을 얻지 못한 상태일 때, 플레이어 차례 순서는 이전 라운드에서의 차례 순서 역순입니다.<br/>
+				플레이어가 승점을 얻으면, 새로운 플레이어 차례 순서는 승점이 낮은 플레이어부터 높은 플레이어 순입니다.<br/>
+				승점이 낮은 플레이어가 다음 라운드의 시작 플레이어가 되며, 승점이 가장 높은 플레이어가 다음 라운드의 마지막 플레이어가 됩니다.<br/>
+				동점이면, 해당하는 플레이어들의 차례 순서는 이전 라운드의 차례 순서 역순입니다.
+			</p>
+			{{#3.II}}<p>
+				두 번째 라운드가 시작되면 수입이 가장 많은 플레이어부터 적은 플레이어 순서로 세금을 내며, 플레이어 차례 순서는 승점을 따릅니다.<br/>
+				수입이 가장 많은 플레이어가 여럿이라면, 그중 플레이어 차례 순서가 먼저인 플레이어가 기준액의 20%를 세금으로 냅니다.<br/>
+				수입이 가장 적은 플레이어가 여럿이라면, 차례 중 나중인 플레이어가 세금을 내지 않습니다.
+			</p>{{/3.II}}
 		{{/7.I}}
 		{{#9.III}}{{^3}}{{^7.I}}
 			<p>
@@ -848,10 +893,19 @@
 			</p>
 		{{/7.I}}{{/3}}{{/9.III}}
 		{{#company}}{{^3.I}}{{^7.I}}
-			<p>The order of the stock companies matches the actual share values from high to low. In case of a tie the order of the concerned companies matches the stack of share value markers from top to bottom.</p>
+			<p>
+				주식회사의 차례 순서는 현재 주가가 높은 주식회사부터 낮은 주식회사 순입니다.<br/>
+				주가가 같은 주식회사 중에는 주가 판에 놓인 마커 중 위에 있는 주식회사부터 밑에 있는 주식회사 순입니다.
+			</p>
 			{{#3.II}}
-				<p>Starting with the 2nd round the income is taxed according to the companies with most to least income: The company with the highest income from the previous round pays 20% tax, the company with the with the lowest pays 0%, and all other companies pay 10% of their last income, see above for <b>Calculation of taxes.</b> In the case of a tie, the company earlier in the turn order pays the higher tax rate. The company turn order continues to be determined according to the actual share value.</p>
-				<p>The stock companies pay taxes from their company assets. If they do not have enough money or are dead broke, they pay their remaining money. The presidents do not pay remaining taxes!</p>
+				<p>
+					두 번째 라운드부터는 이전 라운드 수입에 대한 세금을 냅니다.<br/>
+					수입이 가장 많은 회사는 20%를 내고, 수입이 가장 적은 회사는 0%, 다른 모든 회사는 10%를 냅니다.<br/>
+					위쪽에 있는 <b>세금 계산</b>을 참조하세요.<br/>
+					수입이 같은 경우에는 차례순서가 더 빠른 회사가 높은 세금을 냅니다.<br/>
+					주식회사의 차례 순서는 현재 주가에 따라서 결정됩니다.
+				</p>
+				<p>주식회사는 자신의 자산에서 세금을 냅니다.<br/>충분한 자산이 없거나 완전히 파산했다면, 남은 돈으로만 세금을 내고 끝냅니다.</p>
 			{{/3.II}}			
 		{{/7.I}}{{/3.I}}{{/company}}
 	{{/capture}}
@@ -939,8 +993,10 @@
 			<p>플레이어들은 차례마다 한 번씩, 더 큰 적재함과 더 많은 이동력 중 하나를 업그레이드 할 수 있습니다.<br/>위쪽에 있는 <strong>업그레이드 비용</strong> 표를 참조하세요.</p>
 		{{/1}}
 		{{#8.III}}
-			<p>Starting with the 2nd round the {{agent}} may buy only at max 2 more residents than the # of plants {{^company}}he{{/company}}{{#company}}the company{{/company}} owns in each turn.</p>
-			<p><b>Example:</b> If the {{owner}} owns 4 plants, {{sagent}} may only buy up to 6 residents.</p>
+			<p>
+				두 번째 라운드부터 플레이어는 주민을 살 때 {{^company}}자기가{{/company}}{{#company}}회사가{{/company}} 가지고 있는 생산 설비 수보다 2개 더 많은 주민까지만 살 수 있습니다. (첫 번째 라운드에는 원하는 만큼 살 수 있습니다.)<br/>
+				<b>예:</b> 플레이어가 생산 설비 4개를 가지고 있다면, 주민 6개까지 살 수 있습니다.
+			</p>
 		{{/8.III}}
 		{{#residents}}
 			<p>플레이어는 새로운 주민을 살 수 있으며, 새로 산 주민마다 $10을 {{#company}}(자신의 회사 자산에서) {{/company}}은행에 냅니다. (배치 규칙의 적용을 받음)</p>
@@ -954,7 +1010,7 @@
 	{{/hascapture}}
 
 	{{#capture}}{{#residents}}
-		{{#hurry}}<p>While moving, the residents are <b>in a hurry</b>. Thus, if the {{agent}} moves them onto tiles with at least 1 of {{fowns}} exhausted residents, they remain active.</p>{{/hurry}}
+		{{#hurry}}<p>이 세계에서 이동하는 주민은 항상 <b>서두르는 상태</b>입니다.<br/>그러므로 플레이어가 활성화된 주민들을 비활성화된 자기 주민이 있는 타일로 이동시키면 활성화된 상태로 있습니다.</p>{{/hurry}}
 		{{#2}}
 			{{^2.III}}
 				<p>The first time the {{owner}} reaches 1 city and exchanges 1 resident for 1 settlement, {{sagent}} places that resident directly on top of the matching city card. IMPORTANT: The {{owners}} must reach the cities once during the game. They do not need to stay there until the end of the game. The players may voluntarily remove their settlements from these cities during the game, or may be forced to remove them because of war!</p>
@@ -1108,19 +1164,35 @@
 		{{/6}}
 		{{#7}}{{^6.I}}{{^6.II}}
 			{{^7.II}}
-				<p>Each time the {{agent}} places 1 settlement on a tile, he counts the matching type of terrain on the majority board (including {{fowns}} capital).</p>
+				<p>플레이어는 타일에 정착지 1개를 놓을 때마다, 우위 판에서 해당 지형의 자기 표시 토큰을 올립니다. (자기 수도에 있는 본부 포함)</p>
 			{{/7.II}}
 			{{#7.II}}
-				{{#8}}<p>The {{agent}} counts a land tile for majority purposes, if he builds the plant (if he builds a "fish"-plant, he counts the original terrain). Additionally he counts a city, if he builds {{fowns}} trading house there (including {{owns}} capital).</p>{{/8}}
-				{{^8}}<p>The {{agent}} counts a tile for majority purposes when he places 1 settlement on that tile (including {{fowns}} capital).</p>{{/8}}
+				{{#8}}<p>플레이어는 생산 설비를 건설할 때마다, 우위 판에서 해당 지형의 자기 표시 토큰을 올립니다. (예를 들어 물고기 생산 설비를 건설하면, 생산 설비를 건설한 지형을 올립니다.)<br/>그리고 플레이어가 도시에 교역소를 건설할 때마다, 우위 판에서 도시의 자기 표시 토큰을 올립니다. (자기 수도에 있는 본부 포함)</p>{{/8}}
+				{{^8}}<p>플레이어는 자기 정착지를 놓을 때마다(자기 수도에 있는 본부 포함), 우위 판에서 해당 지형의 자기 표시 토큰을 올립니다.</p>{{/8}}
 			{{/7.II}}
-			{{#4}}<p>If the {{agent}} conquers the tile of another {{owner}}{{#8}} that contains a plant{{/8}}, he counts that tile on the majority board, while the other {{owner}} subtracts it.</p>{{/4}}
+			{{#4}}<p>플레이어가 다른 플레이어의 {{#8}}생산 설비가 있는 {{/8}}타일을 점령하면, 이 플레이어는 우위 판에서 해당 지형의 자기 표시 토큰을 올리고, 잃은 플레이어는 자기 표시 토큰을 내립니다.</p>{{/4}}
 		{{/6.II}}{{/6.I}}{{/7}}
 		{{#8}}
-			<p><b>Plants:</b> On each land tile the {{owners}} commonly may build a total of 1 plant. The {{agent}} needs active residents to perform this action depending on the terrain, see the table <b>Plant</b>. Afterwards, the used residents are exhausted and available again in the next round. The {{agent}} marks the ownership by placing {{fowns}} settlement on the plant. {{^1}}{{#8.I}}The {{agent}} places that good face up in {{^company}}front of himself{{/company}}{{#company}}his company&rsquo;s holdings{{/company}}.{{/8.I}}{{/1}} {{#1}}The plant immediately produces 1 goods tile, which is placed on top of the plant for now.{{/1}}</p>
+			<p><b>생산 설비:</b> 플레이어들은 육지 타일마다 총 1개의 생산 설비만 건설할 수 있습니다.<br/>
+				생산 설비를 건설하려면 지형에 따라 다른 수의 활성화된 자기 주민이 필요합니다.<br/>
+				위쪽에 있는 <b>생산 설비</b> 표를 참조하세요.<br/>
+				생산 설비 건설에 사용된 모든 주민은 비활성화되며, 다음 라운드에 활성화됩니다.<br/>
+				플레이어는 생산 설비에 자기 정착지를 놓아 누구 것인지를 표시합니다.<br/>
+				{{^1}}{{#8.I}}생산 설비는 건설된 즉시 상품 1개를 생산합니다.<br/>해당 생산 설비를 건설한 플레이어는 그 상품을 앞면으로 자기 {{^company}}앞{{/company}}{{#company}}회사 자산{{/company}}에 놓습니다.{{/8.I}}{{/1}}
+				{{#1}}생산 설비를 건설하면 즉시 상품 1개를 생산하며, 이 상품을 생산 설비 위에 놓습니다.{{/1}}
+			</p>
 			{{^8.III}}
-				<p><b>Trading House:</b> If the {{agent}} moves residents onto a city and exchanges 1 resident into 1 settlement, it becomes {{fowns}} trading house. The {{owner}} must pay additional money to build this trading house, see the table <b>Trading House</b>. If the {{owner}} does not have enough money, {{sagent}} cannot move onto the city. Each {{owner}} can only have 1 trading house in each city (the headquarters is a trading house, too).</p>
-				{{#4}}<p>Any number of {{owners}} may build trading houses on each city (no fights on cities). The {{agent}}s must take the trading houses of the militia into account, so even the first {{owner}} must pay money to build {{owns}} trading house!</p>{{/4}}
+				<p><b>교역소:</b> 플레이어의 주민이 도시에 도착하면 주민 1개를 정착지 1개로 바꿉니다.<br/>
+					이 정착지가 그 플레이어의 교역소가 됩니다.<br/>
+					플레이어는 교역소 건설 비용을 추가로 내야합니다.<br/>
+					위쪽에 있는 <b>교역소</b> 표를 참조하세요.<br/>
+					플레이어에게 교역소를 건설할 돈이 부족하다면, 이 플레이어는 도시로 주민을 이동시킬 수 없습니다.<br/>
+					플레이어는 도시마다 자기 교역소를 1개만 건설할 수 있습니다. (본부도 교역소로 취급합니다.)
+				</p>
+				{{#4}}<p>도시마다 아무 플레이어나 교역소를 건설할 수 있습니다. (도시에서는 전투가 일어나지 않습니다.)<br/>
+					플레이어가 교역소를 건설할 때는 민병대의 교역소(막사)도 계산에 포함해야 합니다.<br/>
+					이미 그 도시에 민병대의 교역소가 있으므로 첫 번째 플레이어도 교역소를 건설할 때 돈을 내야 합니다.
+				</p>{{/4}}
 			{{/8.III}}
 		{{/8}}
 	{{/residents}}{{/capture}}
@@ -1302,14 +1374,27 @@
 			<span class="city icon"></span>, <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>, <span class="mountain icon"></span> 1개씩(사막 제외)으로 이뤄진 세트마다 $10을 얻습니다.<br/>
 			위쪽에 있는 <b>수입</b> 예를 참조하세요.
 		</p>{{/6.II}}
-		{{#7.II}}<p>The {{owner}} gets $20 base income for {{owns}} capital, plus income for the majorities as stated above, see table and example <b>Income</b>.</p>{{/7.II}}
+		{{#7.II}}<p>플레이어는 수도로부터 기본 수입 $20을 얻고, 우위를 달성한 지형에 따라 추가 수입을 얻습니다.<br/>위쪽에 있는 <b>수입</b> 예를 참조하세요.</p>{{/7.II}}
 		{{#8.II}}
-			<p>{{^1}}During this phase, the {{owner}} gets 1 matching good for each of his plants from the general storage.{{/1}}{{#1}}The {{agent}} may sell goods already delivered to his trading houses.{{/1}} He may sell {{^4}}1 good{{/4}}{{#4}}2 goods{{/4}} to each of {{fowns}} trading houses{{^4}} (up to 2 goods to the headquarters in {{owns}} capital){{/4}}. {{^1}}Afterwards, he places the sold goods back into the general storage.{{/1}}{{#1}}Afterwards, the goods remain on the trading houses.{{/1}}</p>
-			<p>The {{owner}} gets $20 base income for {{owns}} capital and additional income for the sold goods, see the table and example <b>Scoring</b>. {{^1}}The {{agent}} may exchange goods in a ratio of 2:1 into different goods types, to get a higher income for the sale. The {{owner}} may store any number of goods face up in {{^company}}front of himself{{/company}}{{#company}}its holdings{{/company}} for a later sale.{{/1}}</p>
+			<p>
+				{{^1}}이 단계에서, 플레이어는 일반 저장고에서 자기 생산 설비와 대응하는 상품을 받습니다.{{/1}}
+				{{#1}}플레이어는 생산 설비에서 상품을 받지 않고, 대신 자기 교역소로 배송한 모든 상품에 대해 수입을 얻습니다.{{/1}}
+				플레이어는 자기 교역소마다 상품 {{^4}}1개{{/4}}{{#4}}2개{{/4}}{{^4}}(자기 수도에 있는 본부는 상품 2개까지){{/4}}만 팔 수 있게 제한됩니다.<br/>
+				{{^1}}그런 다음, 팔린 상품을 일반 저장고로 되돌려 놓습니다.{{/1}}
+				{{#1}}플레이어는 교역소에 놓인 상품을 바꿀 수 없으며, 수입을 얻은 다음에도 상품은 교역소에 남아 있습니다.{{/1}}
+			</p>
+			<p>
+				플레이어는 수도로부터 기본 수입 $20을 얻고, 판 상품에 따라 추가 수입을 얻습니다.<br/>
+				위쪽에 있는 <b>수입</b> 예를 참조하세요.<br/>
+				{{^1}}
+					플레이어는 더 높은 가치를 가진 상품 세트를 만들기 위해 자기 상품을 2:1 비율로 다른 상품으로 바꿀 수 있습니다.<br/>
+					플레이어는 상품을 판 다음 남은 상품을 원하는 만큼 앞면으로 자기 {{^company}}앞{{/company}}{{#company}}회사 자산{{/company}}에 놓아 보관할 수 있습니다.
+				{{/1}}
+			</p>
 		{{/8.II}}
 		{{#9.I}}
-			{{#2.III}}<p>The company also gets income from <b>Mid-Term Scorings</b> below.</p>{{/2.III}}
-			<p>Place the income of the stock company separate from the company assets to the side for now</p>
+			{{#2.III}}<p>회사는 아래의 <b>중간 점수 계산</b>으로부터도 수입을 얻습니다.</p>{{/2.III}}
+			<p>주식회사가 얻은 수입을 주식회사의 자산과 별도로 놓습니다.</p>
 		{{/9.I}}
 		{{#9.II}}
 			{{#1.I}}
@@ -1339,12 +1424,22 @@
 				{{^2}}{{#4}}<p>If the company removes its settlement and then the tile is completely empty, the next company placing a new first settlement on that tile also takes 1 income token.</p>{{/4}}{{/2}}
 			{{/5.I}}
 			{{#6.I}}<p>The company gets $20 base income for its capital, plus $10 for each additional city it connected. Furthermore each of its connected cities gives the company money for 1 land tile of each type (except deserts): it gets $5 for grassland, field & forest, $10 for mountain, plus a bonus of $10 for each set containing 1 city, 1 grassland, 1 field, 1 forest, 1 mountain (no desert), see the example <b>Income</b>.</p>{{/6.I}}
-			{{#7.I}}<p>The company gets $20 base income for the capital, plus income for the majorities as stated above, see table and example <b>Income</b>.</p>{{/7.I}}
+			{{#7.I}}<p>회사는 수도로부터 기본 수입 $20을 얻고, 우위를 달성한 지형에 따라 추가 수입을 얻습니다.<br/>위쪽에 있는 <b>수입</b> 예를 참조하세요.</p>{{/7.I}}
 			{{#8.I}}
-				<p>{{^1}}The company may sell goods already produced in its plants.{{/1}}{{#1}}The company may sell goods already delivered to its trading houses.{{/1}} It may sell 1 good to each of its trading houses (up to 2 goods to the headquarters in its capital). {{^1}}Afterwards, the goods remain in front of the company card.{{/1}}{{#1}}Afterwards, the goods remain on the trading houses.{{/1}}</p>
-				<p>The company gets $20 base income for his capital and additional income for the sold goods, see the table and example <b>Scoring</b>. The company may not exchange goods during the income phase.</p>
+				<p>
+					{{^1}}회사는 자기 생산 설비에서 생산한 상품을 팔 수 있습니다.{{/1}}
+					{{#1}}회사는 자기 교역소로 배송한 모든 상품을 팔 수 있습니다.{{/1}}
+					회사는 자기 교역소마다 상품 1개(수도에 있는 본부는 상품 2개까지)만 팔 수 있게 제한됩니다.<br/>
+					{{^1}}그런 다음, 상품은 회사 카드 앞에 남아 있습니다.{{/1}}
+					{{#1}}그런 다음, 상품은 교역소에 남아 있습니다.{{/1}}
+				</p>
+				<p>
+					회사는 수도로부터 기본 수입 $20을 얻고, 판 상품에 따라 추가 수입을 얻습니다.<br/>
+					위쪽에 있는 <b>수입</b> 예를 참조하세요.<br/>
+					회사는 수입 단계동안 상품을 교환할 수 없습니다.<br/>
+				</p>
 			{{/8.I}}
-			<p>Place the income of the stock company separate from the company assets to the side for now.</p>
+			<p>주식회사가 얻은 수입을 주식회사의 자산과 별도로 놓습니다.</p>
 		{{/9.II}}
 		{{#9.III}}<p>
 			플레이어는 자기가 얻은 수입을 자기 돈과 구별해서 따로 놓습니다.<br/>
@@ -1395,19 +1490,22 @@
 
 	{{#company}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2 mod9"><h1>Phase 4: Dividends</h1></div>
+			<div class="col-md-2 col-xs-2 mod9"><h1>4 단계: 배당</h1></div>
 			<div class="col-md-10 col-xs-10">
 				{{#9.I}}
-					{{#3.II}}<p>The presidents record their companies&rsquo; incomes for the round, this figure is used to calculate taxes for the following round.</p>{{/3.II}}
-					<p>The presidents decide if they pay a dividend or keep the income in their company assets.</p>
-					<p><b>Pay a dividend:</b> According to the owned shares the income is divided between players, the bank and the stock company (the stock company keeps the remains). See the <b>Calculation of Dividends</b>. The share value of the company raises by $10.</p>
-					<p><b>Keep the income:</b> Place the whole income into the company assets. The share value remains the same.</p>
-					<p><b>Afterwards, pay maintenance costs:</b> $3 each for all settlements and $1 each for all residents of the stock company. The president must pay missing payments with his own money.</p>
+					{{#3.II}}<p>다음 라운드의 세금 계산에 필요하므로, 사장은 주식회사의 수입을 반드시 기억해야합니다.</p>{{/3.II}}
+					<p>사장은 주식회사가 얻은 수입을 배당할 것인지 주식회사 자산으로 유보할 것인지 결정합니다.</p>
+					<p><b>배당하기:</b> 주식 증권을 가진 플레이어들과 은행, 주식회사에 배당합니다. (주식회사가 남은 것을 갖습니다.)<br/>위쪽에 있는 <b>배당 계산</b>을 참조하세요.<br/>주식회사의 주가가 $10 오릅니다.</p>
+					<p><b>수입 유보하기:</b> 모든 수입을 주식회사 자산에 넣습니다. 주가가 변하지 않습니다.</p>
+					<p><b>유지비 내기:</b> 주식회사가 가지고 있는 모든 정착지마다 $3씩, 모든 주민마다 $1씩을 냅니다.<br/>주식회사가 가진 돈이 모자라면 모자란 만큼을 사장이 냅니다.</p>
 				{{/9.I}}
 				{{#9.II}}
-					{{#3.I}}<p>The presidents record their companies&rsquo; incomes for the round, this figure is used to calculate taxes for the following round.</p>{{/3.I}}
-					<p>Raise the actual share values of the 2 stock companies with the highest and second highest income by $10. Drop the actual share values of all companies with lowest income by $10. Mark all changes of the actual share values on the share value board in order of the former share values from high to low.</p>
-					<p>All stock companies pay a dividend to players and the bank. The presidents keep the remaining income and place it on the company assets. See the <b>Calculation of Dividends</b>.</p>
+					{{#3.I}}<p>다음 라운드의 세금 계산에 필요하므로, 사장은 주식회사의 수입을 반드시 기억해야합니다.</p>{{/3.I}}
+					<p>
+						가장 높은 수입을 올린 주식회사와 두 번째로 높은 수입을 올린 주식회사의 주가를 $10 올립니다.<br/>가장 적은 수입을 올린 주식회사들의 주가를 $10 내립니다.<br/>
+						주가 판에서의 주가를 변경할 때는 변경하기 이전 주가가 높았던 주식회사부터 낮은 주식회사 순으로 변경 상황을 반영합니다.
+					</p>
+					<p>모든 주식회사는 플레이어와 은행에 배당합니다.<br/>사장은 남은 수입을 주식회사 자산에 넣습니다.<br/>위쪽에 있는 <b>배당 계산</b>을 참조하세요.</p>
 				{{/9.II}}
 			</div>
 		</div>
@@ -1415,15 +1513,32 @@
 
 	{{#capture}}
 		{{#7.I}}
-			<p>Starting with the 3rd round, the {{agent}} now removes {{fowns}} resident from the face down scoring card and turns this card face up. If the card shows a <span class="glyphicon glyphicon-ok"></span>, the next {{agent}} continues with his turn. If it is one of the three scorings, the game is paused for an immediate scoring!</p>
-			<p><b>1st and 2nd Scoring:</b> The {{owners}} get victory points (VP) for their majorities, see table and example <b>Scoring</b>.</p>
-			<p><b>3rd Scoring (Final Scoring):</b> The {{owners}} get victory points (VP) for their majorities, see the table and example <b>Scoring</b>. All {{owners}} missing their last turn get once-only additional 3 VP.</p>
-			<p>Following each scoring, the {{owners}} add the VP they got in the actual scoring. Starting with the {{owner}} getting the most VP, each {{agent}} must remove 1 resident for each {{^9.II}}3 VP (2♟) or 4 VP (3♟, 4♟){{/9.II}}{{#9.II}}4 VP{{/9.II}} from the map. If he has not enough residents, he now must remove 1 settlement for each missing resident, so all remaining settlements are still on connected tiles to {{fowns}} capital. He cannot remove the headquarters on {{fowns}} capital. If the {{agent}} cannot remove enough residents and settlements, he does not score the VPs for those pieces. Afterwards, the {{agent}} must adjust {{fowns}} marking tokens on the majority board. In case of a tie for VP use the actual turn order for concerned {{owners}}.</p>
+			<p>
+				세 번째 라운드가 시작될 때부터, 플레이어는 뒷면으로 놓인 점수 카드에서 자기 주민을 제거하고 해당 카드를 앞면으로 펼칩니다.<br/>
+				카드에 <span class="glyphicon glyphicon-ok"></span>라고 표시됐다면, 다음 플레이어는 정상적으로 자기 차례를 진행합니다.<br/>
+				이 카드가 '승점 계산' 카드 3장 중 하나라면, 게임을 잠시 멈추고 즉시 점수 계산을 합니다.
+			</p>
+			<p><b>첫 번째와 두 번째 점수 계산:</b> 플레이어는 각자 자기가 달성한 우위에 따라 승점을 얻고 그만큼 승점 토큰을 가져갑니다. 위쪽에 있는 표와 <b>점수 계산 예</b>를 참조하세요.</p>
+			<p>
+				<b>세 번째 점수 계산 (최종 점수 계산):</b> 플레이어는 각자 자기가 달성한 우위에 따라 승점을 얻고 그만큼 승점 토큰을 가져갑니다. 위쪽에 있는 표와 <b>점수 계산 예</b>를 참조하세요.<br/>
+				세 번째 점수 계산을 마친 다음 마지막 자기 차례를 진행하지 못한 플레이어 모두는 추가 승점 3점을 얻습니다.
+			</p>
+			<p>
+				이번 점수 계산에서 가장 승점을 많이 얻은 플레이어부터 시작해서, 각 플레이어는 아래 행동을 순차적으로 진행해야 합니다. (동점자들은 플레이어 차례 순서를 따릅니다.)<br/>
+				먼저, 플레이어들은 이번 점수 계산에서 얻은 승점 {{^9.II}}3점(2♟) / 4점(3♟, 4♟){{/9.II}}{{#9.II}}4점{{/9.II}}마다 주민 1개를 지도에서 제거해야 합니다.<br/>
+				(마지막 자기 차례를 진행하지 못해 받는 추가 승점은 포함하지 않습니다.)<br/>
+				플레이어에게 제거할 주민이 충분하지 않으면, 이 플레이어는 모자란 주민마다 정착지 1개를 제거해야 합니다.<br/>
+				남은 정착지는 모두 자기 수도와 연결돼야 합니다.<br/>
+				플레이어는 자기 수도에 있는 본부를 제거할 수 없습니다.<br/>
+				플레이어가 주민과 정착지를 충분히 제거할 수 없다면, 이 플레이어는 제거하지 못한 만큼은 승점을 얻지 못합니다.<br/>
+				그런 다음 플레이어는 남은 자기 정착지에 따라 우위 판에서 자기 표시 토큰을 조정합니다.<br/>
+				매번 점수 계산을 한 다음 이번에 얻은 승점을 기존 승점에 더합니다.
+			</p>
 		{{/7.I}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2 mod7"><h1>Phase 5: Scoring and Final Scoring</h1></div>
+			<div class="col-md-2 col-xs-2 mod7"><h1>5 단계: 점수 계산과 최종 점수 계산</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
@@ -1482,22 +1597,22 @@
 			{{#8.I}}
 				{{^4}}
 					{{#9}}
-						<p>The game ends at the end of the round after at least 1 stock company owns at least 4 trading houses and at least 5 goods.</p>
+						<p>주식회사 1개 이상이 교역소 4개와 상품 5개 이상을 가지면 종료됩니다.</p>
 					{{/9}}
 					{{^9}}
-						<p>Depending on the # of players the game ends at the end of the round after at least 1 player owns 8 (2♟), 7 (3♟) or 6 (4♟) trading houses and at least 5 goods.</p>
+						<p>게임에 참가한 플레이어 수에 따라 종료 조건이 달라집니다.<br/>플레이어 1명 이상이 상품 5개 이상과 교역소 8개(2♟) / 7개(3♟) / 6개(4♟) 이상을 가진 라운드를 마치면, 게임이 종료됩니다.</p>
 					{{/9}}
 				{{/4}}
 				{{#4}}
 					{{#9}}
-						<p>The game ends at the end of the round after at least 1 stock company owns at least 3 trading houses and at least 5 goods.</p>
+						<p>주식회사 1개 이상이 교역소 3개와 상품 5개 이상을 가지면 종료됩니다.</p>
 					{{/9}}
 					{{^9}}
-						<p>Depending on the # of players the game ends at the end of the round after at least 1 player owns 6 (2♟), 5 (3♟) or 4 (4♟) trading houses and at least 5 goods.</p>
+						<p>게임에 참가한 플레이어 수에 따라 종료 조건이 달라집니다.<br/>플레이어 1명 이상이 상품 5개 이상과 교역소 6개(2♟) / 5개(3♟) / 4개(4♟) 이상을 가진 라운드를 마치면, 게임이 종료됩니다.</p>
 					{{/9}}
 				{{/4}}
 			{{/8.I}}
-			{{#9.I}}<p>The game ends after the 5th business round (BR). All companies pay a dividend for the last income and must pay maintenance cost for a final time!</p>{{/9.I}}
+			{{#9.I}}<p>5번째 비즈니스 라운드(BR)를 마치면 게임이 종료됩니다.<br/>모든 주식회사는 마지막 수입을 배당하고, 마지막 유지비를 냅니다.</p>{{/9.I}}
 		</div>
 	</div>
 
