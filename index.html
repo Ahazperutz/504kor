@@ -226,29 +226,29 @@
 				{{#3.I}}<p>승점 10점이 놓인 공장을 지도 옆에 놓습니다.</p>{{/3.I}}
 				{{#4.I}}
 					{{^6}}{{^7}}<p>우위 판을 게임 지도 옆에 놓습니다.</p>{{/7}}{{/6}}
-					<p>우위 판의 첫 번째 도시 칸 옆에 승점 3점을 놓고, 두번째 칸에 4점씩 놓고, 세번째 칸에 5점씩 놓고, ...</p>
+					<p>우위 판의 첫 번째 도시 칸 옆에 승점 3점을 놓고, 두번째 칸 옆에 4점 놓고, 세번째 칸 옆에 5점 놓고, ...</p>
 				{{/4.I}}
 				{{#5.I}}
 					{{^6}}{{^7}}<p>우위 판을 사막이 보이는 면으로 게임 지도 옆에 놓고, 각 지형 열 아래에 플레이어마다 표시 토큰을 이 판 아래에 놓습니다.</p>{{/7}}{{/6}}
-					<p>우위 판의 각 지역 열 아래에 승점 5점씩 놓습니다.{{#6}} 탐사 표시를 위해 우위 판 아래에 플레이어마다 6개의 다른 토큰(정착지 같은)을 놓습니다.{{/6}}{{#7}} 탐사 표시를 위해 우위 판 아래에 플레이어마다 6개의 다른 토큰(길 같은)을 놓습니다.{{/7}}</p>
+					<p>우위 판의 각 지형 열 아래에 승점 5점씩을 놓습니다.{{#6}} 탐사 표시를 위해 우위 판 아래에 플레이어마다 6개의 다른 토큰(정착지 같은)을 놓습니다.{{/6}}{{#7}} 탐사 표시를 위해 우위 판 아래에 플레이어마다 6개의 다른 토큰(길 같은)을 놓습니다.{{/7}}</p>
 				{{/5.I}}
-				{{#6.I}}<p>Place 5 VP below each terrain column of the majority board.</p>{{/6.I}}
-				{{#7.I}}<p>Place 10 VP next to the first row of the majority board, and 20 VP next to the second row of the majority board.</p>{{/7.I}}
-				{{#8.I}}<p>Place 1 good of each type with 5 VP on it next to the map.</p>{{/8.I}}
+				{{#6.I}}<p>우위 판의 각 지형 열 아래에 승점 5점씩을 놓습니다.</p>{{/6.I}}
+				{{#7.I}}<p>우위 판의 첫 번째 행에 승점 10점, 두 번째 행에 승점 20점을 놓습니다.</p>{{/7.I}}
+				{{#8.I}}<p>승점 5점이 놓인 상품 5개를 지도 옆에 놓습니다.</p>{{/8.I}}
 				{{#9.I}}
-					{{#1.II}}<p>Place 1 good of each type with $50 on it next to the map.</p>{{/1.II}}
-					{{#3.II}}<p>Place two factories with $100 each next to the map.</p>{{/3.II}}
+					{{#1.II}}<p>%50이 놓인 상품 5개를 지도 옆에 놓습니다.</p>{{/1.II}}
+					{{#3.II}}<p>$100이 놓인 공장 2개를 지도 옆에 놓습니다.</p>{{/3.II}}
 					{{#4.II}}
-						<p>Place the majority board next to the game map.</p>
-						<p>Place $30 next to the first city space of the majority board, $40 next to the second space, and so forth.</p>
+						<p>우위 판을 지도 옆에 놓습니다.</p>
+						<p>첫 번째 도시 칸 옆에 $30, 두 번쨰 칸 옆에 $40, 세번째 칸 옆에 $50, ... 을 놓습니다.</p>
 					{{/4.II}}
 					{{#5.II}}
-						<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each stock company below this board.</p>
-						<p>Place $50 below each terrain column of the majority board.</p>
+						<p>사막 열이 보이는 면으로 우위판을 지도 옆에 놓고, 우위 판의 아래에 각 주식회사의 마커 6개를 놓습니다.</p>
+						<p>우위 판의 각 지형 열 아래에 $40씩을 놓습니다.</p>
 					{{/5.II}}
-					{{#6.II}}<p>Place $50 below each terrain column of the majority board.</p>{{/6.II}}
-					{{#7.II}}<p>Place $100 next to the first row of the majority board, and $200 next to the second row of the majority board.</p>{{/7.II}}
-					{{#8.II}}<p>Place 1 good of each type with $50 on it next to the map.</p>{{/8.II}}
+					{{#6.II}}<p>우위 판의 각 지형 열 아래에 $50씩을 놓습니다.</p>{{/6.II}}
+					{{#7.II}}<p>우위 판의 첫 번째 줄 옆에 $100을 놓고, 두 번째 줄 옆에 $200을 놓습니다.</p>{{/7.II}}
+					{{#8.II}}<p>$50이 놓인 상품 5개를 지도 옆에 놓습니다.</p>{{/8.II}}
 				{{/9.I}}
 			{{/2.III}}
 			{{#2}}{{^2.III}}
@@ -312,7 +312,7 @@
 					3♟: 서로 같은 거리만큼 떨어진 도시를 수도로 선택합니다.<br/>
 					4♟: 수도로 선택되지 않은 도시 둘이 서로 마주 보게 수도를 선택합니다.
 				</p>{{/9}}
-				{{#1}}{{^1.III}}{{^company}}<p>When playing with 2♟/4♟ Players cannot choose cities 5 or 10 for their capital. (This allows all players to comply with both rules for capital placement.)</p>{{/company}}{{/1.III}}{{/1}}
+				{{#1}}{{^1.III}}{{^company}}<p>2♟/4♟ 플레이인 경우, 플레이어는 자신의 수도로 도시 5 또는 10을 선택할 수 없습니다. (이것은 모든 플레이어가 수도 배치에 대한 두 규칙을 모두 준수 할 수 있게 합니다.)</p>{{/company}}{{/1.III}}{{/1}}
 				{{#8}}
 					{{^8.III}}<p>수도로 선택되지 않은 모든 자유 도시에 막사 1개씩을 놓습니다. 이 막사는 교역소로 간주합니다.</p>{{/8.III}}
 					{{#8.III}}<p>수도로 선택되지 않은 모든 자유 도시에 막사와 민병대를 각각 1개씩 놓습니다.</p>{{/8.III}}
@@ -417,7 +417,7 @@
 				<img src="img/example-2-ii.png" style="width: 100%">
 				<h2>수입 예:</h2>
 				<p>
-					도일이는 이번 차례 중에 들판 1개와 숲 1개, 4번 도시에 첫 정착지를 놨고, 나희의 정착지가 이미 놓여 있는 1번 도시로 수송 차량을 이동했습니다.<br/>
+					도일이는 이번 차례 중에 들판 1개와 숲 1개, 4번 도시에 첫 정착지를 놨고, 나희의 정착지가 이미 놓여 있는 1번 도시에 도일이가 정착지 1개를 추가로 놨습니다.<br/>
 					도일이는 두 도시에 있던 주민을 해당하는 도시 카드 위쪽에 놨습니다.<br/>
 					도일이는 이번 라운드의 수입으로 총 $90을 받습니다.<br/>
 					$20 (수도) + $20 (4번 도시 첫 정착지, 들판, 숲) + $50 (도시의 두 번째 세 번째 주민)<br/>
@@ -442,14 +442,28 @@
 				</div>
 				{{#7.I}}
 					<div class="note col-md-3 col-xs-4">			
-						<h2>Example:</h2>
-						<p>The current player order is John, Camille, Sarah and Harry, and on the previous turn they earned $50, $68, $68 and $50 dollars respectively. Camille and Sarah have equal highest income ($68); as Camille is earlier in the turn she pays $2 for every full $10 income, in this case $12; John and Harry have equal lowest income; as Harry is later in the turn he doesn&rsquo;t pay any tax. Sarah and John pay $6 and $5 respsectively.</p>
+						<h2>예:</h2>
+						<p>
+							현재 플레이어 차례 순서는 John, Camille, Sarah, Harry이고, 이전 차례에 각각 $50, $68, $68, $50을 벌었습니다.<br/>
+							Camille, Sarah는 $68로 최고 수입의 플레이어입니다.<br/>
+							Camille은 차례 순서가 빠르기 때문에 $12를 세금으로 냅니다.<br/>
+							John, Harry는 $50으로 최저 수입의 플레이어입니다.<br/>
+							Harry는 차례 순서가 늦기 때문에 세금을 내지 않습니다.<br/>
+							Sarah, John은 각각 $6, $5의 세금을 냅니다.
+						</p>
 					</div>
 				{{/7.I}}
 				{{#9.I}}
 					<div class="note col-md-3 col-xs-4">
-						<h2>Example:</h2>
-						<p>The current company order is Orange, Blue, White, Green and Purple, and on the previous turn they earned $40, $68, $68, $40 and $50 dollars respectively. Blue and White have equal highest income ($68); as Blue is earlier in the turn she pays $2 for every full $10 income, in this case $12. Orange and Green have equal lowest income; as Green is later in the turn he doesn&rsquo;t pay any tax. White, Purple and Orange pay $6, $5 and $4 respectively. </p>
+						<h2>예:</h2>
+						<p>
+							현재 회사 차례 순서는 오렌지, 파랑, 흰색, 초록, 보라이고, 이전 차례에 각각 $40, $68, $68, $40, $50을 벌었습니다.<br/>
+							파랑, 흰색 회사는 $68로 최고 수입의 회사입니다.<br/>
+							파랑은 차례 순서가 빠르기 때문에 $12를 세금으로 냅니다.<br/>
+							오렌지와 초록은 $40으로 최저 수입의 회사입니다.<br/>
+							초록은 차례 순서가 늦기 때문에 세금을 내지 않습니다.<br/>
+							흰색, 보라, 오렌지는 각각 $6, $5, $4의 세금을 냅니다.
+						</p>
 					</div>
 				{{/9.I}}
 				<div class="note col-md-3 col-xs-6">
@@ -706,26 +720,37 @@
 			{{#2.I}}
 				<div class="note col-md-4 col-xs-4">
 					<img src="img/example-2-ii.png" style="width: 100%">
-					<h2>Example Income:</h2>
-					<p>The green company placed first settlements on 1 field, 1 forest and city "5", additionally 1 settlement on city "1" where the red company already has a settlement. The company placed 1 resident each on top of both city cards. Now, the company gets $90. $20 (base income for the capital) + $20 (1st settlements on field, forest and on city "5") + $50 (for overall 2nd and 3rd resident on the city cards). Afterwards, the company moves both residents to the bottom of the city cards.</p>
+					<h2>수입 예:</h2>
+					<p>
+						초록 회사는 들판 1개와 숲 1개, 5번 도시에 첫 정착지를 놨고, 빨강 회사의 정착지가 이미 놓여 있는 1번 도시에 정착지를 놨습니다.<br/>
+						회사는 두 도시에 있던 주민을 해당하는 도시 카드 위쪽에 놨습니다.<br/>
+						수입으로 $90을 받습니다. $20 (수도) + $20 (들판, 숲, 5번 도시 첫 정착지) + $50(도시의 두번째 정착지)<br/>
+						그런 다음, 두 도시 카드에 놓인 주민 2개를 도시 카드 아래쪽으로 이동시킵니다.
+					</p>
 				</div>
 			{{/2.I}}
 			{{#4.I}}
 				<div class="note col-md-3 col-xs-6">
-					<h2>Example Income:</h2>
-					<p>In addition to its capital the green company additionally controls 2 wood, 3 grasslands, 1 mountain and 2 city tiles. The company gets an income of $70 = $20 (base income for the capital) + $40 (8 additional tiles) + $10 (3 different types of land tiles).</p>
+					<h2>수입 예:</h2>
+					<p>
+						초록 회사는 수도와 더불어 숲 2개, 초원 3개, 산 1개, 도시 2개를 지배하고 있습니다.<br/>
+						수입으로 $70을 받습니다.  (수도로 인한 기본 수입 $20 + 타일 8개로 인한 수입 $40 + 도시가 아닌 지형 종류 3가지로 인한 수입 $10)
+					</p>
 				</div>
 			{{/4.I}}
 			{{#5.I}}
 				<div class="note col-md-3 col-xs-4">
-					<h2>Example Income:</h2>
-					<p>During the first few rounds the green company explored 8 tiles and placed settlements first onto 6 tiles. Thus, the company gets an income of $90 = $20 (base income for the capital) + $40 (8 explored tiles) + $30 (6 first settlements).</p>
+					<h2>수입 예:</h2>
+					<p>
+						처음 몇 라운드가 진행되는 동안 초록 회사는 타일 8개를 발견하고 타일 6개에 첫 정착지를 놨습니다.<br/>
+						수입으로 $90을 받습니다. (수도로 인한 기본 수입 $20 + 발견한 타일 8개로 인한 수입 $40 + 첫 정착지 6개로 인한 수입 $30)
+					</p>
 				</div>
 			{{/5.I}}
 			{{#6.I}}
 				<div class="note col-md-3 col-xs-4">
-					<h2>Example Income:</h2>
-					<p>The green company gets a total of $75: $20 (Base income for the capital) + $10 (1 additional city) + $25 (1 grassland, 2 forest, 2 fields) + $10 (1 mountain) + $10 (1 set). The 3rd forest does not give the company income in the moment, as until now it only connected 2 cities.</p>
+					<h2>수입 예:</h2>
+					<p>초록 회사는 총 $75의 수입을 얻습니다.<br/>수도로 인한 기본 수입 $20 + 추가적인 도시 1개로 인한 $10 + 초원 1개, 숲 2개, 들판 2개로 인한 수입 $25 + 산 1개로 인한 수입 $10 + 모든 지형 1세트로 인한 수입 $10<br/>현재 두 도시만 아인이의 도로망에 연결돼 있으므로, 세번째 숲은 아무런 수입도 주지 않습니다.</p>
 				</div>
 			{{/6.I}}
 			{{#7.I}}
@@ -793,7 +818,6 @@
 					{{#4}}{{^8.I}}{{^8.II}}
 					<li>
 						<b>"신입 보호" 예외 규칙:</b> 새로 설립된 주식회사는 자신의 첫 번째 BR을 진행하기 전까지는 다른 주식회사로부터 공격받지 않습니다.
-						An opposing stock company may only be attacked after it finishes its first BR. In other words, it is safe after establishing, as long as it only has a marked capital.
 					</li>
 					{{/8.II}}{{/8.I}}{{/4}}
 					</li>
@@ -851,7 +875,7 @@
 				위쪽에 있는 <b>세금 계산</b>을 참조하세요.<br/>
 				첫 번째 플레이어가 더 높은 세금을 내기 때문에 두 번째 플레이어보다 실제 수입이 적을 수 있습니다.
 			</p>
-			{{#9.II}}<p>The stock company order for the 1st business round (BR) is determined in reverse order of establishment. If stock companies are only established in later SRs, just for once they are first in stock company order in the next BR!</p>{{/9.II}}
+			{{#9.II}}<p>첫 번째 비즈니스 라운드(BR)에서 주식회사의 차례 순서는 설립된 순서의 <b>역순</b>입니다.<br/>지난 주식 라운드(SR) 중에 설립된 주식회사가 있다면, 이 주식회사는 설립된 직후의 BR에서 첫 번쨰로 차례를 진행합니다.</p>{{/9.II}}
 		{{/7.I}}{{/9.I}}{{/3.III}}{{/3}}
 		{{#7.I}}
 			{{^9.II}}
@@ -947,13 +971,16 @@
 <script id="template_phase3abcd" type="x-tmpl-mustache">
 	{{#capture}}
 		{{#2}}{{#residents}}
-			<p>At the start of his turn, the {{agent}} may change {{fowns}} capital by exchanging {{owns}} headquarters with 1 of {{fowns}} own settlements in any other city.</p>
-			<p>If the {{owner}} does not have enough residents to buy in <b>Phase 3 C</b> or enough settlements to settle a tile in <b>Phase 3 D/3 E/3 G</b> in {{owns}} storage, the {{agent}} may take back the missing pieces from the game map without substitution and place them directly back on the map. If he takes back 1 settlement, he must take back all residents on the same tile.</p>
+			<p>플레이어는 자기 차례가 시작될 때 다른 도시에 있는 자기 정착지와 자기 본부를 바꿈으로써 수도를 변경할 수 있습니다.</p>
+			<p>
+				플레이어가 자기 저장고에 <b>3C 단계</b>에 살 주민이 모자라거나, <b>3D/3E/3G 단계</b>에서 타일에 놓을 정착지가 모자라면, 플레이어는 지도에 있는 해당 내용물을 교체 없이 가져온 다음 다시 지도 위의 새로운 위치에 놓을 수 있습니다.<br/>
+				플레이어가 지도에서 정착지를 가져오면 그 타일에 있는 모든 주민도 가져옵니다.
+			</p>
 		{{/residents}}{{/2}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2 mod2"><h1>Phase 3 A: Capital</h1></div>
+			<div class="col-md-2 col-xs-2 mod2"><h1>3A 단계: 수도</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
@@ -1013,8 +1040,15 @@
 		{{#hurry}}<p>이 세계에서 이동하는 주민은 항상 <b>서두르는 상태</b>입니다.<br/>그러므로 플레이어가 활성화된 주민들을 비활성화된 자기 주민이 있는 타일로 이동시키면 활성화된 상태로 있습니다.</p>{{/hurry}}
 		{{#2}}
 			{{^2.III}}
-				<p>The first time the {{owner}} reaches 1 city and exchanges 1 resident for 1 settlement, {{sagent}} places that resident directly on top of the matching city card. IMPORTANT: The {{owners}} must reach the cities once during the game. They do not need to stay there until the end of the game. The players may voluntarily remove their settlements from these cities during the game, or may be forced to remove them because of war!</p>
-				{{#4}}<p>The {{owner}} reaches an opposing city the first time, if {{sagent}} moves 1 of {{fowns}} residents on this city. In that case he places 1 additional resident from {{owns}} storage on top of the matching city card (moving on the city is important, not the outcome of the following fight!).</p>{{/4}}
+				<p>
+					플레이어의 주민이 도시에 처음 도착할 때마다 주민 1개를 정착지 1개로 바꾸고, 그 주민을 해당하는 도시 카드에 놓습니다.<br/>
+					<b>중요:</b> 플레이어는 게임 중 각 도시마다 한 번씩 들러야 하지만, 게임이 끝날 때까지 머무를 필요는 없습니다.<br/>
+					정착지는 플레이어가 원할 때 스스로 제거할 수 있으며, 전쟁으로 인해 강제로 제거당할 수도 있습니다.
+				</p>
+				{{#4}}<p>
+					플레이어의 주민 1개가 상대의 도시에 처음 도착하면, 이 플레이어는 자기 저장고에서 주민 1개를 가져와 해당하는 도시 카드에 놓습니다.<br/>
+					(전투 결과와 상관 없이 도시에 도착했다는 것이 중요합니다.)
+				</p>{{/4}}
 			{{/2.III}}
 		{{/2}}
 		{{#4}}
@@ -1098,7 +1132,6 @@
 					<li>플레이어가 타일에 첫 정착지를 놓을 때 그 타일에 있는 승점 1점을 얻습니다.</li>
 					<li>플레이어가 한 타일에서 주민 1개를 비활성화시켜서 수확 행동을 하면, 그 타일에 있는 승점 1점을 얻습니다. (플레이어는 이 행동을 도시에 남은 승점 3점 각각에 대해서 할 수 있습니다.) 플레이어가 자기 주민을 비활성화시켜서 다른 행동을 할 때는 이 승점을 얻을 수 없습니다.</li>
 				</ol>
-
 			{{/5.I}}
 			{{#5.II}}
 				{{#3.I}}<p>플레이어는 방금 발견한 타일로 인접한 타일에서 활성화된 자기 주민을 원하는 만큼 이동시킬 수 있으며, 이들은 이렇게 이동해도 비활성화되지 않습니다.</p>{{/3.I}}
@@ -1225,34 +1258,59 @@
 				{{#residents}}{{^4}}주민을 실은 수송 차량은 그 플레이어의 정착지가 없는, 즉 비어 있거나 상대의 정착지나 주민이 있는 타일을 지나 이동할 수 있습니다.{{/4}}<br/> 플레이어가 자기 정착지가 없는 타일에 주민을 내리면, 내린 주민 중 1개가 정착지 1개로 바뀝니다.{{/residents}}
 			</p>
 			{{#6}}
-				<p>The {{agent}} needs 0.5 MP per road when moving {{fowns}} transport trolley on {{owns}} roads.</p>
-				{{#1.III}}<p>Once per turn and following the building rules for roads, the {{agent}} may build 1 road for free from the tile with his transport trolley, if the {{owner}}} has 1 settlement each on both affected tiles.</p>{{/1.III}}
+				<p>플레이어가 수송 차량을 자기 도로 위에서 이동시키면 도로마다 0.5가 듭니다.</p>
+				{{#1.III}}<p>
+					도로를 건설하려는 두 타일 모두에 자기 정착지가 있고, 그중 한 타일에 자기 수송 차량이 있으면, 두 타일을 연결하는 도로 1개를 무료로 건설할 수 있습니다.<br/>
+					차례마다 한 번이며, 도로 건설 규칙을 따라야 합니다.
+				</p>{{/1.III}}
 			{{/6}}
 			{{#4}}
-				<p>The {{agent}} may move {{fowns}} transport trolley on all tiles, even on opposing tiles. He gets 1 additional MP, if the transport trolley starts the movement on one of {{fowns}} tiles. If the transport trolley moves onto opposing tiles for the first time during this phase, he needs 1 additional MP for each opponent (if it starts on an opposing tile or continues to move onto more tiles of the same opponent, no further additional MPs are needed).</p>
-				{{#8}}{{^8.III}}<p>The cities are neutral and no {{owner}} controls them. Each {{agent}} may move onto a city for 1 MP.</p>{{/8.III}}{{/8}}
-				<p> If the transport trolley moves onto a tile without 1 of {{fowns}} settlements, the {{agent}} must unload at least 1 resident which turns into 1 settlement. If the transport trolley moves onto an opposing tile with loaded residents, the {{agent}} must unload them for the fight. The {{agent}} cannot load exhausted residents on an opposing tile. {{#2}}After the transport trolley finishes its movement, a fight follows immediately.{{/2}}</p>
+				<p>
+					플레이어는 자기 수송 차량을 상대의 타일을 포함한 아무 타일로나 이동시킬 수 있습니다.<br/>
+					수송 차량이 플레이어의 타일에서 출발하면 이동력 1을 더 얻습니다.<br/>
+					이 단계 중에 수송 차량이 상대의 타일로 처음 이동할 때 이동력이 1 더 듭니다.<br/>
+					(각각의 상대마다 따로 적용합니다. 상대의 타일에서 출발하기만 하는것, 또는 한 번 들어갔던 상대의 타일로 이동하는 것에는 추가로 이동력이 들지 않습니다.)
+				</p>
+				{{#8}}{{^8.III}}<p>도시는 중립이며 누구도 지배하지 않습니다. 플레이어들은 도시로 이동할 때 이동력 1만 듭니다.</p>{{/8.III}}{{/8}}
+				<p>
+					만약 주민을 실은 수송 차량이 자신의 정착지가 없는 타일로 이동하면, 반드시 주민 1개를 내려 정착지 1개로 바꿔 그 타일에 놓아야 합니다.<br/>
+					상대의 타일로 이동하면 모든 주민을 내려 전투 준비를 해야 합니다.<br/>
+					플레이어는 상대의 타일에서 비활성화된 주민을 실을 수 없습니다.
+					{{#2}}수송 차량이 이동을 마치면 즉시 전투가 일어납니다.{{/2}}
+				</p>
 			{{/4}}
-			{{#2.II}}{{#residents}}<p>The {{agent}} reaches a city only with {{fowns}} transport trolley. In that case he places 1 resident from {{fowns}} storage on top of the matching city card.</p>{{/residents}}{{/2.II}}
+			{{#2.II}}{{#residents}}<p>플레이어의 수송 차량만으로 도시에 처음 도착하면, 플레이어는 자기 저장고에서 주민 1개를 가져와 해당하는 도시 카드의 위쪽에 놓습니다.</p>{{/residents}}{{/2.II}}
 			{{^residents}}
 				<p>플레이어는 차례 중 수송 차량에 사용할 수 있는 추가 이동력을 살 수 있습니다. 위쪽에 있는 <b>추가 이동력을 위한 비용</b> 표를 참조하세요.</p>
 				{{#2}}{{^2.III}}<p>플레이어의 수송 차량이 도시에 처음 도착할 때마다 그 도시에 있는 자기 주민을 해당하는 도시 카드에 놓습니다.{{/2.III}}{{/2}}
 				{{#5}}
-					<p>The transport trolley may explore new tiles. It must move onto the newly explored tile for 1 movement point (MP), it only needs 2 MP for moving onto each mountain. If the {{agent}} explores 1 water tile, he needs 1 MP but the transport trolley must remain on the starting tile. If the {{agent}} explores 1 mountain tile with his last MP, the transport trolley must remain on the starting tile, too.</p>
-					<p><b>Exploring:</b> After choosing the destination space, the {{agent}} places the explorer tiles next to the following stacks, until he placed all 6 tiles.</p>
+					<p>
+						수송 차량으로 새로운 타일을 탐사할 수 있습니다.<br/>
+						수송 차량의 이동력 1을 들여 새로 발견한 타일로 이동해야 합니다. 산으로 이동할 때만 이동력 2가 듭니다.<br/>
+						플레이어가 물 타일을 발견했다면, 이동력 1이 들지만 수송 차량은 탐사 직전에 있던 타일에 남아 있습니다.<br/>
+						플레이어는 자기 수송 차량이 도착한 타일에 정착지 1개를 놓을 수 있습니다.<br/>
+						아래 <b>수입</b>을 참조하세요. (이는 선택 가능한 행동입니다. 정착지의 수는 제한돼 있으므로 플레이어는 이 행동을 하지 않을 수도 있습니다.)
+					</p>
+					<p><b>탐사:</b> 목적지 칸을 선택한 다음, 플레이어는 탐험가 마커 6개를 섞고, 다음의 규칙에 따라 지도 타일 더미 옆에 탐험가 마커를 놓습니다.</p>
 					<ol>
-						<li><b>City:</b> # of explorer tiles = # of tiles between the destination space and the closest city (Across existing land tiles). New cities are never located adjacent to other cities!</li>
-						<li><b>Water:</b> # of explorer tiles = # of tiles between the destination space and the central city (across linear distance, even across water or empty spaces), or 0 if next to an existing water tile. New water tiles are never located adjacent to other water tiles!</li>
-						<li><b>Land tiles:</b> 1 explorer tile next to each stack, in the following order: grassland, forest field, mountain, desert.</li>
-						<li><b>Remaining explorer tiles:</b> 1 additional explorer tile next to each stack, which already received 1 or more explorer tiles, in the following order: city, water, grassland, forest, field, mountain desert, if necessary repeatedly.</li>
+						<li><b>도시:</b> 이 옆에는 '목적지 칸과 가장 가까운 도시 사이에 있는 육지 타일수'만큼 탐험가 마커를 놓습니다. 육지 타일은 현재 지도에 존재하는 것들만 셉니다. 도시끼리는 절대 인접하게 놓지 않으므로, 도시 타일 옆 칸을 탐사할 때는 이 더미에 탐험가 마커를 놓지 않습니다.</li>
+						<li><b>물:</b> 이 옆에는 '목적지 칸과 중앙 도시 사이에 있는 지도 타일 수'만큼 탐험가 마커를 놓습니다. 직선거리로 타일 숫자를 세며, 그 사이에 물이나 빈칸이 있어도 됩니다. 물끼리는 절대 인접하게 놓지 않으므로, 물 타일 옆 칸을 탐사할 때는 이 더미에 탐험가 마커를 놓지 않습니다.</li>
+						<li><b>육지 타일:</b> 초원-숲-들판-산-사막 더미 순으로 탐험가 마커 1개씩을 놓습니다.</li>
+						<li><b>남은 탐험가 마커:</b> 이미 탐험가 마커가 1개 이상 있는 각 지도 타일 더미마다 도시-물-초원-숲-들판-산-사막 순으로 탐험가 마커를 1개씩 추가합니다. 필요하다면 반복합니다.</li>
 					</ol>
-					<p>Afterwards, the {{agent}} rolls 1 die and places the corresponding map tile on the destination space. See the example <b>Exploring</b>.</p>
-					{{#mapnum.1}}<p>The {{agent}}s may only explore in a distance of 4 spaces around the central city. Thus, following the adjacency rules above, the {{agent}}s will not always explore all cities or water tiles.</p>{{/mapnum.1}}
-					{{^1.III}}{{^8}}<p>When placing a city, place 4 goods onto that city, matching the small circular symbol.</p>{{/8}}{{/1.III}}
+					<p>그런 다음, 플레이어는 주사위 1개를 굴려 나온 숫자에 해당하는 지도 타일을 발견하고 탐사 목적지 칸에 놓습니다. 위쪽에 있는 <b>탐사 예</b>를 참조하세요.</p>
+					{{#mapnum.1}}<p>플레이어들은 중앙 도시에서 4칸 떨어진 칸까지만 탐사할 수 있습니다. 그러므로 앞서 설명한 도시/물 인접 불가 규칙 때문에, 경우에 따라 모든 도시와 물 타일이 사용되지 않을 수 있습니다.</p>{{/mapnum.1}}
+					{{^1.III}}{{^8}}<p>도시를 놓을때 그 도시에 있는 원형 심볼과 같은 상품 4개를 놓습니다.</p>{{/8}}{{/1.III}}
 					{{#5.II}}
-						{{#3.I}}<p>The {{agent}} may move any number of {{fowns}} active residents from adjacent tiles onto the just explored tile without exhausting them in this way.</p>{{/3.I}}
-						{{#4.I}}<p>Depending on the terrain the {{owner}} discovers or receives the following. <span class="desert icon"></span> empty, <span class="grass icon"></span> & <span class="forest icon"></span> 1 own settlement, <span class="grain icon"></span> 1 own settlement + 1 own exhausted resident, <span class="mountain icon"></span> 1 militia. For defeating this militia once-only $20. <span class="city icon"></span> 1 barrack and 1 militia. The player does not get income tokens for discovered settlements!</p>{{/4.I}}
-						{{#2.III}}{{#9.I}}<p>The {{agent}} counts that tile on the majority board.</p>{{/9.I}}{{/2.III}}
+						{{#3.I}}<p>플레이어는 방금 발견한 타일로 인접한 타일에서 활성화된 자기 주민을 원하는 만큼 이동시킬 수 있으며, 이들은 이렇게 이동해도 비활성화되지 않습니다.</p>{{/3.I}}
+						{{#4.I}}<p>플레이어는 탐사할 때마다 발견한 지형에 따라 다음을 받거나 발견합니다.<br/>
+							<span class="desert icon"></span>: 아무것도 없습니다.<br/>
+							<span class="grass icon"></span> / <span class="forest icon"></span>: 자기 정착지 1개<br/>
+							<span class="grain icon"></span>: 자기 정착지 1개와 비활성화된 자기 주민 1개,<br/>
+							<span class="mountain icon"></span>: 민병대 1개. 이 민병대를 물리친 플레이어는 일회성으로 $20을 얻습니다.<br/>
+							<span class="city icon"></span>: 막사 1개와 민병대 1개. 플레이어는 발견한 정착지로부터는 수입 토큰을 받지 않습니다.
+						</p>{{/4.I}}
+						{{#2.III}}{{#9.I}}<p>플레이어는 우위 판위의 해당 타일을 계산합니다.</p>{{/9.I}}{{/2.III}}
 					{{/5.II}}
 				{{/5}}
 				<p>
@@ -1271,9 +1329,25 @@
 				{{/8.II}}{{/8.I}}
 			</p>{{/1.III}}
 			{{#8}}
-				<p>Directly after the {{agent}} builds a plant, it produces once-only 1 good. The {{agent}} places that good for the moment on top of the plant. Only the owner may transport the goods placed on the plants!</p>
-				{{#1.III}}<p>The {{agent}} must transport the goods to {{fowns}} trading houses on the cities. He must follow the limited delivery quantities of {{fowns}} trading houses (The cities themselves have no specific demand for the goods)! If the {{agent}} unloads goods on a land tile or cities, where he has no trading houses or already fulfilled their delivery quantities, the goods remain there until any {{owner}} loads them again onto {{owns}} transport trolley.</p>{{/1.III}}
-				{{^1.III}}{{^8.III}}<p>The  {{agent}} must transport the goods to {{fowns}} trading houses on the cities. He must follow the limited delivery quantities of {{fowns}} trading houses and additionally he must follow the demand of the cities. He places the delivered goods for the moment on top of the trading house and covers the matching spaces on the cities with covering tokens. {{#1.II}} (He can track delivered goods by placing matching goods from the supply face up below the goods price board.){{/1.II}}{{#8.I}}See below at <b>Final Scoring</b>{{/8.I}}{{#8.II}}See below at <b>Phase 3 H:Income</b>{{/8.II}} for the limited delivery quantities of trading houses.</p>{{/8.III}}{{/1.III}}
+				<p>
+					플레이어가 생산 설비를 건설하면, 생산 설비는 즉시 일회성으로 상품 1개를 생산합니다.<br/>
+					플레이어는 그 상품을 해당 생산 설비 위에 놓습니다.<br/>
+					생산 설비의 소유주만이 생산 설비에 놓인 상품을 자기 수송 차량에 실을 수 있습니다.
+				</p>
+				{{#1.III}}<p>
+					플레이어는 자기 교역소로 그 상품을 배달해야 합니다.<br/>
+					교역소 자체의 상품 수용량 제한을 그대로 적용합니다. (도시 자체는 어떤 상품도 요구하지 않습니다.)<br/>
+					플레이어가 육지 타일이나, 자기 교역소가 없거나, 자기 교역소가 있더라도 교역소의 제한에 도달한 도시에 상품을 내리면, 이 상품은 아무 플레이어나 수송 차량에 싣기 전까지 그 자리에 남아 있습니다.
+				</p>{{/1.III}}
+				{{^1.III}}{{^8.III}}<p>
+					플레이어는 상품을 도시가 있는 자기 교역소로 배송해야 합니다.<br/>
+					그리고 그 상품은 반드시 그 도시가 요구하는 것이어야 합니다.<br/>
+					플레이어는 배송한 상품을 그 교역소 위에 놓습니다.<br/>
+					도시의 해당 상품 칸을 가림 토큰으로 덮습니다.<br/>
+					{{#1.II}}(저장고에서 해당하는 상품을 가져와 상품 가격 판의 아래에 놓아 배송한 상품을 추적할 수 있습니다.){{/1.II}}
+					아래에 있는 최종 점수 계산과 교역소에 따른 제한을 참조하세요.<br/>
+					아래에 있는 {{#8.I}}<b>최종 점수 계산</b>{{/8.I}}{{#8.II}}<b>3H 단계: 수입</b>{{/8.II}}과 교역소에 따른 제한을 참조하세요.
+				</p>{{/8.III}}{{/1.III}}
 			{{/8}}
 		{{/1}}
 	{{/capture}}
@@ -1334,11 +1408,11 @@
 				한 상품의 가격은 $10 미만으로 내려가지는 않으며, $140을 초과해서 올라가지도 않습니다.<br/>
 				{{^8.I}}마지막으로, 플레이어는 배송한 상품 모두를 일반 저장고에 놓습니다.{{/8.I}}
 				{{#8.I}}
-					The player leaves their goods tokens on the trading houses.
-					(If he used additional tokens under the goods price board to track deliveries, he returns those tokens into the general storage.)
+					플레이어는 배송한 상품을 자신의 교역소에 놓습니다.<br/>
+					그 플레이어는 이 배송한 상품 각각에 대해 단 한 번 수입을 얻으며, 그 상품을 일반 저장고에 되돌리지 않습니다.
 				{{/8.I}}
 			</p>
-			{{#4}}{{^8.I}}<p>If the {{owner}} delivers goods to a city without his settlements, he must pay $1 for each full $10 of this sale to the owner of the city, or in case of a free city, payment goes to the bank.</p>{{/8.I}}{{/4}}
+			{{#4}}{{^8.I}}<p>플레이어가 자기 정착지가 없는 도시에 상품을 배송하면, 플레이어는 배송한 상품의 가격 $10마다 $1을 그 도시의 소유주에게 내야 합니다.<br/>그 도시가 자유 도시라면 은행에 냅니다.</p>{{/8.I}}{{/4}}
 		{{/1.II}}
 		{{#2.II}}
 			<p>
@@ -1348,9 +1422,12 @@
 				그런 다음 그 새로 놓은 주민들을 해당 도시 카드의 아래쪽으로 이동시킵니다.<br/>
 				위쪽에 있는 <b>수입 예</b>를 참조하세요.
 			</p>
-			{{#7.I}}<p>If the {{agent}} removes {{fowns}} settlement and then there are no settlements left on the tile, the next {{owner}} placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>{{/7.I}}
+			{{#7.I}}<p>플레이어가 자기 정착지를 제거해서 그 타일에 정착지가 하나도 남지 않으면, 그 타일에 첫 정착지를 놓은 다음 플레이어가 다시 한 번 일회성 수입 $5을 얻을 수 있습니다. (도시와 산은 일회성 $10)</p>{{/7.I}}
 			{{^7.I}}{{#1}}<p>플레이어가 자기 정착지를 제거해서 그 타일에 정착지가 하나도 남지 않으면, 그 타일에 첫 정착지를 놓은 다음 플레이어가 다시 한 번 일회성 수입 $5을 얻을 수 있습니다. (도시와 산은 일회성 $10)</p>{{/1}}{{/7.I}}
-			{{#4}}<p>If a {{agent}} neutralizes a tile from another {{owner}}, the next {{owner}} placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain). If he conquers that tile he gets that income.</p>{{/4}}
+			{{#4}}<p>
+				플레이어가 다른 회사의 타일을 중립화시키면, 그 타일에 첫 정착지를 놓은 다음 플레이어가 다시 한 번 일회성 수입 $5을 얻을 수 있습니다. (도시와 산은 일회성 $10)<br/>
+				플레이어가 타일을 점령하면 수입을 얻습니다.
+			</p>{{/4}}
 		{{/2.II}}
 		{{#3.II}}
 			<p>플레이어는 수도로부터 기본 수입 $20을 얻고, 자기 공장마다 $15씩을 얻습니다.{{^company}}<br/>플레이어들은 다음 라운드의 <b>1단계</b>에서 세금을 내기 전까지 이번 라운드에서 얻은 수입을 따로 분리해 둡니다.{{/company}}</p>
@@ -1398,32 +1475,52 @@
 		{{/9.I}}
 		{{#9.II}}
 			{{#1.I}}
-				<p>The company gets $20 base income for its capital, plus once-only money for each good delivered in <b>Phase 3 E</b>. The company balances accounts separately for each good. It gets the price for the 1st good according to the goods price board and adjusts all prices: the price for the delivered good drops 3 spaces, the prices for all other goods each rise 1 space. Then, the company gets the price for the 2nd good etc.! The price for a type of goods cannot drop below the first "$10" space and cannot rise above $140. After receiving their income, the company places the delivered goods in front of their company board to score VP for them in the Final Scoring.</p>
-				{{#4}}<p>If the company delivers goods to a city without its settlements, it must pay $1 for each full $10 of this sale to the owner of the city, or in case of a free city, payment goes to the bank.</p>{{/4}}
+				<p>
+					회사는 수도로부터 기본 수입 $20을 얻고, <b>3E 단계</b>에서 배송한 상품으로부터 일회성 수입을 얻습니다.<br/>
+					상품 종류마다 가격이 달리 조정됩니다.<br/>
+					상품 가격 판의 가격에 따라 첫 번째로 배송한 상품에 대한 수입을 받고 난 다음 모든 상품의 가격을 조정합니다.<br/>
+					첫 번째로 배송한 상품의 가격은 3칸 내려가고, 다른 모든 상품의 가격은 1칸 올라갑니다.<br/>
+					그런 다음 회사는 같은 방식으로 두 번째로 배송한 상품에 대한 수입을 받고, 이런 식으로 모든 상품에 대한 수입을 받습니다.<br/>
+					한 상품의 가격은 $10 미만으로 내려가지는 않으며, $140을 초과해서 올라가지도 않습니다.<br/>
+					최종 점수 계산에서 점수를 얻기 위해서, 배송한 상품 모두를 회사 판 앞에 놓습니다.
+				</p>
+				{{#4}}<p>회사가 자기 정착지가 없는 도시에 상품을 배송하면, 회사는 배송한 상품의 가격 $10마다 $1을 그 도시의 소유주에게 내야 합니다.<br/>그 도시가 자유 도시라면 은행에 냅니다.</p>{{/4}}
 			{{/1.I}}
 			{{#2.I}}
-				<p>The company gets $20 base income for its capital, plus once-only money for each settlement, which it placed on an empty tile during this turn, depending on the type of terrain: It gets $5 for <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>, <span class="desert icon"></span> and $10 for <span class="city icon"></span> and <span class="mountain icon"></span>. Additionally the company gets once-only money each time it places a settlement on 1 or more city cards in <b>Phase 3 D</b>. For the overall 1st resident $10, for the overall 2nd resident $20 etc. Afterwards, it moves the new residents to the bottom of the matching city cards - see example of <b>Income</b>.</p>
-				{{#1}}
-					<p>If the company removes its settlement and then there are no settlements left on the tile, the next company placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain).</p>
-				{{/1}}
-				{{#4}}<p>If a stock company neutralizes a tile from another company, the next presdent placing a first settlement on that tile gets again once-only $5 (once-only $10 for city and mountain). If the company conquers that tile it gets that income.</p>{{/4}}
+				<p>
+					회사는 수도로부터 기본 수입 $20을 얻고, 이번 차례 중에 회사가 비어있던 타일에 놓은 첫 정착지에 대해 일회성 수입을 얻습니다.<br/>
+					그 타일이 <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>, <span class="desert icon"></span>라면 타일마다 $5씩, <span class="city icon"></span> and <span class="mountain icon"></span>라면 타일마다 $10씩을 얻습니다.<br/>
+					이번 차례 중에 회사가 도시 카드에 주민을 놨다면, 현재 도시 카드에 놓인 모든 주민 중 첫 번째 자기 주민은 $10, 두 번째 자기 주민은 $20과 같은 방식으로 일회성 수입을 얻습니다.<br/>
+					그런 다음 그 새로 놓은 주민들을 해당 도시 카드의 아래쪽으로 이동시킵니다.<br/>
+					위쪽에 있는 <b>수입 예</b>를 참조하세요.
+				</p>
+				{{#1}}<p>회사가 자기 정착지를 제거해서 그 타일에 정착지가 하나도 남지 않으면, 그 타일에 첫 정착지를 놓은 다음 회사가 다시 한 번 일회성 수입 $5을 얻을 수 있습니다. (도시와 산은 일회성 $10)</p>{{/1}}
+				{{#4}}<p>
+					주식회사가 다른 회사의 타일을 중립화시키면, 그 타일에 첫 정착지를 놓은 다음 회사가 다시 한 번 일회성 수입 $5을 얻을 수 있습니다. (도시와 산은 일회성 $10)<br/>
+					회사가 타일을 점령하면 수입을 얻습니다.
+				</p>{{/4}}
 			{{/2.I}}
 			{{#3.I}}
-				<p>The company gets $20 base income for its capital, plus $15 for each of its factories. All companies place their income for now to one side, until they pay taxes in the next Phase 1.</p>
+				<p>회사는 수도로부터 기본 수입 $20을 얻고, 자기 공장마다 $15씩을 얻습니다.<br/>회사들은 다음 라운드의 <b>1단계</b>에서 세금을 내기 전까지 이번 라운드에서 얻은 수입을 따로 분리해 둡니다.</p>
 			{{/3.I}}
 			{{#4.I}}
-				<p>The companies receive $20 base income for their capital, plus $5 for each additionally owned tile. The companies also receive a bonus income for different types of land tiles (non city tiles), see the example <b>Income</b>.</p>
+				<p>회사는 수도로부터 기본 수입 $20을 얻고, 지배하고 있는 타일마다 $5씩을 얻습니다. 그리고 회사가 지배하는 육지 지형 종류(도시는 제외)에 따라 추가 수입을 얻습니다. 위쪽에 있는 <b>수입</b> 예를 참조하세요.</p>
 				<table>
-					<tr><th># of different types of land tiles</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
-					<tr><th>bonus income</th><td>$0</td><td>$5</td><td>$10</td><td>$20</td><td>$30</td></tr>
+					<tr><th>육지 지형 종류 수(도시 제외)</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+					<tr><th>추가 수입</th><td>$0</td><td>$5</td><td>$10</td><td>$20</td><td>$30</td></tr>
 				</table>
 			{{/4.I}}
 			{{#5.I}}
-				<p>The company gets $20 base income for the capital, plus $5 for each tile it explored (including water) plus $5 for each settlement, which the company placed first on a tile. For a better overview the company places 1 income token for each explored tile and settlement in front of the company card, see the example <b>Income</b>.</p>
-				{{#2}}<p>If the company removes its settlement and then the tile is completely empty, the next company placing a new first settlement on that tile also takes 1 income token.</p>{{/2}}
-				{{^2}}{{#4}}<p>If the company removes its settlement and then the tile is completely empty, the next company placing a new first settlement on that tile also takes 1 income token.</p>{{/4}}{{/2}}
+				<p>회사는 수도로부터 기본 수입 $20을 얻고, 자기가 발견한 타일 1개(물 타일 포함)마다 $5를 얻고, 타일에 첫 정착지를 놓을 때마다 $5씩을 얻습니다.<br/>이를 표시하기 위해 회사는 타일을 발견하거나 첫 정착지를 놓을 때마다 수입 토큰을 자기 앞에 놓습니다.<br/>위에 있는 <b>수입 예</b>를 참조하세요.</p>
+				{{#2}}<p>회사가 자기 정착지를 제거해 그 타일에 정착지가 하나도 남지 않으면, 다른 회사가 그 타일에 새로운 첫 정착지를 놓고 수입 토큰을 받을 수 있습니다.</p>{{/2}}
+				{{^2}}{{#4.I}}<p>회사가 자기 정착지를 제거해 그 타일에 정착지가 하나도 남지 않으면, 다른 회사가 그 타일에 새로운 첫 정착지를 놓고 수입 토큰을 받을 수 있습니다.</p>{{/4.I}}{{/2}}
 			{{/5.I}}
-			{{#6.I}}<p>The company gets $20 base income for its capital, plus $10 for each additional city it connected. Furthermore each of its connected cities gives the company money for 1 land tile of each type (except deserts): it gets $5 for grassland, field & forest, $10 for mountain, plus a bonus of $10 for each set containing 1 city, 1 grassland, 1 field, 1 forest, 1 mountain (no desert), see the example <b>Income</b>.</p>{{/6.I}}
+			{{#6.I}}<p>
+				회사는 수도로부터 기본 수입 $20을 얻고, 자기 도로망에 연결된 <span class="city icon"></span>마다 $10을 얻습니다.<br/>
+				그리고 자기 도로망에 연결된 도시 숫자를 기준으로 <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>마다 $5씩, <span class="mountain icon"></span>마다 $10씩을 얻습니다.<br/>
+				<span class="city icon"></span>, <span class="grass icon"></span>, <span class="forest icon"></span>, <span class="grain icon"></span>, <span class="mountain icon"></span> 1개씩(사막 제외)으로 이뤄진 세트마다 $10을 얻습니다.<br/>
+				위쪽에 있는 <b>수입</b> 예를 참조하세요.
+			</p>{{/6.I}}
 			{{#7.I}}<p>회사는 수도로부터 기본 수입 $20을 얻고, 우위를 달성한 지형에 따라 추가 수입을 얻습니다.<br/>위쪽에 있는 <b>수입</b> 예를 참조하세요.</p>{{/7.I}}
 			{{#8.I}}
 				<p>
@@ -1462,22 +1559,22 @@
 <script id="template_scoring" type="x-tmpl-mustache">
 	{{#capture}}
 		{{#2.III}}
-			{{#1.I}}<p>각 상품 종류마다 그 상품을 두 번 배송한 첫 플레이어</p>{{/1.I}}
+			{{#1.I}}<p>각 상품 종류마다 그 상품을 두 번 배송한 첫 플레이어는 승점 5점을 받습니다.</p>{{/1.I}}
 			{{#3.I}}<p>도시 3개 각각에 자기 공장 1개 이상을 건설한 첫 플레이어 / 한 도시에 자기 공장 3개를 건설한 첫 플레이어는 승점 10점을 받습니다.</p>{{/3.I}}
-			{{#4.I}}<p>Award VP to a {{owner}} when they conquer a free city from the stacks set aside on the majority board (3 for the first free city, 4 for the second, etc).</p>{{/4.I}}
-			{{#5.I}}<p>Award 5VP from the stack set aside on the corresponding column of the majority board to the first {{owner}} to explore one of the 6 terrain types (no water) three times.</p>{{/5.I}}
-			{{#6.I}}<p>Award 5 VP from the stack set aside on the corresponding column of the majority board to the first {{owner}} to connect one of the 6 terrain types (no water) with {{owns}} roads a third time.</p>{{/6.I}}
-			{{#7.I}}<p>Award 10 VP to the first {{owner}} to control 1 of each terrain type (no water). Award 20 VP to the first {{owner}} to control 2 of each terrain type (no water).</p>{{/7.I}}
-			{{#8.I}}<p>Award 5 VP from the stack set aside for this purpose to the first {{owner}} owning 3 plants of a good type.</p>{{/8.I}}
+			{{#4.I}}<p>플레이어가 자유 도시를 점령할 때마다 우위 판 위의 승점을 받습니다. (첫 번째 도시 승점 3점, 주 번째 도시 승점 4점, ...)</p>{{/4.I}}
+			{{#5.I}}<p>각각의 지형을 세 번 발견한 첫 플레이어는 승점 5점을 받습니다.</p>{{/5.I}}
+			{{#6.I}}<p>자기 도로망에 각각의 지형(물 제외)을 세 개째 연결한 첫 플레이어는 승점 5점을 받습니다.</p>{{/6.I}}
+			{{#7.I}}<p>모든 종류의 지형(물 제외)을 하나 이상 지배한 첫 플레이어는 승점 10점을 받습니다.<br/>모든 종류의 지형(물 제외)을 둘 이상 지배한 첫 플레이어는 승점 20점을 받습니다.</p>{{/7.I}}
+			{{#8.I}}<p>각 상품 종류마다 해당 생산 설비 3개를 소유한 첫 플레이어는 승점 5점을 받습니다.</p>{{/8.I}}
 			{{#9.I}}<p>
-				{{#1.II}}Award $50 to the first stock company delivering one of the good types a second time from the stack set aside for this purpose.{{/1.II}}
-				{{#3.II}}Award $100 to the first stock company having at least 1 factory in 3 cities, and to the first stock company having 3 factories in 1 city.{{/3.II}}
-				{{#4.II}}Award money to a stock company when they conquer a free city from the stacks set aside on the majority board ($30 for the first free city, $40 for the second, etc).{{/4.II}}
-				{{#5.II}}Award $50 from the stack set aside on the corresponding column of the majority board to the first stock company to explore one of the 6 terrain types (no water) three times.{{/5.II}}
-				{{#6.II}}Award $50 from the stack set aside on the corresponding column of the majority board to the first stock company to connect one of the 6 terrain types (no water) with his roads a third time.{{/6.II}}
-				{{#7.II}}Award $100 to the first stock company to control 1 of each terrain type (no water). Award $200 to the first stock company to control 2 of each terrain type (no water).{{/7.II}}
-				{{#8.II}}Award $50 from the stack set aside for this purpose to the first stock company owning 3 plants of a good type.{{/8.II}}
-				Treat this money as income.
+				{{#1.II}}각 상품 종류마다 그 상품을 두 번 배송한 첫 주식회사는 $50을 받습니다.{{/1.II}}
+				{{#3.II}}도시 3개 각각에 자기 공장 1개 이상을 건설한 첫 주식회사는 / 한 도시에 자기 공장 3개를 건설한 첫 주식회사는는 $100을 받습니다.{{/3.II}}
+				{{#4.II}}주식회사가 자유 도시를 점령할 때마다 우위 판 위의 승점을 받습니다. (첫 번째 도시 $30, 주 번째 도시 $40, ...){{/4.II}}
+				{{#5.II}}각각의 지형(물 제외)을 세 번 발견한 첫 주식회사는 $50을 받습니다.{{/5.II}}
+				{{#6.II}}자기 도로망에 각각의 지형(물 제외)을 세 개째 연결한 첫 주식회사는 $50을 받습니다.{{/6.II}}
+				{{#7.II}}모든 종류의 지형(물 제외)을 하나 이상 지배한 첫 주식회사는 $100을 받습니다.<br/>모든 종류의 지형(물 제외)을 둘 이상 지배한 첫 주식회사는 $200을 받습니다.{{/7.II}}
+				{{#8.II}}각 상품 종류마다 해당 생산 설비 3개를 소유한 첫 주식회사는 $50을 받습니다.{{/8.II}}
+				이 돈을 수입으로 취급합니다.
 			</p>{{/9.I}}
 		{{/2.III}}
 	{{/capture}}
@@ -1556,12 +1653,12 @@
 				{{/residents}}
 				{{#residents}}
 					{{#4}}
-						{{#9.II}}<p>The game ends at the end of the round in which at least 1 stock company had 4 population on city cards.</p>{{/9.II}}
-						{{^9.II}}<p>Depending on the # of players the game ends at the end of the round after at least 1 player placed population on 7 (2♟), 6 (3♟) or 5 (4♟) city cards.</p>{{/9.II}}
+						{{#9.II}}<p>주식회사 1개 이상이 자기 인구 4개 이상을 도시 카드에 놓은 라운드를 마치면 게임이 끝납니다.</p>{{/9.II}}
+						{{^9.II}}<p>게임에 참가한 플레이어 수에 따라서 종료 조건이 달라집니다.<br/>플레이어 1명 이상이 자기 인구 7개(2♟) / 6개(3♟) / 5개(4♟) 이상을 도시 카드에 놓은 라운드를 마치면 게임이 끝납니다.</p>{{/9.II}}
 					{{/4}}
 					{{^4}}
-						{{#9.II}}<p>The game ends at the end of the round in which at least 1 stock company had 6 population on city cards.</p>{{/9.II}}
-						{{^9.II}}<p>Depending on the # of players the game ends at the end of the round after at least 1 player placed population on 9 (2♟), 8 (3♟) or 7 (4♟) city cards.</p>{{/9.II}}
+						{{#9.II}}<p>주식회사 1개 이상이 자기 인구 6개 이상을 도시 카드에 놓은 라운드를 마치면 게임이 끝납니다.</p>{{/9.II}}
+						{{^9.II}}<p>게임에 참가한 플레이어 수에 따라서 종료 조건이 달라집니다.<br/>플레이어 1명 이상이 자기 인구 9개(2♟) / 8개(3♟) / 7개(4♟) 이상을 도시 카드에 놓은 라운드를 마치면 게임이 끝납니다</p>{{/9.II}}
 					{{/4}}
 				{{/residents}}
 			{{/2.I}}
